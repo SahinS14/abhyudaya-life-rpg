@@ -3,111 +3,38 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#090511">
-  <meta name="description" content="Abhyudaya turns real-life progress into a heroic RPG journey.">
+  <meta name="theme-color" content="#07040d">
+  <meta name="description" content="Abhyudaya: a real-life RPG for building your legend.">
   <title>Abhyudaya — LifeQuest</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root { --gold:#e7bd75; --gold-light:#fff0bd; --ink:#090511; --mist:rgba(255,249,231,.72); }
-    * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body { margin:0; min-width:320px; color:#fff9ea; background:var(--ink); font-family:Manrope,system-ui,sans-serif; }
-    a { color:inherit; text-decoration:none; }
-    .realm { min-height:100svh; position:relative; isolation:isolate; overflow:hidden; background:#090511; }
-    .hero-image, .veil, .grain { position:absolute; inset:0; pointer-events:none; }
-    .hero-image { z-index:-4; width:100%; height:100%; object-fit:cover; object-position:center; opacity:.71; filter:saturate(.82) contrast(1.06) brightness(.74); transform:scale(1.025); animation:float-world 16s ease-in-out infinite alternate; }
-    .veil { z-index:-3; background:linear-gradient(90deg,rgba(5,3,12,.94) 0%,rgba(8,4,14,.63) 42%,rgba(9,4,15,.2) 72%,rgba(4,2,9,.76)),linear-gradient(0deg,rgba(5,3,12,.94) 0%,transparent 34%,rgba(5,2,12,.36) 100%); }
-    .grain { z-index:-2; opacity:.18; background-image:radial-gradient(rgba(255,230,160,.42) .55px,transparent .6px); background-size:5px 5px; mix-blend-mode:soft-light; }
-    .container { width:min(1220px,calc(100% - 48px)); margin:auto; }
-    header { min-height:92px; display:flex; align-items:center; justify-content:space-between; gap:24px; border-bottom:1px solid rgba(240,212,151,.19); }
-    .brand { display:flex; align-items:center; gap:13px; min-width:max-content; }
-    .brand img { width:42px; height:42px; object-fit:contain; filter:drop-shadow(0 0 12px rgba(238,191,97,.6)); }
-    .brand-name { display:block; font:700 1.12rem/1 Cinzel,serif; letter-spacing:.18em; }
-    .brand-sub { display:block; margin-top:5px; color:var(--gold); font:500 .57rem/1 'DM Mono',monospace; letter-spacing:.27em; }
-    .head-links { display:flex; gap:30px; align-items:center; color:#fff3d6; font:500 .72rem/1 'DM Mono',monospace; letter-spacing:.14em; text-transform:uppercase; }
-    .head-links a { opacity:.78; transition:opacity .2s,color .2s; }
-    .head-links a:hover { opacity:1; color:var(--gold-light); }
-    .sound-toggle { border:1px solid rgba(239,204,132,.38); color:#ffe6af; background:rgba(20,13,30,.42); border-radius:99px; padding:9px 13px; cursor:pointer; font:500 .64rem/1 'DM Mono',monospace; letter-spacing:.08em; }
-    .sound-toggle:hover { background:rgba(231,189,117,.16); }
-    .sound-dot { display:inline-block; width:6px; height:6px; border-radius:50%; background:#e7bd75; margin-right:7px; box-shadow:0 0 9px var(--gold); }
-    .hero { padding:clamp(76px,13vh,150px) 0 94px; max-width:810px; }
-    .eyebrow { display:flex; align-items:center; gap:9px; color:#f0d395; font:500 .65rem/1 'DM Mono',monospace; letter-spacing:.23em; text-transform:uppercase; }
-    .eyebrow::before { content:''; width:33px; height:1px; background:var(--gold); box-shadow:0 0 8px var(--gold); }
-    h1 { max-width:760px; margin:22px 0 19px; font:700 clamp(3.5rem,9vw,8.8rem)/.83 Cinzel,serif; letter-spacing:-.075em; text-shadow:0 6px 44px rgba(0,0,0,.55); }
-    h1 span { color:var(--gold); }
-    .hero h2 { margin:0; max-width:570px; font:600 clamp(1rem,2vw,1.55rem)/1.42 Cinzel,serif; letter-spacing:.045em; }
-    .hero p { max-width:525px; margin:23px 0 34px; color:var(--mist); font:500 clamp(1rem,1.4vw,1.12rem)/1.72 Manrope,sans-serif; }
-    .quote { color:#f8db9e; font:600 1.45rem/1.1 'Cormorant Garamond',serif; font-style:italic; letter-spacing:.03em; }
-    .quote::before { content:'✦'; font-size:.7em; margin-right:9px; color:var(--gold); }
-    .actions { display:flex; flex-wrap:wrap; gap:14px; margin-top:37px; }
-    .button { display:inline-flex; min-height:52px; align-items:center; justify-content:center; gap:11px; border-radius:2px; padding:0 24px; font:700 .72rem/1 Cinzel,serif; letter-spacing:.1em; transition:transform .2s,box-shadow .2s,background .2s; }
-    .button:hover { transform:translateY(-3px); }
-    .primary { color:#180d12; background:linear-gradient(105deg,#b87e3a,#ffe7ad 50%,#bf813e); background-size:180%; box-shadow:0 11px 34px rgba(194,135,57,.27),inset 0 1px rgba(255,255,255,.8); }
-    .primary:hover { background-position:100%; box-shadow:0 16px 42px rgba(235,182,92,.4); }
-    .secondary { border:1px solid rgba(255,231,175,.6); background:rgba(16,10,27,.32); color:#fff5d8; backdrop-filter:blur(8px); }
-    .secondary:hover { background:rgba(245,213,149,.14); box-shadow:0 9px 25px rgba(0,0,0,.22); }
-    .arrow { font:1.15rem/1 Manrope,sans-serif; }
-    .ember { position:absolute; z-index:-1; width:4px; height:4px; border-radius:50%; background:#ffdc88; box-shadow:0 0 10px 2px rgba(255,176,71,.72); opacity:0; animation:rise var(--time) linear infinite; animation-delay:var(--delay); left:var(--left); bottom:-18px; }
-    .ember:nth-child(odd) { width:2px; height:2px; background:#fff1bf; }
-    .signal { position:absolute; right:4vw; top:37%; color:rgba(255,235,189,.8); font:500 .58rem/1.65 'DM Mono',monospace; letter-spacing:.14em; text-transform:uppercase; text-align:right; writing-mode:vertical-rl; }
-    .signal::after { content:''; display:block; width:1px; height:60px; margin:10px auto 0; background:linear-gradient(transparent,var(--gold),transparent); }
-    .metrics { border-top:1px solid rgba(240,212,151,.21); background:rgba(8,4,14,.5); backdrop-filter:blur(12px); }
-    .metrics-inner { display:grid; grid-template-columns:repeat(3,1fr); }
-    .metric { min-height:107px; padding:25px clamp(14px,3vw,43px); border-right:1px solid rgba(240,212,151,.18); display:flex; flex-direction:column; justify-content:center; }
-    .metric:last-child { border:0; }
-    .metric strong { color:#ffe4a6; font:600 .68rem/1.3 'DM Mono',monospace; letter-spacing:.12em; text-transform:uppercase; }
-    .metric span { margin-top:8px; color:rgba(255,249,234,.7); font-size:.78rem; line-height:1.45; }
-    .how { background:radial-gradient(circle at 72% 0,#2c1c35 0,transparent 33%),#0a0611; padding:83px 0; }
-    .how-head { max-width:650px; margin-bottom:35px; }
-    .how h2 { margin:11px 0 0; font:700 clamp(1.8rem,4vw,3.2rem)/1 Cinzel,serif; letter-spacing:-.045em; }
-    .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-    .card { min-height:205px; padding:25px; border:1px solid rgba(239,204,132,.22); background:linear-gradient(130deg,rgba(255,247,220,.07),rgba(255,255,255,.015)); }
-    .card-num { color:var(--gold); font:500 .68rem/1 'DM Mono',monospace; letter-spacing:.16em; }
-    .card h3 { margin:20px 0 8px; font:700 1.2rem/1.25 Cinzel,serif; }
-    .card p { margin:0; color:var(--mist); font-size:.87rem; line-height:1.7; }
-    footer { padding:24px 0 34px; color:rgba(255,249,234,.48); background:#0a0611; font:500 .64rem/1.5 'DM Mono',monospace; letter-spacing:.08em; text-align:center; }
-    @keyframes rise { 0%{transform:translate3d(0,0,0) scale(.5);opacity:0} 12%{opacity:.85} 82%{opacity:.46} 100%{transform:translate3d(var(--drift),-108vh,0) scale(1.7);opacity:0} }
-    @keyframes float-world { from{transform:scale(1.025) translate3d(0,0,0)} to{transform:scale(1.07) translate3d(-.6%,-.4%,0)} }
-    @media (max-width:720px) { .container{width:min(100% - 32px,1220px)} header{min-height:76px}.brand img{width:35px;height:35px}.brand-name{font-size:.9rem}.brand-sub{font-size:.48rem}.head-links{display:none}.sound-toggle{padding:8px 10px;font-size:.55rem}.hero{padding:96px 0 72px}.signal{display:none}h1{font-size:clamp(3.3rem,17vw,5.8rem);letter-spacing:-.08em}.hero h2{font-size:1rem}.hero p{font-size:.94rem}.actions{margin-top:28px}.button{min-height:49px;padding:0 18px;font-size:.65rem}.metrics-inner{grid-template-columns:1fr}.metric{min-height:78px;border-right:0;border-bottom:1px solid rgba(240,212,151,.18);padding:17px 0}.metric:last-child{border-bottom:0}.how{padding:61px 0}.cards{grid-template-columns:1fr}.card{min-height:auto;padding:22px} }
-    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms!important; animation-iteration-count:1!important; scroll-behavior:auto!important; } }
+    :root{--gold:#e7bd75;--pale:#fff0c3;--ink:#07040d;--line:rgba(237,199,126,.25)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-width:320px;color:#fff9e9;background:var(--ink);font-family:Manrope,system-ui,sans-serif}a{color:inherit;text-decoration:none}.realm{position:relative;isolation:isolate;display:flex;min-height:100svh;overflow:hidden;background:#090610}.hero-image,.veil,.stars{position:absolute;inset:0;pointer-events:none}.hero-image{z-index:-4;width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.76) saturate(.86) contrast(1.06);animation:world-drift 18s ease-in-out infinite alternate}.veil{z-index:-3;background:linear-gradient(180deg,rgba(5,3,11,.63),transparent 29%,rgba(5,3,10,.04) 56%,rgba(5,3,10,.88) 100%),linear-gradient(90deg,rgba(7,3,12,.31),transparent 48%,rgba(5,3,9,.19))}.stars{z-index:-2;opacity:.15;background-image:radial-gradient(rgba(255,228,159,.8) .5px,transparent .7px);background-size:25px 25px}.container{display:flex;flex-direction:column;width:min(1220px,calc(100% - 48px));margin:auto}.top{display:flex;min-height:92px;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(242,211,149,.18)}.brand{display:flex;align-items:center;gap:13px;min-width:max-content}.brand img{width:43px;height:43px;object-fit:contain;filter:drop-shadow(0 0 12px rgba(238,191,97,.67))}.brand-name{display:block;font:700 1.12rem/1 Cinzel,serif;letter-spacing:.18em}.brand-sub{display:block;margin-top:5px;color:var(--gold);font:500 .57rem/1 'DM Mono',monospace;letter-spacing:.27em}.sound-toggle{display:inline-flex;align-items:center;border:1px solid rgba(239,204,132,.4);border-radius:999px;padding:10px 14px;color:#ffe6af;background:rgba(12,7,20,.36);backdrop-filter:blur(8px);cursor:pointer;font:500 .61rem/1 'DM Mono',monospace;letter-spacing:.09em;transition:background .2s,border .2s}.sound-toggle:hover{border-color:#f5ce7c;background:rgba(231,189,117,.16)}.sound-dot{width:6px;height:6px;margin-right:7px;border-radius:50%;background:#d19c42;box-shadow:0 0 10px #efbc58}.sound-toggle.playing .sound-dot{background:#ffce5b;animation:pulse 1.25s infinite}.hero-spacer{flex:1;min-height:200px}.hero-actions{display:flex;justify-content:center;gap:15px;padding:0 0 clamp(46px,7vh,82px)}.button{display:inline-flex;min-height:54px;align-items:center;justify-content:center;gap:10px;border-radius:3px;padding:0 26px;font:700 .72rem/1 Cinzel,serif;letter-spacing:.1em;transition:transform .2s,box-shadow .2s,background .2s}.button:hover{transform:translateY(-3px)}.primary{color:#190f12;background:linear-gradient(105deg,#bb8040,#ffebaf 49%,#bd803c);background-size:180%;box-shadow:0 10px 35px rgba(194,135,57,.34),inset 0 1px rgba(255,255,255,.8)}.primary:hover{background-position:100%;box-shadow:0 17px 44px rgba(235,182,92,.44)}.secondary{border:1px solid rgba(255,231,175,.72);color:#fff5d8;background:rgba(10,7,16,.35);backdrop-filter:blur(9px)}.secondary:hover{background:rgba(245,213,149,.15)}.arrow{font:1.1rem/1 Manrope,sans-serif}.ember{position:absolute;z-index:-1;bottom:-20px;left:var(--left);width:4px;height:4px;border-radius:50%;opacity:0;background:#ffdf85;box-shadow:0 0 10px 2px rgba(255,155,51,.8);animation:rise var(--time) linear infinite;animation-delay:var(--delay)}.ember:nth-child(odd){width:2px;height:2px;background:#fff3c2}.character{padding:clamp(54px,8vw,100px) 0;background:radial-gradient(circle at 50% -20%,#3b243a 0,transparent 44%),#090611}.character .container{display:block}.character-heading{margin:0 0 26px;text-align:center;color:#ebc57b;font:600 .67rem/1 'DM Mono',monospace;letter-spacing:.22em;text-transform:uppercase}.character-heading::before,.character-heading::after{content:'✦';margin:0 12px;color:#9e6c2c}.character-frame{position:relative;width:min(1040px,100%);margin:auto;overflow:hidden;border:1px solid var(--line);border-radius:10px;background:#14101b;box-shadow:0 25px 65px rgba(0,0,0,.48)}.character-frame img{display:block;width:100%;height:auto;filter:saturate(.9) contrast(1.03)}.character-frame::after{content:'';position:absolute;inset:0;border:1px solid rgba(255,235,185,.11);border-radius:10px;pointer-events:none}footer{padding:22px 16px 31px;background:#090611;color:rgba(255,248,229,.48);text-align:center;font:500 .6rem/1.4 'DM Mono',monospace;letter-spacing:.09em}@keyframes rise{0%{transform:translate3d(0,0,0) scale(.55);opacity:0}12%{opacity:.92}79%{opacity:.45}100%{transform:translate3d(var(--drift),-109svh,0) scale(1.7);opacity:0}}@keyframes world-drift{from{transform:scale(1.025) translate3d(0,0,0)}to{transform:scale(1.075) translate3d(-.6%,-.4%,0)}}@keyframes pulse{50%{box-shadow:0 0 16px 4px #efbc58}}@media(max-width:650px){.container{width:min(100% - 32px,1220px)}.top{min-height:76px}.brand img{width:35px;height:35px}.brand-name{font-size:.9rem}.brand-sub{font-size:.47rem}.sound-toggle{padding:9px 10px;font-size:.5rem}.sound-toggle [data-sound-label]{display:none}.sound-dot{margin:0}.hero-spacer{min-height:390px}.hero-actions{flex-direction:column;align-items:stretch;padding-bottom:40px;gap:11px}.button{min-height:51px;padding:0 16px;font-size:.66rem}.character{padding:55px 0}.character-heading{font-size:.56rem;letter-spacing:.14em}.character-heading::before,.character-heading::after{margin:0 7px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
   </style>
 </head>
 <body>
   <section class="realm" aria-labelledby="page-title">
-    <img class="hero-image" src="hero.png" alt="" aria-hidden="true">
-    <div class="veil"></div><div class="grain"></div>
-    <i class="ember" style="--left:7%;--delay:-1s;--time:12s;--drift:31px"></i><i class="ember" style="--left:17%;--delay:-8s;--time:16s;--drift:-48px"></i><i class="ember" style="--left:29%;--delay:-4s;--time:11s;--drift:37px"></i><i class="ember" style="--left:51%;--delay:-10s;--time:14s;--drift:-20px"></i><i class="ember" style="--left:68%;--delay:-3s;--time:17s;--drift:45px"></i><i class="ember" style="--left:83%;--delay:-12s;--time:13s;--drift:-38px"></i><i class="ember" style="--left:92%;--delay:-6s;--time:18s;--drift:19px"></i>
-    <div class="container">
-      <header>
-        <a class="brand" href="index.html" aria-label="Abhyudaya home"><img src="logo.png" alt=""><span><b class="brand-name">ABHYUDAYA</b><small class="brand-sub">LIFEQUEST // 01</small></span></a>
-        <div class="head-links" aria-label="Primary navigation"><a href="#how-it-works">The Path</a><a href="auth.html">Enter Realm</a></div>
-        <button class="sound-toggle" type="button" aria-pressed="false" aria-label="Toggle ambience"><span class="sound-dot"></span><span data-sound-label>AMBIENCE OFF</span></button>
-      </header>
-      <main class="hero">
-        <div class="eyebrow">A life role-playing system</div>
-        <h1 id="page-title">ABHYU<span>DAYA</span></h1>
-        <h2>TURN YOUR LIFE INTO A HEROIC JOURNEY.</h2>
-        <p>Transform the quiet work that shapes your life into quests, earned experience, and a character story worth returning to every day.</p>
-        <div class="quote">Small steps. Light great fires.</div>
-        <div class="actions">
-          <a class="button primary" href="auth.html"><span>CREATE YOUR CHAMPION</span><span class="arrow">→</span></a>
-          <a class="button secondary" href="auth.html"><span>ENTER THE SANCTUARY</span><span class="arrow">↗</span></a>
-        </div>
-      </main>
-    </div>
-    <div class="signal" aria-hidden="true">A personal world<br>built by action</div>
+    <img class="hero-image" src="hero.png" alt="" aria-hidden="true"><div class="veil"></div><div class="stars"></div>
+    <i class="ember" style="--left:5%;--delay:-1s;--time:12s;--drift:32px"></i><i class="ember" style="--left:13%;--delay:-8s;--time:16s;--drift:-48px"></i><i class="ember" style="--left:24%;--delay:-4s;--time:11s;--drift:37px"></i><i class="ember" style="--left:38%;--delay:-10s;--time:14s;--drift:-20px"></i><i class="ember" style="--left:52%;--delay:-3s;--time:17s;--drift:45px"></i><i class="ember" style="--left:68%;--delay:-12s;--time:13s;--drift:-38px"></i><i class="ember" style="--left:83%;--delay:-6s;--time:18s;--drift:19px"></i><i class="ember" style="--left:94%;--delay:-14s;--time:15s;--drift:-28px"></i>
+    <div class="container"><header class="top"><a class="brand" href="index.html" aria-label="Abhyudaya home"><img src="logo.png" alt=""><span><b class="brand-name">ABHYUDAYA</b><small class="brand-sub">LIFEQUEST // 01</small></span></a><button class="sound-toggle" type="button" aria-pressed="false" aria-label="Start mythic ambience"><span class="sound-dot"></span><span data-sound-label>START AMBIENCE</span></button></header><main class="hero-spacer"><h1 id="page-title" hidden>Abhyudaya LifeQuest</h1></main><nav class="hero-actions" aria-label="Enter Abhyudaya"><a class="button primary" href="auth.html">CREATE YOUR CHAMPION <span class="arrow">→</span></a><a class="button secondary" href="auth.html">ENTER THE SANCTUARY <span class="arrow">↗</span></a></nav></div>
   </section>
-  <section class="metrics" aria-label="Product principles"><div class="container metrics-inner"><div class="metric"><strong>01 // Quests</strong><span>Turn real work into clear, meaningful missions.</span></div><div class="metric"><strong>02 // Progress</strong><span>Gain server-verified XP, gold, and attributes.</span></div><div class="metric"><strong>03 // Legacy</strong><span>Build consistency through streaks, trophies, and story.</span></div></div></section>
-  <section class="how" id="how-it-works"><div class="container"><div class="how-head"><div class="eyebrow">The reward loop</div><h2>A ritual that makes progress feel real.</h2></div><div class="cards"><article class="card"><div class="card-num">I. ACCEPT</div><h3>Choose a quest</h3><p>Create a task and link it to the attribute your real effort will forge.</p></article><article class="card"><div class="card-num">II. COMPLETE</div><h3>Claim the moment</h3><p>Complete the quest to trigger an immediate, satisfying XP and gold reward.</p></article><article class="card"><div class="card-num">III. ASCEND</div><h3>See your story grow</h3><p>Level up, sustain your streak, unlock rewards, and return stronger tomorrow.</p></article></div></div></section>
+  <section class="character" aria-labelledby="character-showcase"><div class="container"><h2 class="character-heading" id="character-showcase">Your character, your legend</h2><div class="character-frame"><img src="docs/screenshots/06-character.png" alt="Abhyudaya character profile showing the avatar, level, attributes, XP and earned equipment"></div></div></section>
   <footer>ABHYUDAYA — MAKE THE ORDINARY LEGENDARY.</footer>
   <script>
-    document.querySelector('.sound-toggle').addEventListener('click', function () {
-      const active = this.getAttribute('aria-pressed') === 'true';
-      this.setAttribute('aria-pressed', String(!active));
-      this.querySelector('[data-sound-label]').textContent = active ? 'AMBIENCE OFF' : 'AMBIENCE ON';
-    });
+    (() => {
+      const control = document.querySelector('.sound-toggle'); let ctx, master, playing = false;
+      function chime() { if (!playing) return; const osc=ctx.createOscillator(), gain=ctx.createGain(); osc.type='sine'; osc.frequency.value=[293.66,369.99,440,587.33][Math.floor(Math.random()*4)]; gain.gain.setValueAtTime(.0001,ctx.currentTime); gain.gain.exponentialRampToValueAtTime(.15,ctx.currentTime+.018); gain.gain.exponentialRampToValueAtTime(.0001,ctx.currentTime+2.5); osc.connect(gain).connect(master); osc.start(); osc.stop(ctx.currentTime+2.6); setTimeout(chime, 2350 + Math.random()*1550); }
+      function createAmbience() {
+        ctx = new (window.AudioContext || window.webkitAudioContext)(); master = ctx.createGain(); master.gain.value = .22; master.connect(ctx.destination);
+        const drone = ctx.createOscillator(), low = ctx.createOscillator(), droneGain = ctx.createGain(), lowGain = ctx.createGain();
+        drone.type='sine'; drone.frequency.value=146.83; low.type='triangle'; low.frequency.value=73.42; droneGain.gain.value=.18; lowGain.gain.value=.11;
+        drone.connect(droneGain).connect(master); low.connect(lowGain).connect(master); drone.start(); low.start();
+      }
+      async function toggleSound() { try { if (!ctx) createAmbience(); if (playing) { await ctx.suspend(); playing=false; } else { await ctx.resume(); playing=true; chime(); } control.classList.toggle('playing',playing); control.setAttribute('aria-pressed',String(playing)); control.setAttribute('aria-label',playing?'Pause mythic ambience':'Start mythic ambience'); control.querySelector('[data-sound-label]').textContent=playing?'AMBIENCE ON':'START AMBIENCE'; } catch (_) { control.querySelector('[data-sound-label]').textContent='TAP FOR SOUND'; } }
+      control.addEventListener('click',toggleSound);
+      window.addEventListener('pointerdown', () => { if (!playing) toggleSound(); }, {once:true});
+      window.addEventListener('load', () => { toggleSound(); });
+    })();
   </script>
 </body>
 </html>
