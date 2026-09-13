@@ -55,6 +55,11 @@
   document.head.append(mobileStyle);
 
   document.addEventListener('DOMContentLoaded', () => {
+    const logoutFromRealm = async (button) => {
+      if (button) { button.disabled = true; button.textContent = 'Signing out…'; }
+      try { await fetch('/api/auth/logout', { method: 'POST', credentials: 'same-origin' }); }
+      finally { sessionStorage.removeItem('abhyudaya_session'); location.href = 'index.html'; }
+    };
     if (location.pathname.endsWith('index.html') || location.pathname === '/') {
       const publicNav = document.querySelector('header nav');
       if (publicNav) publicNav.innerHTML = '<a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" href="#how-it-works">How it works</a><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" href="auth.html">Sign in</a>';
@@ -67,6 +72,11 @@
       const current = ({ 'dashboard.html':'dashboard', 'quests.html':'quests', 'character.html':'character', 'inventory.html':'inventory', 'shop.html':'shop', 'achievements.html':'achievements', 'activity.html':'activity', 'progression.html':'progression', 'guild.html':'guild', 'settings.html':'settings' })[location.pathname.split('/').pop()] || 'dashboard';
       const entries = [['dashboard','dashboard','Dashboard'],['quests','swords','Quests'],['character','person','Character'],['inventory','backpack','Inventory'],['shop','storefront','Shop'],['achievements','military_tech','Trophy Room'],['activity','insights','Activity'],['progression','auto_graph','Progression'],['guild','groups','Guild & Raids'],['settings','settings','System Settings']];
       sideNav.innerHTML = entries.map(([path, icon, label]) => `<a data-path="${path}" href="${routes[path]}" ${current === path ? 'aria-current="page"' : ''} class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg ${current === path ? 'bg-surface-container-high text-primary font-bold shadow-inner' : 'text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface'} transition-all group font-label-md text-label-md tracking-wider uppercase"><span class="material-symbols-outlined text-primary text-xl">${icon}</span>${label}</a>`).join('');
+      const sideLogout = document.createElement('button');
+      sideLogout.type = 'button'; sideLogout.className = 'mt-4 flex w-full items-center gap-space-sm px-space-md py-2.5 rounded-lg text-error hover:bg-surface-container-high transition-all font-label-md text-label-md tracking-wider uppercase';
+      sideLogout.innerHTML = '<span class="material-symbols-outlined text-xl">logout</span>Log out';
+      sideLogout.addEventListener('click', () => logoutFromRealm(sideLogout));
+      sideNav.append(sideLogout);
       const crest = document.querySelector('aside img'); if (crest) { crest.src = 'logo.png'; crest.alt = 'Abhyudaya crest'; }
       document.querySelectorAll('aside span').forEach(node => { if (node.textContent.trim() === 'LIFEQUEST') node.textContent = 'ABHYUDAYA'; });
       const dockItems = [['dashboard','dashboard','Home'],['quests','swords','Quests'],['character','person','Hero'],['shop','storefront','Shop'],['settings','menu','More']];
@@ -132,12 +142,12 @@
         accountMenu.innerHTML = '<a href="character.html" role="menuitem" class="ab-account-link">Character</a><a href="settings.html" role="menuitem" class="ab-account-link">System settings</a><div class="my-1 border-t border-surface-container-high"></div><button type="button" role="menuitem" class="ab-account-link ab-account-logout">Log out</button>';
         profileTrigger.append(accountMenu);
         const setOpen = open => { accountMenu.classList.toggle('hidden', !open); profileTrigger.setAttribute('aria-expanded', String(open)); };
-        profileTrigger.addEventListener('click', event => { if (event.target.closest('.ab-account-menu')) return; setOpen(accountMenu.classList.contains('hidden')); });
+        profileTrigger.addEventListener('click', event => { event.stopPropagation(); if (event.target.closest('.ab-account-menu')) return; setOpen(accountMenu.classList.contains('hidden')); });
         profileTrigger.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setOpen(accountMenu.classList.contains('hidden')); } if (event.key === 'Escape') setOpen(false); });
+        accountMenu.addEventListener('click', event => event.stopPropagation());
         document.addEventListener('click', event => { if (!profileTrigger.contains(event.target)) setOpen(false); });
         accountMenu.querySelector('.ab-account-logout').addEventListener('click', async () => {
-          const logout = accountMenu.querySelector('.ab-account-logout'); logout.disabled = true; logout.textContent = 'Signing out…';
-          try { await fetch('/api/auth/logout', { method: 'POST', credentials: 'same-origin' }); } finally { sessionStorage.removeItem('abhyudaya_session'); location.href = 'index.html'; }
+          logoutFromRealm(accountMenu.querySelector('.ab-account-logout'));
         });
       }
     }

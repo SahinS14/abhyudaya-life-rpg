@@ -16,6 +16,12 @@
     "levelup-3.html",
   ];
   if (!protectedPages.includes(page)) return;
+  if (["dashboard.html", "quests.html"].includes(page)) {
+    document.documentElement.classList.add("realm-data-pending");
+    const pendingStyle = document.createElement("style");
+    pendingStyle.textContent = ".realm-data-pending .quest-card{visibility:hidden!important}";
+    document.head.append(pendingStyle);
+  }
   const api = async (url, options = {}) => {
     const token = sessionStorage.getItem("abhyudaya_session");
     const response = await fetch(url, {
@@ -95,6 +101,26 @@
       oscillator.connect(gain).connect(context.destination);
       oscillator.start(now + index * 0.08);
       oscillator.stop(now + index * 0.08 + 0.18);
+    });
+  };
+  const playQuestComplete = () => {
+    if (!settings.sound_enabled || !window.AudioContext) return;
+    const context = new AudioContext(), now = context.currentTime;
+    [523.25, 659.25, 783.99].forEach((frequency, index) => {
+      const oscillator = context.createOscillator(), gain = context.createGain();
+      oscillator.type = "sine"; oscillator.frequency.value = frequency;
+      gain.gain.setValueAtTime(.0001, now + index * .07); gain.gain.exponentialRampToValueAtTime(.11, now + index * .07 + .01); gain.gain.exponentialRampToValueAtTime(.0001, now + index * .07 + .28);
+      oscillator.connect(gain).connect(context.destination); oscillator.start(now + index * .07); oscillator.stop(now + index * .07 + .3);
+    });
+  };
+  const playLevelUp = () => {
+    if (!settings.sound_enabled || !window.AudioContext) return;
+    const context = new AudioContext(), now = context.currentTime;
+    [261.63, 329.63, 392, 523.25, 659.25].forEach((frequency, index) => {
+      const oscillator = context.createOscillator(), gain = context.createGain();
+      oscillator.type = "triangle"; oscillator.frequency.value = frequency;
+      gain.gain.setValueAtTime(.0001, now + index * .12); gain.gain.exponentialRampToValueAtTime(.1, now + index * .12 + .02); gain.gain.exponentialRampToValueAtTime(.0001, now + index * .12 + .34);
+      oscillator.connect(gain).connect(context.destination); oscillator.start(now + index * .12); oscillator.stop(now + index * .12 + .36);
     });
   };
   const playStreak = () => {
@@ -182,7 +208,7 @@
     narrative.textContent = `${stories[task.attribute] || stories.focus} Day ${currentHero.current_streak} of your streak is now secured.`;
     overlay.classList.remove("hidden");
     requestAnimationFrame(() => overlay.classList.remove("opacity-0"));
-    playReward();
+    playQuestComplete();
     window.realmBurst?.(90);
   };
   const extraQuestCard = (task) =>
@@ -220,6 +246,7 @@
           : '<p class="col-span-full rounded-xl bg-surface-container-low p-space-lg text-on-surface-variant">No quests have been forged yet. Create your first custom quest.</p>',
       );
     }
+    document.documentElement.classList.remove("realm-data-pending");
     document.addEventListener(
       "click",
       async (event) => {
@@ -282,8 +309,10 @@
           button.textContent = "Claimed";
           button.closest(".quest-card")?.classList.add("opacity-40");
           questCelebration(result.task);
-          if (result.levelUp)
-            setTimeout(() => (location.href = "levelup.html"), 700);
+          if (result.levelUp) {
+            playLevelUp();
+            setTimeout(() => (location.href = "levelup.html"), 1250);
+          }
         } catch (error) {
           button.disabled = false;
           toast(error.message);
@@ -490,8 +519,10 @@
           hydrate(hero);
           questCelebration(result.task, hero);
           button.textContent = "Claimed";
-          if (result.levelUp)
-            setTimeout(() => (location.href = "levelup.html"), 700);
+        if (result.levelUp) {
+          playLevelUp();
+          setTimeout(() => (location.href = "levelup.html"), 1250);
+        }
         } catch (error) {
           button.disabled = false;
           toast(error.message);
@@ -513,6 +544,7 @@
       true,
     );
     document.getElementById("celebrationModal")?.classList.add("hidden");
+    document.documentElement.classList.remove("realm-data-pending");
   };
   const bindShopPage = async () => {
     const products = await api("/api/shop");
@@ -696,6 +728,11 @@
       const value = card?.querySelector(".font-headline-md");
       if (value && statValues[button.dataset.target] !== undefined) value.textContent = statValues[button.dataset.target];
     });
+    const levelSoundKey = `abhyudaya-levelup-${hero.level}`;
+    if (!sessionStorage.getItem(levelSoundKey)) {
+      sessionStorage.setItem(levelSoundKey, "1");
+      setTimeout(playLevelUp, 250);
+    }
     document.addEventListener(
       "click",
       async (event) => {
