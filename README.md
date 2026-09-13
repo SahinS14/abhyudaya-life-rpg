@@ -38,10 +38,8 @@ This is a same-origin Express application: deploy the pages and `/api/*` backend
    - Secret: `JWT_SECRET` set to a long random value (for example, `openssl rand -hex 32`).
 3. Share the resulting `https://…onrender.com` address. First open `/api/health` and confirm it returns `status: ok`.
 
-Render Free is appropriate for a short judging demo, but its local disk is ephemeral: its SQLite database is lost after a redeploy, restart, or idle spin-down. Create a fresh judge account after deployment and do not treat this option as permanent storage.
+### Vercel + Supabase production deployment
 
-### Persistent production deployment
+The app now runs on Supabase Postgres, not a local SQLite file. In Supabase SQL Editor, run `supabase/schema.sql` once. In Vercel, add `DATABASE_URL` from **Supabase → Connect → Transaction pooler** (port 6543), `JWT_SECRET`, and `NODE_ENV=production` for Production and Preview. Do not set `DATABASE_PATH`, and do not expose the database URL, database password, or service-role key in browser code.
 
-For persistent SQLite, use an always-on host with a mounted disk and set `DATABASE_PATH` to the disk path (for example, `/var/data/abhyudaya.db`). The server supports that path and refuses to start in production without `JWT_SECRET`.
-
-For a fully free persistent public build, migrate the SQLite layer to a managed Postgres database such as Supabase before deploying the Node service. Free web hosts do not preserve a local SQLite file. Keep the database connection string and JWT secret only in the host environment-variable dashboard, never in frontend code or Git.
+Vercel runs `api/[...path].js`, which loads the same Express application for every `/api/*` route. The Postgres client is configured for serverless transaction pooling: one connection, TLS, and prepared statements disabled.
