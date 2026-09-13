@@ -1,6 +1,85 @@
-# Abhyudaya
+# Abhyudaya — Life, Levelled Up
 
-Abhyudaya is a full-stack RPG productivity application. The existing `dashboard.html` Command Centre is the authenticated home, while `quests.html` is the dedicated Quest Log. Their shared menu connects the visual screens.
+> A full-stack Life RPG that turns real-world habits into quests, character growth, streaks, achievements, and rewards.
+
+[Live demo](https://abhyudaya-red.vercel.app) · [API health](https://abhyudaya-red.vercel.app/api/health) · [Architecture](#architecture) · [Feature tour](#feature-tour)
+
+![Abhyudaya product preview](docs/screenshots/abhyudaya-product-preview.svg)
+
+## Why Abhyudaya?
+
+Normal productivity apps delay the reward. Abhyudaya closes that feedback loop: a completed workout, study block, or focused task gives immediate XP, Gold, a linked attribute increase, streak progression, an in-world celebration, and a durable record in the player’s account.
+
+## Feature tour
+
+| Screen | What it does | Connected system |
+| --- | --- | --- |
+| Landing & auth | Explains the Life RPG premise, then creates or signs into a protected account. | Password hashing, JWT session |
+| Onboarding | Builds a player identity: archetype, origin, directives, protocol, and six attributes. | Character persistence and starter quest creation |
+| Dashboard | Shows the current character state, active quests, XP, Gold, streak, notifications, and story rewards. | Live user-scoped API data |
+| Quest Log | Create, edit, delete, and complete real-world quests. | Transactional CRUD and reward engine |
+| Character & progression | Presents attributes, level path, origin, and ascension state. | Non-linear level system |
+| Trophy Room | Tracks unlock conditions and allows a reward to be claimed once. | Achievement claims |
+| Guild Shop & inventory | Buy, equip, use, or disenchant earned virtual items. | Gold economy and inventory ownership |
+| Activity & notifications | Shows immutable account activity and recent realm events. | Activity log |
+| System settings | Theme, sound, motion, export, rebirth, API-key and account controls. | Persistent user settings / account lifecycle |
+
+### Reward loop
+
+1. Create a quest and choose its attribute.
+2. Complete it from the Quest Log or Dashboard.
+3. The server verifies it has not already been completed.
+4. One database transaction awards XP, Gold, `+1` to the linked attribute, an updated streak, and any level-up record.
+5. The interface reacts immediately with animation, sound (when enabled), a story moment, and live stats.
+
+## Architecture
+
+```mermaid
+flowchart LR
+  U[Player / Judge] -->|HTTPS| V[Vercel static site]
+  V -->|same-origin /api/*| E[Express serverless function]
+  E -->|JWT + HTTP-only session| A[Auth middleware]
+  A --> R[Reward and CRUD routes]
+  R -->|transaction pooler, TLS| P[(Supabase Postgres)]
+  P --> T[Users • Characters • Quests]
+  P --> I[Inventory • Achievements • Activity]
+```
+
+### Data model
+
+```mermaid
+erDiagram
+  USERS ||--|| CHARACTERS : owns
+  USERS ||--o{ TASKS : creates
+  USERS ||--o{ ACTIVITY_LOGS : generates
+  USERS ||--o{ INVENTORY : owns
+  SHOP_ITEMS ||--o{ INVENTORY : appears_in
+  USERS ||--o{ ACHIEVEMENT_CLAIMS : claims
+  USERS ||--o{ ASCENSION_CLAIMS : earns
+  USERS ||--|| USER_SETTINGS : configures
+```
+
+## Technical decisions
+
+- **Frontend:** semantic HTML, responsive CSS/Tailwind utilities, vanilla JavaScript, accessible keyboard controls, mobile bottom navigation.
+- **Backend:** Express API hosted as a Vercel Node function.
+- **Database:** Supabase Postgres through the serverless Transaction Pooler; no browser-side database credentials.
+- **Security:** bcrypt password hashing, JWT sessions in HTTP-only cookies, bearer fallback for same-origin UI requests, user-scoped database queries, and server-side reward calculation.
+- **Atomic progression:** completion, Gold, XP, stat, streak, level, and activity updates happen in one Postgres transaction.
+- **Deployment:** Vercel serves `public/`; all nested `/api/*` routes are rewritten to the Express handler. Supabase retains data across Vercel instances.
+
+## Project structure
+
+```text
+.
+├── public/                 # Landing, auth, onboarding and in-app screens
+├── api/index.js            # Vercel function entrypoint
+├── server.js               # Express API and progression engine
+├── supabase/schema.sql     # Cloud Postgres schema and seed shop items
+├── docs/screenshots/       # Repository visuals for GitHub
+├── vercel.json             # /api/* routing configuration
+└── README.md
+```
 
 ## Run locally
 
