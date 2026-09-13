@@ -24,6 +24,7 @@
     *,*::before,*::after{box-sizing:border-box}
     img,svg,video{max-width:100%;height:auto}
     button,a,input,select,textarea{touch-action:manipulation}
+    .ab-account-menu{position:absolute;right:0;top:calc(100% + .75rem);z-index:120;width:14rem;overflow:hidden;border:1px solid rgba(255,193,116,.3);border-radius:.75rem;padding:.35rem;background:#060e20;box-shadow:0 20px 45px rgba(0,0,0,.52);backdrop-filter:blur(18px)}.ab-account-menu.hidden{display:none}.ab-account-link{display:flex;width:100%;align-items:center;border:0;border-radius:.55rem;padding:.7rem .8rem;background:transparent;color:#d8c3ad;cursor:pointer;text-align:left;font-size:.75rem;font-weight:700;letter-spacing:.04em;text-decoration:none;transition:background .16s,color .16s}.ab-account-link:hover,.ab-account-link:focus{outline:0;background:#222a3d;color:#ffc174}.ab-account-logout{color:#ffb4ab}.ab-account-logout:disabled{opacity:.6;cursor:wait}
     @media(max-width:767px){
       html{font-size:15px} body{min-width:0;overflow-x:hidden;padding-bottom:5.75rem}
       aside.fixed,aside[class*="fixed"]{display:none!important}
@@ -112,5 +113,33 @@
     document.querySelectorAll('a[data-path]').forEach((link) => {
       if (link.getAttribute('href') === page) link.setAttribute('aria-current', 'page');
     });
+
+    // Turn the repeated visual-only profile cluster into a real, keyboard-accessible account menu.
+    const profileImage = [...document.querySelectorAll('header img[alt="Profile"]')][0];
+    if (profileImage) {
+      const profileTrigger = profileImage.closest('div');
+      if (profileTrigger && !profileTrigger.dataset.accountMenu) {
+        profileTrigger.dataset.accountMenu = 'true';
+        profileTrigger.setAttribute('role', 'button');
+        profileTrigger.setAttribute('tabindex', '0');
+        profileTrigger.setAttribute('aria-haspopup', 'menu');
+        profileTrigger.setAttribute('aria-expanded', 'false');
+        profileTrigger.setAttribute('aria-label', 'Open account menu');
+        profileTrigger.style.position = 'relative';
+        const accountMenu = document.createElement('div');
+        accountMenu.className = 'ab-account-menu hidden absolute right-0 top-full z-[120] mt-3 w-56 overflow-hidden rounded-xl border border-primary/30 bg-surface-container-lowest p-1.5 shadow-2xl backdrop-blur-xl';
+        accountMenu.setAttribute('role', 'menu');
+        accountMenu.innerHTML = '<a href="character.html" role="menuitem" class="ab-account-link">Character</a><a href="settings.html" role="menuitem" class="ab-account-link">System settings</a><div class="my-1 border-t border-surface-container-high"></div><button type="button" role="menuitem" class="ab-account-link ab-account-logout">Log out</button>';
+        profileTrigger.append(accountMenu);
+        const setOpen = open => { accountMenu.classList.toggle('hidden', !open); profileTrigger.setAttribute('aria-expanded', String(open)); };
+        profileTrigger.addEventListener('click', event => { if (event.target.closest('.ab-account-menu')) return; setOpen(accountMenu.classList.contains('hidden')); });
+        profileTrigger.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setOpen(accountMenu.classList.contains('hidden')); } if (event.key === 'Escape') setOpen(false); });
+        document.addEventListener('click', event => { if (!profileTrigger.contains(event.target)) setOpen(false); });
+        accountMenu.querySelector('.ab-account-logout').addEventListener('click', async () => {
+          const logout = accountMenu.querySelector('.ab-account-logout'); logout.disabled = true; logout.textContent = 'Signing out…';
+          try { await fetch('/api/auth/logout', { method: 'POST', credentials: 'same-origin' }); } finally { sessionStorage.removeItem('abhyudaya_session'); location.href = 'index.html'; }
+        });
+      }
+    }
   });
 })();
