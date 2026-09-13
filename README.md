@@ -1,16 +1,48 @@
-# Abhyudaya — Life, Levelled Up
+<div align="center">
+  <img src="logo.png" alt="Abhyudaya crest" width="92" />
+  <h1>ABHYUDAYA</h1>
+  <p><strong>Life, Levelled Up.</strong></p>
+  <p>A full-stack Life RPG that turns real-world habits into quests, character growth, streaks, achievements, and rewards.</p>
+  <p>
+    <a href="https://abhyudaya-red.vercel.app"><img src="https://img.shields.io/badge/Live%20Demo-Enter%20the%20Realm-f59e0b?style=for-the-badge&logo=vercel&logoColor=white" alt="Live demo" /></a>
+    <a href="https://abhyudaya-red.vercel.app/api/health"><img src="https://img.shields.io/badge/Backend-Supabase%20Postgres-29c1df?style=for-the-badge&logo=supabase&logoColor=white" alt="Supabase backend" /></a>
+    <img src="https://img.shields.io/badge/Deployment-Vercel-171717?style=for-the-badge&logo=vercel" alt="Vercel deployment" />
+  </p>
+</div>
 
-> A full-stack Life RPG that turns real-world habits into quests, character growth, streaks, achievements, and rewards.
+![Abhyudaya landing page](docs/screenshots/01-landing.png)
 
-[Live demo](https://abhyudaya-red.vercel.app) · [API health](https://abhyudaya-red.vercel.app/api/health) · [Architecture](#architecture) · [Feature tour](#feature-tour)
+> **The pitch:** productivity should not feel like a chore. Abhyudaya gives meaningful real-world action an immediate, visible consequence in a persistent RPG world.
 
-![Abhyudaya product preview](docs/screenshots/abhyudaya-product-preview.svg)
+<details>
+<summary><strong>Quick links</strong></summary>
 
-## Why Abhyudaya?
+- [Live demo](https://abhyudaya-red.vercel.app)
+- [Cloud API health](https://abhyudaya-red.vercel.app/api/health)
+- [Feature tour](#feature-tour)
+- [Architecture](#architecture)
+- [Run locally](#run-locally)
+
+</details>
+
+## ✦ The Realm at a Glance
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/screenshots/04-auth.png" alt="Abhyudaya account login and signup" /><br/><strong>🔐 Secure entry</strong><br/>Create an account, log in, then forge a unique operative.</td>
+    <td width="50%"><img src="docs/screenshots/05-quests.png" alt="Abhyudaya quest board" /><br/><strong>⚔️ Quest board</strong><br/>Convert daily actions into focused, rewarding missions.</td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="docs/screenshots/06-character.png" alt="Abhyudaya character page" /><br/><strong>🧬 Character build</strong><br/>Track six attributes, equipment, class, title, and identity.</td>
+    <td width="50%"><img src="docs/screenshots/11-progression.png" alt="Abhyudaya progression journey" /><br/><strong>↗️ Progression path</strong><br/>Make long-term growth tangible with nonlinear levelling and ascension.</td>
+  </tr>
+</table>
+
+## 🎮 Why Abhyudaya?
 
 Normal productivity apps delay the reward. Abhyudaya closes that feedback loop: a completed workout, study block, or focused task gives immediate XP, Gold, a linked attribute increase, streak progression, an in-world celebration, and a durable record in the player’s account.
 
-## Feature tour
+## 🧭 Feature tour
 
 | Screen | What it does | Connected system |
 | --- | --- | --- |
@@ -32,7 +64,24 @@ Normal productivity apps delay the reward. Abhyudaya closes that feedback loop: 
 4. One database transaction awards XP, Gold, `+1` to the linked attribute, an updated streak, and any level-up record.
 5. The interface reacts immediately with animation, sound (when enabled), a story moment, and live stats.
 
-## Architecture
+## 🖼️ Explore the Product
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/screenshots/02-guild.png" alt="Guild and raid hub" /><br/><strong>Guild & raids</strong></td>
+    <td width="50%"><img src="docs/screenshots/03-settings.png" alt="System settings" /><br/><strong>System settings</strong></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="docs/screenshots/07-inventory.png" alt="Inventory and armory" /><br/><strong>Inventory & armory</strong></td>
+    <td width="50%"><img src="docs/screenshots/08-shop.png" alt="Guild shop" /><br/><strong>Reward shop</strong></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="docs/screenshots/09-trophy-room.png" alt="Achievement trophy room" /><br/><strong>Achievement sanctum</strong></td>
+    <td width="50%"><img src="docs/screenshots/10-activity.png" alt="Activity dashboard" /><br/><strong>Activity & insight log</strong></td>
+  </tr>
+</table>
+
+## 🏗️ Architecture
 
 ```mermaid
 flowchart LR
@@ -59,7 +108,7 @@ erDiagram
   USERS ||--|| USER_SETTINGS : configures
 ```
 
-## Technical decisions
+## 🛡️ Technical decisions
 
 - **Frontend:** semantic HTML, responsive CSS/Tailwind utilities, vanilla JavaScript, accessible keyboard controls, mobile bottom navigation.
 - **Backend:** Express API hosted as a Vercel Node function.
@@ -68,7 +117,7 @@ erDiagram
 - **Atomic progression:** completion, Gold, XP, stat, streak, level, and activity updates happen in one Postgres transaction.
 - **Deployment:** Vercel serves `public/`; all nested `/api/*` routes are rewritten to the Express handler. Supabase retains data across Vercel instances.
 
-## Project structure
+## 📁 Project structure
 
 ```text
 .
