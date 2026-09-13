@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary-fixed-dim":"#ffb95f","on-secondary-container":"#c4abff","error-container":"#93000a","inverse-on-surface":"#283044","tertiary-fixed":"#acedff","surface-bright":"#31394d","outline-variant":"#534434","on-primary-fixed":"#2a1700","on-background":"#dae2fd","error":"#ffb4ab","inverse-surface":"#dae2fd","tertiary-fixed-dim":"#4cd7f6","on-error":"#690005","on-primary":"#472a00","tertiary-container":"#29c1df","on-primary-fixed-variant":"#653e00","on-surface":"#dae2fd","secondary-fixed-dim":"#d0bcff","surface-tint":"#ffb95f","on-error-container":"#ffdad6","inverse-primary":"#855300","on-secondary-fixed-variant":"#5516be","surface-variant":"#2d3449","on-surface-variant":"#d8c3ad","secondary-fixed":"#e9ddff","tertiary":"#54ddfc","on-tertiary-fixed-variant":"#004e5c","on-tertiary-fixed":"#001f26","on-tertiary":"#003640","secondary":"#d0bcff","primary-fixed":"#ffddb8","surface-container":"#171f33","primary":"#ffc174","on-tertiary-container":"#004b58","surface-container-low":"#131b2e","surface-dim":"#0b1326","surface-container-high":"#222a3d","outline":"#a08e7a","surface-container-highest":"#2d3449","on-primary-container":"#613b00","surface-container-lowest":"#060e20","on-secondary-fixed":"#23005c","background":"#0b1326","surface":"#0b1326","on-secondary":"#3c0091","secondary-container":"#571bc1","primary-container":"#f59e0b"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{gutter:"1.25rem","space-xl":"2.5rem","space-md":"1rem","margin-mobile":"1rem",margin:"2rem","gutter-mobile":"0.75rem","space-xs":"0.25rem","space-sm":"0.5rem","space-lg":"1.5rem"},fontFamily:{"headline-xl":["Outfit"],"body-lg":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"label-lg":["Space Grotesk"],"headline-md":["Outfit"],"headline-xl-mobile":["Outfit"],"headline-lg":["Outfit"],"label-sm":["Space Grotesk"],"headline-sm":["Outfit"],"label-md":["Space Grotesk"],"headline-lg-mobile":["Outfit"],"body-sm":["Plus Jakarta Sans"]},fontSize:{"headline-xl":["40px",{lineHeight:"48px",letterSpacing:"-0.02em",fontWeight:"800"}],"body-lg":["16px",{lineHeight:"26px",fontWeight:"400"}],"body-md":["14px",{lineHeight:"22px",fontWeight:"400"}],"label-lg":["14px",{lineHeight:"20px",letterSpacing:"0.05em",fontWeight:"600"}],"headline-md":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"600"}],"headline-xl-mobile":["30px",{lineHeight:"38px",letterSpacing:"-0.02em",fontWeight:"800"}],"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.015em",fontWeight:"700"}],"label-sm":["10px",{lineHeight:"14px",letterSpacing:"0.08em",fontWeight:"700"}],"headline-sm":["18px",{lineHeight:"26px",letterSpacing:"0em",fontWeight:"600"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.06em",fontWeight:"600"}],"headline-lg-mobile":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"700"}],"body-sm":["12px",{lineHeight:"18px",fontWeight:"400"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface min-h-screen relative selection:bg-primary selection:text-on-primary"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest/95 backdrop-blur-2xl z-50 flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.4)]"><div class="flex flex-col"><div class="h-20 px-space-md flex items-center gap-space-sm bg-surface-container-low/40"><img alt="Abhyudaya Crest Logo" class="h-8 w-auto object-contain" src="logo.png"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm font-bold tracking-widest text-primary uppercase">ABHYUDAYA</span><span class="font-label-sm text-label-sm text-tertiary font-bold tracking-wider">HERO REALM</span></div></div><div class="px-space-md py-space-sm"><div class="p-space-sm rounded-lg bg-surface-container/70 flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Character</span><span class="font-label-sm text-label-sm text-primary font-bold">Lvl 18</span></div><div class="font-body-sm text-body-sm text-on-surface font-semibold truncate">Master Builder</div><div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden"><div class="bg-tertiary h-full w-[82%] rounded-full shadow-[0_0_8px_rgba(84,221,252,0.6)]"></div></div></div></div><nav class="flex flex-col gap-0.5 px-space-sm mt-space-xs overflow-y-auto" data-active-classes="bg-surface-container-high text-primary font-bold shadow-inner"><a class="px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md tracking-wider uppercase" data-path="dashboard" href="#">Dashboard</a><a class="px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md tracking-wider uppercase" data-path="quests" href="#">Quests</a><a class="px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md tracking-wider uppercase" data-path="character" href="#">Character</a><a class="px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md tracking-wider uppercase" data-path="inventory" href="#">Inventory</a><a class="px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md tracking-wider uppercase" data-path="shop" href="#">Shop</a><a class="px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md tracking-wider uppercase" data-path="achievements" href="#">Achievements</a><a class="px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md tracking-wider uppercase" data-path="progression" href="#">Progression</a><a class="px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md tracking-wider uppercase" data-path="activity" href="#">Activity</a><a class="px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md tracking-wider uppercase" data-path="guild-and-raids" href="#">Guild &amp; Raids</a><a class="px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md tracking-wider uppercase" data-path="settings" href="#">Settings</a></nav></div><div class="p-space-md bg-surface-container-low/60 m-space-sm rounded-xl flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary text-lg animate-pulse">bolt</span><span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Mana: 92/100</span></div><span class="font-label-sm text-label-sm text-primary font-bold">+5/h</span></div></aside><div class="pl-64 flex flex-col min-h-screen"><header class="fixed top-0 left-64 right-0 h-20 bg-surface-container-lowest/85 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.3)] px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-high"><span class="font-label-sm text-label-sm text-primary font-bold uppercase tracking-wider">LVL 18 APPRENTICE</span></div><div class="hidden xl:flex items-center gap-space-md px-space-md py-1.5 rounded-xl bg-surface-container-low/80"><div class="flex flex-col gap-1 min-w-[140px]"><div class="flex justify-between font-label-sm text-label-sm"><span class="text-tertiary font-bold">XP</span><span class="text-on-surface-variant">14,850 / 18k (82%)</span></div><div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden"><div class="bg-tertiary h-full w-[82%] rounded-full shadow-[0_0_8px_rgba(84,221,252,0.6)]"></div></div></div><div class="h-6 w-px bg-surface-variant"></div><div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-primary-container text-base">monetization_on</span><span class="font-label-md text-label-md text-primary font-bold">3,420</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Gold</span></div><div class="h-6 w-px bg-surface-variant"></div><div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-error text-base">local_fire_department</span><span class="font-label-md text-label-md text-on-surface font-bold">21</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Streak</span></div><div class="h-6 w-px bg-surface-variant"></div><div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-secondary text-base">vital_signs</span><span class="font-label-md text-label-md text-secondary font-bold">92%</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Mana</span></div></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-xs px-space-md py-2 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md font-bold uppercase tracking-wider shadow-[0_0_20px_-3px_rgba(245,158,11,0.45)] hover:bg-primary-fixed hover:text-on-primary-fixed transition-all" type="button"><span class="material-symbols-outlined text-base">add</span>Quick Quest</button><div class="relative flex items-center justify-center p-2 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-error text-on-error font-label-sm text-label-sm flex items-center justify-center font-bold">3</span></div><div class="flex items-center gap-space-sm pl-space-xs cursor-pointer"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-[0_0_12px_rgba(255,193,116,0.3)]" src="https://lh3.googleusercontent.com/aida/AEtjO1Un5KHrOuO6lJtk784KRKgIJapiSJAm9vYXk1jXVOmX7j8LOH_treR8UG-6MejUX5mOGR7YY2JmCTbSrp1h0jVIbSYsIv1Bq6KDxGzQ0TawFf3D_w2-VDgUTDuZqdzSAvjlpaI7_p8jKL8TlrXUAEsi_a_6f_JAtR_cYMIQyizsoBOZ8faqh7pg-OwLHJGfOh3tm_2WkoAQoE4qt_6C3Icm9Z4k_amSovd8EW_OHHHKc_zkW_7i7qbfOg"/><span class="material-symbols-outlined text-on-surface-variant text-base">expand_more</span></div></div></header><main class="w-full pt-20 px-space-lg pb-space-xl flex-1 bg-background"><div class="flex flex-col w-full gap-space-lg">
+<div class="relative w-full rounded-xl bg-surface-container-low/90 backdrop-blur-xl p-space-lg shadow-xl overflow-hidden">
+<div class="absolute -right-16 -top-16 w-96 h-96 rounded-full bg-primary/10 blur-3xl pointer-events-none"></div>
+<div class="absolute left-1/3 -bottom-24 w-80 h-80 rounded-full bg-secondary-container/20 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col xl:flex-row items-start xl:items-center justify-between gap-space-lg">
+<div class="flex items-start sm:items-center gap-space-md">
+<div class="relative shrink-0 w-20 h-20 rounded-xl bg-surface-container-high flex items-center justify-center shadow-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Cyber-arcane guild crest emblem featuring an illuminated golden griffin overlaid on an electric cyan geometric matrix against obsidian void with glowing runic particles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGLogwIU_02UHxuVfclVmU9_QNDL4o2hnZXKdf6c7yPQNZYgZZg6iMTzcV-xjc6OkfCuet-e7T8bXfybZF3FEW2vTSz2J3Je8MWfE66LkCxEJVYU2_9QGx8UEJLnO5XpBrtP-4P0bNIg5tpo5ASYhZCmktfKaLTFXmCyxxOCVfandcfjAPS2l39je67Ch-wfSwic1_fA27QFGa4PHiLyQC3DP2AplvllHtsorAtQedypcMxuvHAOs"/>
+<span class="absolute -bottom-1 -right-1 px-1.5 py-0.5 rounded bg-primary text-on-primary font-label-sm text-label-sm font-bold tracking-wider">RANK 4</span>
+</div>
+<div class="flex flex-col gap-1 min-w-0">
+<div class="flex flex-wrap items-center gap-2">
+<h1 class="font-headline-md text-headline-md text-on-surface font-extrabold tracking-tight">Aethelgard Syndicate</h1>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-highest text-tertiary font-label-sm text-label-sm font-bold tracking-widest uppercase">Planetary Div IV</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Unite with fellow operatives, pledge collective daily focus, and slay epic productivity world bosses.</p>
+<div class="flex flex-wrap items-center gap-x-4 gap-y-1 mt-1 text-on-surface-variant">
+<span class="font-label-md text-label-md flex items-center gap-1 text-primary"><span class="material-symbols-outlined text-sm">shield</span> Guild Lvl 28</span>
+<span class="text-surface-variant">•</span>
+<span class="font-label-md text-label-md text-on-surface-variant">XP: 84,200 / 100,000 (84%)</span>
+<span class="text-surface-variant">•</span>
+<span class="font-label-md text-label-md text-tertiary flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span> 28/30 Online (93% Attendance)</span>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm w-full xl:w-auto shrink-0">
+<button class="flex-1 sm:flex-none flex items-center justify-center gap-1.5 px-space-md py-2.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-md text-label-md font-bold uppercase tracking-wider transition-all" type="button">
+<span class="material-symbols-outlined text-base text-tertiary">account_tree</span>
+          Codex &amp; Rules
+        </button>
+<button class="flex-1 sm:flex-none flex items-center justify-center gap-1.5 px-space-md py-2.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-md text-label-md font-bold uppercase tracking-wider transition-all" type="button">
+<span class="material-symbols-outlined text-base text-secondary">group</span>
+          Manage Roster
+        </button>
+<button class="w-full sm:w-auto flex items-center justify-center gap-2 px-space-lg py-2.5 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md font-bold uppercase tracking-wider shadow-[0_0_24px_-4px_rgba(245,158,11,0.5)] hover:bg-primary-fixed hover:text-on-primary-fixed transition-all" type="button">
+<span class="material-symbols-outlined text-lg">payments</span>
+          Deposit To Treasury
+        </button>
+</div>
+</div>
+<div class="mt-space-md pt-space-md grid grid-cols-1 md:grid-cols-3 gap-space-md bg-surface-container/60 rounded-xl p-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-secondary-container/40 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-xl">auto_awesome</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Active Guild Buff</span>
+<span class="px-1.5 py-0.2 rounded bg-secondary-container/60 text-secondary font-label-sm text-label-sm font-semibold">T3 SYNCHRONY</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-secondary font-bold truncate">Celestial Synchrony</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">+15% Gold on Pomodoros, +10% Focus Multiplier</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-xl">savings</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Syndicate Vault</span>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-sm text-headline-sm text-primary font-extrabold tracking-tight">48,900</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Aureus Gold</span>
+</div>
+<span class="font-body-sm text-body-sm text-tertiary">Weekly Inflow: +4,250 Gold (+18%)</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-1.5">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-on-surface-variant uppercase">Guild Level Progress</span>
+<span class="text-primary font-bold">15,800 XP to Lvl 29</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-primary to-tertiary h-full w-[84%] rounded-full shadow-[0_0_10px_rgba(255,193,116,0.6)]"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-right">Raid Node Unlock: High-Sec Firewall at Lvl 30</span>
+</div>
+</div>
+</div>
+<div class="relative w-full rounded-2xl bg-surface-container-low/95 backdrop-blur-2xl shadow-2xl p-space-lg overflow-hidden">
+<div class="absolute inset-0 opacity-15 pointer-events-none mix-blend-screen bg-cover bg-center" data-alt="Hyper-detailed dark science-fantasy cosmic raid boss, a crystalline chrono-gorgon entwined with glowing clockwork gears, neon cyan spacetime rifts, and violet cosmic fire in deep obsidian void" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDe6KgIWDNd1Ki_njkbll32kD9ZkNLF7cEPelcGKhkaOBKaA1zF8zfeKXeHFO_ZDkKM4QdAskyyZ03wtUA_nRVz2ZyJw7HpISI9ZGokNHP2kYdC66h9zPtjo-jjodiODudL1D5vHXqOU4x28g0iiNpom9Blg5jx6tkZ7yVZ_yqjmwTxDnYUtBQkZ3VYhUCX_TK7nIxXOChcVyRkPKwdeBEmSbXHtRY0fKXBLoiO2u_Ww9EHsaI4nOY')"></div>
+<div class="absolute top-0 right-0 w-full h-full bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/80 to-transparent pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-space-lg">
+<div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-space-md">
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 rounded bg-error/20 text-error font-label-sm text-label-sm font-bold tracking-widest uppercase flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm animate-pulse">crisis_alert</span>
+            WORLD RAID ACTIVE // EPOCH PHASE 3/4
+          </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-tertiary font-label-sm text-label-sm font-bold uppercase">Rank S Apex Anomaly</span>
+</div>
+<div class="flex items-center gap-space-md bg-surface-container-lowest/90 px-space-md py-2 rounded-xl">
+<span class="material-symbols-outlined text-error text-xl animate-spin">hourglass_top</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Purge Deadline Remaining</span>
+<span class="font-headline-sm text-headline-sm text-error font-extrabold tracking-widest font-label-lg" id="raid-timer">09h 42m 18s</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-center">
+<div class="xl:col-span-8 flex flex-col gap-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md tracking-wider text-tertiary uppercase font-bold">Colossal Productivity Threat</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface font-extrabold tracking-tight">The Chrono-Devourer: Gorgon of Inertia</h2>
+</div>
+<div class="flex flex-col gap-2 p-space-md rounded-xl bg-surface-container-lowest/80 backdrop-blur-md">
+<div class="flex justify-between items-end">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Collective Integrity Gauge</span>
+<span class="font-headline-sm text-headline-sm text-error font-extrabold">342,100 <span class="text-on-surface-variant font-normal text-sm">/ 1,000,000 HP</span></span>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-label-sm font-bold tracking-wider uppercase animate-pulse">Critical Vulnerability (34.2%)</span>
+</div>
+</div>
+<div class="relative w-full bg-surface-container-highest h-4 rounded-full overflow-hidden shadow-inner">
+<div class="h-full bg-gradient-to-r from-error via-primary to-tertiary w-[34.2%] rounded-full shadow-[0_0_16px_rgba(255,180,171,0.8)] relative">
+<div class="absolute right-0 top-0 bottom-0 w-2 bg-on-surface animate-ping opacity-75"></div>
+</div>
+</div>
+<div class="flex justify-between items-center font-label-sm text-label-sm text-on-surface-variant">
+<span>Guild Kinetic Impact: <strong class="text-primary">657,900 DMG Dealt</strong></span>
+<span>Enrage Trigger: &lt;100,000 HP</span>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<div class="p-space-sm rounded-lg bg-surface-container/70 flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-error text-lg shrink-0 mt-0.5">warning</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-bold">Affliction: Doom of Procrastination</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Incomplete dawn tasks inflict -5% group shield each hour. Maintain uninterrupted Pomodoro chains to suppress.</span>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container/70 flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-lg shrink-0 mt-0.5">cyclone</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-bold">Hazard: Shattered Time Vortex</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Random focus distractors spawn every 45 mins. Cleanse by logging 25-minute uninterrupted sprint sessions.</span>
+</div>
+</div>
+</div>
+</div>
+<div class="xl:col-span-4 flex flex-col gap-space-md p-space-md rounded-xl bg-surface-container-high/60 backdrop-blur-md">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold tracking-wider text-primary uppercase">Personal Telemetry</span>
+<span class="px-2 py-0.5 rounded bg-primary-container/30 text-primary font-label-sm text-label-sm font-bold uppercase">Operative Nyx // Core-01</span>
+</div>
+<div class="flex items-center gap-space-md p-space-sm rounded-lg bg-surface-container-lowest">
+<div class="w-12 h-12 rounded-lg bg-tertiary-container/30 flex items-center justify-center text-tertiary font-headline-sm text-headline-sm font-bold">
+              #3
+            </div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Today's Boss Damage</span>
+<span class="font-headline-sm text-headline-sm text-tertiary font-bold">14,820 Kinetic DMG</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">5 Focus Sprints Completed today</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider">Estimated Purge Spoils</span>
+<div class="grid grid-cols-2 gap-2">
+<div class="p-2 rounded bg-surface-container-lowest flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">token</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm font-bold text-on-surface truncate">Mythic Chrono-Shard</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Material</span>
+</div>
+</div>
+<div class="p-2 rounded bg-surface-container-lowest flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-base">monetization_on</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm font-bold text-primary truncate">1,200 Aureus</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Gold Bounty</span>
+</div>
+</div>
+<div class="p-2 rounded bg-surface-container-lowest flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-base">military_tech</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm font-bold text-secondary truncate">Inertia Breaker</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Guild Title</span>
+</div>
+</div>
+<div class="p-2 rounded bg-surface-container-lowest flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-base">inventory_2</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm font-bold text-tertiary truncate">Tier V Relic Cache</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Loot Chest</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-2 pt-2">
+<button class="w-full flex items-center justify-center gap-2 py-3 px-space-md rounded-lg bg-primary-container text-on-primary-container font-headline-sm text-headline-sm font-bold uppercase tracking-wider shadow-[0_0_24px_-2px_rgba(245,158,11,0.6)] hover:bg-primary-fixed hover:text-on-primary-fixed active:translate-y-0.5 transition-all" id="sprint-attack-btn" type="button">
+<span class="material-symbols-outlined text-xl">swords</span>
+              Engage Focus Sprint (+DMG)
+            </button>
+<div class="flex items-center justify-between text-on-surface-variant px-1 font-body-sm text-body-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-tertiary">bolt</span> Costs 15 Mana</span>
+<span class="flex items-center gap-1 text-primary"><span class="material-symbols-outlined text-sm">local_fire_department</span> +2,800 Base DMG</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<div class="lg:col-span-8 flex flex-col gap-space-md bg-surface-container-low/80 backdrop-blur-xl rounded-xl p-space-lg shadow-xl">
+<div class="flex flex-col sm:flex-row justify-between sm:items-center gap-space-sm pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-2xl">leaderboard</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-extrabold tracking-tight">Guild Strike Squad Roster</h2>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-highest p-1 rounded-lg">
+<button class="px-2.5 py-1 rounded bg-surface-container-low text-primary font-label-sm text-label-sm font-bold uppercase" type="button">Top DPS</button>
+<button class="px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm font-bold uppercase" type="button">Focus Tanks</button>
+<button class="px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm font-bold uppercase" type="button">Support</button>
+<button class="px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm font-bold uppercase" type="button">Full Roster</button>
+</div>
+</div>
+<div class="flex flex-col gap-2.5">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between p-space-md rounded-xl bg-surface-container/90 hover:bg-surface-container-high transition-colors gap-3">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary-container font-headline-sm text-headline-sm font-black flex items-center justify-center shadow-[0_0_12px_rgba(245,158,11,0.5)]">
+              1
+            </div>
+<div class="relative w-11 h-11 rounded-lg overflow-hidden shrink-0 bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="Cybernetic futuristic holy paladin commander portrait with glowing gold visor and polished dark slate power armor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCapMbH805zxwV_t_l3sFgCflhyFUcSYxRvGmAzDCFFlaKrOdX_mxzWlcl0IFn-Vru0dnDPzTk2_HPxfU6uIL4lJl12cM_0DtaL_bWUacAlCOD9Tvk25uVQ_ABlCb-B9yb38hRJKviLFJIZyDaB5Y6h5fHL3b3V-nt7qiGuCuwkeW8EecerbLibxlP9poFlg_FktmdCK5vxWCO3rSjdSFGHe3HQspf-XJCsphuSvuiHB2MH-tWJDdo"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-tertiary shadow-[0_0_6px_rgba(84,221,252,0.8)]"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface truncate">Operative Vance</span>
+<span class="px-1.5 py-0.2 rounded bg-primary-container/30 text-primary font-label-sm text-label-sm font-bold uppercase">MVP</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Lvl 42 Aegis Paladin • 6 Deep Work Sprints</span>
+</div>
+</div>
+<div class="flex items-center justify-between sm:justify-end gap-space-md shrink-0">
+<div class="flex flex-col sm:items-end">
+<span class="font-headline-sm text-headline-sm text-primary font-black tracking-tight">24,100 DMG</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Contribution: 16.2%</span>
+</div>
+<button class="catalyst-btn px-2.5 py-1.5 rounded-lg bg-secondary-container/40 hover:bg-secondary-container text-secondary hover:text-on-secondary font-label-sm text-label-sm font-bold uppercase flex items-center gap-1 transition-all" title="Gift +5 Mana" type="button">
+<span class="material-symbols-outlined text-sm">bolt</span>
+              +5 Mana
+            </button>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between p-space-md rounded-xl bg-surface-container/70 hover:bg-surface-container-high transition-colors gap-3">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest text-on-surface font-headline-sm text-headline-sm font-black flex items-center justify-center">
+              2
+            </div>
+<div class="relative w-11 h-11 rounded-lg overflow-hidden shrink-0 bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="Cyberpunk rogue assassin operative with cyan optical implants and sleek dark obsidian stealth cowl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVQEnt5rwBejv7FRBFt67FxzIZ_FctOog4OFTb2no8PD3TSreQ_pEHcSMZDXfaX4Z0qQgUSayLKXb4Svvmb8EIzmhr1gvAFouhoh6tclqczqyQFODPRXojp_hkJvb87UtiBuzWTqqprdTq5F-Spk6HRWIztMXH-kszjZVJsgNTP5Eum6Kd1fJ4q4UZjnVGIiL1ivY3GxVmt2rwWcxJ8E6lUHThR5wHNd0Lzyw-5zBy9KZymVaDejQ"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-tertiary shadow-[0_0_6px_rgba(84,221,252,0.8)]"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface truncate">Kaelen Dusk</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Lvl 38 Chrono Rogue • 5h Coding Sprint Session</span>
+</div>
+</div>
+<div class="flex items-center justify-between sm:justify-end gap-space-md shrink-0">
+<div class="flex flex-col sm:items-end">
+<span class="font-headline-sm text-headline-sm text-tertiary font-black tracking-tight">18,900 DMG</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Contribution: 12.7%</span>
+</div>
+<button class="catalyst-btn px-2.5 py-1.5 rounded-lg bg-secondary-container/40 hover:bg-secondary-container text-secondary hover:text-on-secondary font-label-sm text-label-sm font-bold uppercase flex items-center gap-1 transition-all" title="Gift +5 Mana" type="button">
+<span class="material-symbols-outlined text-sm">bolt</span>
+              +5 Mana
+            </button>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between p-space-md rounded-xl bg-surface-container-high/90 shadow-md gap-3">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-8 h-8 rounded-lg bg-tertiary-container/30 text-tertiary font-headline-sm text-headline-sm font-black flex items-center justify-center">
+              3
+            </div>
+<div class="relative w-11 h-11 rounded-lg overflow-hidden shrink-0 bg-surface-container-highest">
+<img alt="Nyx" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1Un5KHrOuO6lJtk784KRKgIJapiSJAm9vYXk1jXVOmX7j8LOH_treR8UG-6MejUX5mOGR7YY2JmCTbSrp1h0jVIbSYsIv1Bq6KDxGzQ0TawFf3D_w2-VDgUTDuZqdzSAvjlpaI7_p8jKL8TlrXUAEsi_a_6f_JAtR_cYMIQyizsoBOZ8faqh7pg-OwLHJGfOh3tm_2WkoAQoE4qt_6C3Icm9Z4k_amSovd8EW_OHHHKc_zkW_7i7qbfOg"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-tertiary shadow-[0_0_6px_rgba(84,221,252,0.8)]"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-primary truncate">Nyx // Core-01</span>
+<span class="px-1.5 py-0.2 rounded bg-primary text-on-primary font-label-sm text-label-sm font-bold uppercase">YOU</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Lvl 18 Technomancer • 4 Pomodoros Logged</span>
+</div>
+</div>
+<div class="flex items-center justify-between sm:justify-end gap-space-md shrink-0">
+<div class="flex flex-col sm:items-end">
+<span class="font-headline-sm text-headline-sm text-tertiary font-black tracking-tight">14,820 DMG</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Contribution: 9.9%</span>
+</div>
+<span class="px-3 py-1.5 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-bold uppercase">Active Player</span>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between p-space-md rounded-xl bg-surface-container/70 hover:bg-surface-container-high transition-colors gap-3">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest text-on-surface font-headline-sm text-headline-sm font-black flex items-center justify-center">
+              4
+            </div>
+<div class="relative w-11 h-11 rounded-lg overflow-hidden shrink-0 bg-surface-container-highest">
+<div class="w-full h-full bg-secondary-container/50 flex items-center justify-center text-secondary font-bold">LM</div>
+<span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-tertiary shadow-[0_0_6px_rgba(84,221,252,0.8)]"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface truncate">Lyra Moon</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Lvl 29 Alchemist • Morning Routine Flawless</span>
+</div>
+</div>
+<div class="flex items-center justify-between sm:justify-end gap-space-md shrink-0">
+<div class="flex flex-col sm:items-end">
+<span class="font-headline-sm text-headline-sm text-on-surface font-black tracking-tight">12,400 DMG</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Contribution: 8.3%</span>
+</div>
+<button class="catalyst-btn px-2.5 py-1.5 rounded-lg bg-secondary-container/40 hover:bg-secondary-container text-secondary hover:text-on-secondary font-label-sm text-label-sm font-bold uppercase flex items-center gap-1 transition-all" title="Gift +5 Mana" type="button">
+<span class="material-symbols-outlined text-sm">bolt</span>
+              +5 Mana
+            </button>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between p-space-md rounded-xl bg-surface-container/70 hover:bg-surface-container-high transition-colors gap-3">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest text-on-surface font-headline-sm text-headline-sm font-black flex items-center justify-center">
+              5
+            </div>
+<div class="relative w-11 h-11 rounded-lg overflow-hidden shrink-0 bg-surface-container-highest">
+<div class="w-full h-full bg-primary-container/30 flex items-center justify-center text-primary font-bold">ZT</div>
+<span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-tertiary shadow-[0_0_6px_rgba(84,221,252,0.8)]"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface truncate">Zephyr Thorne</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Lvl 22 Sentinel • Habit Streak x40 (Titan Iron)</span>
+</div>
+</div>
+<div class="flex items-center justify-between sm:justify-end gap-space-md shrink-0">
+<div class="flex flex-col sm:items-end">
+<span class="font-headline-sm text-headline-sm text-on-surface font-black tracking-tight">9,800 DMG</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Contribution: 6.5%</span>
+</div>
+<button class="catalyst-btn px-2.5 py-1.5 rounded-lg bg-secondary-container/40 hover:bg-secondary-container text-secondary hover:text-on-secondary font-label-sm text-label-sm font-bold uppercase flex items-center gap-1 transition-all" title="Gift +5 Mana" type="button">
+<span class="material-symbols-outlined text-sm">bolt</span>
+              +5 Mana
+            </button>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<div class="flex flex-col gap-space-md bg-surface-container-low/80 backdrop-blur-xl rounded-xl p-space-lg shadow-xl">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-2xl">hub</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Guild Nodes &amp; Perks</h3>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold uppercase">2/3 Mastered</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div class="p-space-sm rounded-lg bg-surface-container/70 flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded bg-tertiary/20 text-tertiary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-lg">code</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold text-sm">Sanctum of Infinite Code</span>
+<span class="text-tertiary font-label-sm text-label-sm uppercase font-bold">Unlocked</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">+20% XP bonus on technical &amp; development quests</span>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container/70 flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded bg-primary/20 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-lg">menu_book</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold text-sm">Library of Ancient Disciplines</span>
+<span class="text-primary font-label-sm text-label-sm uppercase font-bold">Unlocked</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">+1 daily skip ticket without forfeiting streak counter</span>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container/70 flex flex-col gap-1.5">
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded bg-secondary-container/40 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-lg">fitness_center</span>
+</div>
+<div class="flex flex-col min-w-0 w-full">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold text-sm">Colosseum of Physical Grit</span>
+<span class="text-secondary font-label-sm text-label-sm uppercase font-bold">In Progress</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Health &amp; workout sprint multipliers</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden mt-1">
+<div class="bg-secondary h-full w-[72%] rounded-full shadow-[0_0_8px_rgba(208,188,255,0.7)]"></div>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Guild Contributed: 14,400 / 20,000 Aureus</span>
+<span class="text-secondary font-bold">72%</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-space-md bg-surface-container-low/80 backdrop-blur-xl rounded-xl p-space-lg shadow-xl">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-2xl">swords</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Guild War Standings</h3>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-secondary font-label-sm text-label-sm font-bold uppercase">Bracket Alpha</span>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between p-2 rounded bg-surface-container-lowest">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-on-surface-variant">#1</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Valkyrie Protocol</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">1,480,200 pts</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded bg-surface-container-lowest">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-on-surface-variant">#2</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Obsidian Dynasty</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-bold">1,310,500 pts</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded bg-surface-container-lowest">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-on-surface-variant">#3</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Nexus Vanguard</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-bold">1,194,000 pts</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded bg-surface-container-high">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-primary">#4</span>
+<span class="font-label-md text-label-md font-bold text-primary">Aethelgard Syndicate</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">1,082,340 pts</span>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container/60 flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Gap to Rank #3 Podium:</span>
+<span class="font-label-sm text-label-sm text-tertiary font-bold">+111,660 Focus PTS</span>
+</div>
+</div>
+</div>
+</div>
+<div class="fixed bottom-6 right-6 hidden z-50 flex items-center gap-3 px-space-md py-3 rounded-xl bg-surface-container-high border-0 shadow-2xl backdrop-blur-xl" id="raid-toast">
+<span class="material-symbols-outlined text-primary text-2xl">bolt</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Focus Catalyst Dispatched!</span>
+<span class="font-body-sm text-body-sm text-on-surface" id="raid-toast-message">Gifted +5 Mana to your operative teammate.</span>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    let secondsLeft = 9 * 3600 + 42 * 60 + 18;
+    const timerElem = document.getElementById('raid-timer');
+    if (timerElem) {
+      setInterval(() => {
+        if (secondsLeft > 0) {
+          secondsLeft--;
+          const h = Math.floor(secondsLeft / 3600);
+          const m = Math.floor((secondsLeft % 3600) / 60);
+          const s = secondsLeft % 60;
+          timerElem.textContent = `${String(h).padStart(2, '0')}h ${String(m).padStart(2, '0')}m ${String(s).padStart(2, '0')}s`;
+        }
+      }, 1000);
+    }
+
+    const sprintBtn = document.getElementById('sprint-attack-btn');
+    const toast = document.getElementById('raid-toast');
+    const toastMsg = document.getElementById('raid-toast-message');
+
+    function showToast(text) {
+      if (!toast) return;
+      if (toastMsg) toastMsg.textContent = text;
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 3200);
+    }
+
+    if (sprintBtn) {
+      sprintBtn.addEventListener('click', () => {
+        sprintBtn.disabled = true;
+        sprintBtn.classList.add('opacity-75');
+        showToast("Focus Sprint Engaged! 2,800 Kinetic Boss Damage queued on task completion.");
+        setTimeout(() => {
+          sprintBtn.disabled = false;
+          sprintBtn.classList.remove('opacity-75');
+        }, 1500);
+      });
+    }
+
+    const catalystButtons = document.querySelectorAll('.catalyst-btn');
+    catalystButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.classList.add('bg-secondary', 'text-on-secondary');
+        showToast("Arcane Catalyst beamed: +5 Mana transmitted to operative!");
+        setTimeout(() => {
+          btn.classList.remove('bg-secondary', 'text-on-secondary');
+        }, 800);
+      });
+    });
+  })();
+</script></main></div><script src="site.js"></script><script src="page-actions.js"></script><script src="world.js"></script><script src="live-ui.js"></script></body></html>

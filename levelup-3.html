@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Abhyudaya - Hero Ascension Celebration</title>
+<!-- Tailwind CSS v3 CDN with forms & container queries plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Outfit and Orbitron for cyberpunk-arcane aesthetic -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&amp;family=Outfit:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Outfit', 'sans-serif'],
+            display: ['Orbitron', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            obsidian: '#070b14',
+            arcaneDark: '#0b1326',
+            arcaneBlue: '#13203f',
+            goldPulse: '#f59e0b',
+            cyanGaze: '#38bdf8',
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Glassmorphism and Glow Styles -->
+<style data-purpose="glow-and-glass-effects">
+    .cyber-hex-border {
+      clip-path: polygon(15% 0%, 85% 0%, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%, 0% 15%);
+    }
+    .modal-radial-glow {
+      background: radial-gradient(circle at 50% 10%, rgba(245, 158, 11, 0.22) 0%, rgba(56, 189, 248, 0.08) 40%, rgba(7, 11, 20, 0.95) 75%);
+    }
+    .card-glass-glow {
+      background: linear-gradient(135deg, rgba(19, 32, 63, 0.75) 0%, rgba(11, 19, 38, 0.85) 100%);
+      backdrop-filter: blur(14px);
+    }
+    .gold-shimmer-btn {
+      background: linear-gradient(90deg, #d97706 0%, #f59e0b 50%, #fbbf24 100%);
+      box-shadow: 0 0 25px rgba(245, 158, 11, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+    }
+    .gold-shimmer-btn:hover {
+      box-shadow: 0 0 35px rgba(245, 158, 11, 0.75), inset 0 1px 2px rgba(255, 255, 255, 0.6);
+      transform: translateY(-1px);
+    }
+    .cyber-grid-backdrop {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(56, 189, 248, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(245, 158, 11, 0.04) 1px, transparent 1px);
+    }
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.65; transform: scale(1); }
+      50% { opacity: 0.95; transform: scale(1.02); }
+    }
+    .ambient-burst {
+      animation: pulseGlow 4s ease-in-out infinite;
+    }
+  </style>
+<!-- END: Custom Glassmorphism and Glow Styles -->
+</head>
+<body class="bg-obsidian text-slate-100 min-h-screen relative flex items-center justify-center p-3 sm:p-6 select-none overflow-x-hidden">
+<!-- BEGIN: Ambient Background & World Setting -->
+<!-- Underlying World Context Scene Layer -->
+<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden" data-purpose="background-scenery">
+<img alt="Abhyudaya Cyberpunk Command Space" class="w-full h-full object-cover object-center filter brightness-[0.22] contrast-[1.1] blur-[3px] scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1W6lBYteoPX30S_iR92Mrk-S1GKmgzeg0czLS0wpkm0J9DWRWhPlEw3RM9tgztbnXG7i_uCWikVDzGvZzfZtdi4X5BbdMYmw4X_76TzXsp71k9v_Ry0bgFthkGhuJAZEKH4qA5WV61WMbByYwkJFlOrG-LYznQ8HHkdBBUTzI_ZgEYQXuEI6NVG4a7ZG1OmZFXtC0VG6qDpqHF2SmylEzxJmn3xjtCBZyw4Js_eTENKaMK_Td4lNUtPJg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-obsidian via-[#070b14e6] to-[#070b14b3]"></div>
+<div class="absolute inset-0 cyber-grid-backdrop"></div>
+</div>
+<!-- END: Ambient Background & World Setting -->
+<!-- BEGIN: Modal Backdrop Wrapper -->
+<div class="relative z-10 w-full max-w-[980px] my-auto flex flex-col items-center">
+<!-- Ambient Radial Light Halo Behind Modal -->
+<div class="ambient-burst absolute -top-16 w-3/4 h-72 bg-gradient-to-r from-cyan-500/20 via-amber-500/30 to-purple-600/20 rounded-full blur-3xl pointer-events-none"></div>
+<!-- BEGIN: Main Ascension Celebration Dialog -->
+<main class="relative w-full rounded-2xl border border-amber-500/40 modal-radial-glow shadow-[0_0_50px_rgba(245,158,11,0.25),0_0_100px_rgba(0,0,0,0.9)] p-5 sm:p-8 backdrop-blur-2xl transition-all duration-300" data-purpose="ascension-milestone-dialog">
+<!-- Corner Decorative Tech Crosshairs -->
+<div class="absolute -top-1.5 -left-1.5 w-4 h-4 border-t-2 border-l-2 border-amber-400"></div>
+<div class="absolute -top-1.5 -right-1.5 w-4 h-4 border-t-2 border-r-2 border-amber-400"></div>
+<div class="absolute -bottom-1.5 -left-1.5 w-4 h-4 border-b-2 border-l-2 border-cyan-400"></div>
+<div class="absolute -bottom-1.5 -right-1.5 w-4 h-4 border-b-2 border-r-2 border-cyan-400"></div>
+<!-- BEGIN: Modal Header Section -->
+<header class="text-center mb-6" data-purpose="header-section">
+<!-- Milestone Protocol Pill -->
+<div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-cyan-400/40 bg-cyan-950/40 text-cyan-300 text-xs font-mono tracking-widest uppercase mb-3 shadow-[0_0_12px_rgba(56,189,248,0.3)]">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping"></span>
+          PROTOCOL ZENITH // MILESTONE REACHED
+        </div>
+<!-- Grand Ascension Title -->
+<h1 class="text-2xl sm:text-4xl md:text-5xl font-extrabold font-display tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-amber-300 to-amber-500 filter drop-shadow-[0_2px_12px_rgba(245,158,11,0.5)]">
+          HERO ASCENSION: LEVEL 18 REACHED!
+        </h1>
+<!-- Ascension Subtitle -->
+<p class="text-slate-300 text-xs sm:text-sm md:text-base mt-2 max-w-xl mx-auto font-sans text-opacity-90">
+          Your synaptic discipline has breached previous physical and mental boundaries. High-tier skill nodes unlocked.
+        </p>
+</header>
+<!-- END: Modal Header Section -->
+<!-- BEGIN: Hero Showcase & Rank Promotion -->
+<section class="mb-6 p-4 sm:p-5 rounded-xl border border-amber-500/20 bg-arcaneDark/70 relative overflow-hidden" data-purpose="hero-rank-showcase">
+<div class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-80 bg-cyan-500/5 blur-2xl pointer-events-none"></div>
+<div class="flex flex-col sm:flex-row items-center justify-between gap-5 relative z-10">
+<!-- Left: Hero Level Progression & Promotion -->
+<div class="flex flex-col items-center sm:items-start text-center sm:text-left">
+<div class="flex items-center gap-2.5 font-display font-black text-2xl sm:text-3xl tracking-wide">
+<span class="text-slate-400 line-through decoration-amber-500/70 opacity-75 text-xl sm:text-2xl">LVL 17</span>
+<span class="text-cyan-400 text-xl">➔</span>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-amber-200 drop-shadow-[0_0_12px_rgba(245,158,11,0.8)]">
+                LVL 18
+              </span>
+<span class="ml-2 text-xs font-mono font-normal uppercase px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-400/30">
+                Ascended
+              </span>
+</div>
+<!-- Rank Promotion Honorific -->
+<div class="mt-1.5 flex items-center gap-2">
+<span class="text-cyan-300 text-xs sm:text-sm font-mono tracking-wider font-semibold">
+                RANK PROMOTION:
+              </span>
+<span class="text-white font-display text-sm sm:text-base font-bold tracking-wider px-2.5 py-0.5 bg-gradient-to-r from-blue-900/60 to-cyan-900/40 border border-cyan-400/40 rounded shadow-[0_0_10px_rgba(56,189,248,0.3)] text-cyan-200">
+                ARCANE VANGUARD
+              </span>
+</div>
+<!-- XP Breakdown Subtext -->
+<p class="text-xs text-slate-400 font-mono mt-2">
+              XP Overflow: <span class="text-amber-300 font-bold">+1,420 XP</span> carried forward to Level 19 threshold.
+            </p>
+</div>
+<!-- Right: Hero Portrait in Radiant Hex Frame -->
+<div class="flex items-center gap-4">
+<div class="text-right hidden md:block">
+<div class="text-xs text-slate-400 font-mono uppercase">Operative Identifier</div>
+<div class="text-sm font-semibold text-slate-200 font-mono">NYX // CORE-01</div>
+<div class="text-[11px] text-emerald-400 flex items-center justify-end gap-1 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Synced to Node
+              </div>
+</div>
+<!-- Glowing Hexagonal Portrait Container -->
+<div class="relative group">
+<!-- Animated Ring Glow -->
+<div class="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-amber-500 via-cyan-400 to-amber-300 opacity-70 blur-md group-hover:opacity-100 transition duration-500"></div>
+<div class="relative w-20 h-20 sm:w-24 sm:h-24 p-[2px] rounded-xl bg-gradient-to-b from-amber-300 via-amber-500 to-cyan-500 shadow-xl overflow-hidden">
+<img alt="Player Operative Character Portrait" class="w-full h-full object-cover object-top rounded-[10px] bg-slate-900 filter contrast-110" src="https://lh3.googleusercontent.com/aida/AEtjO1Un5KHrOuO6lJtk784KRKgIJapiSJAm9vYXk1jXVOmX7j8LOH_treR8UG-6MejUX5mOGR7YY2JmCTbSrp1h0jVIbSYsIv1Bq6KDxGzQ0TawFf3D_w2-VDgUTDuZqdzSAvjlpaI7_p8jKL8TlrXUAEsi_a_6f_JAtR_cYMIQyizsoBOZ8faqh7pg-OwLHJGfOh3tm_2WkoAQoE4qt_6C3Icm9Z4k_amSovd8EW_OHHHKc_zkW_7i7qbfOg"/>
+</div>
+<!-- Mini Class Badge Tag -->
+<div class="absolute -bottom-2 -right-1 px-1.5 py-0.5 bg-obsidian border border-amber-400 rounded text-[10px] font-mono text-amber-300 font-bold tracking-tighter shadow-md">
+                CL-V
+              </div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Hero Showcase & Rank Promotion -->
+<!-- BEGIN: Ascension Rewards & Unlocks Grid (3 Columns) -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6" data-purpose="ascension-rewards-grid">
+<!-- CARD 1: Attribute Calibration -->
+<article class="card-glass-glow rounded-xl p-4 border border-amber-500/30 flex flex-col justify-between hover:border-amber-400/60 transition-colors duration-200">
+<div>
+<div class="flex items-center justify-between border-b border-amber-500/20 pb-2 mb-3">
+<h2 class="text-sm font-display font-bold text-amber-300 tracking-wide flex items-center gap-1.5">
+<span class="text-amber-400">⚙</span> ATTRIBUTE CALIBRATION
+              </h2>
+<span class="text-[11px] font-mono font-bold px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 animate-pulse">
+                +3 FREE PTS
+              </span>
+</div>
+<p class="text-[11px] text-slate-300 mb-3">Allocate synaptic resonance points to tune focus and throughput:</p>
+<!-- Attribute Steppers List -->
+<div class="space-y-2.5">
+<!-- Stepper: Intellect -->
+<div class="flex items-center justify-between text-xs bg-slate-900/60 p-2 rounded-lg border border-slate-700/50">
+<div class="flex flex-col">
+<span class="font-medium text-slate-200">Intellect</span>
+<span class="text-[10px] text-slate-400 font-mono">74 ➔ <strong class="text-amber-300">75</strong></span>
+</div>
+<div class="flex items-center gap-1.5">
+<button aria-label="Decrease Intellect" class="w-5 h-5 rounded bg-slate-800 text-slate-400 hover:text-white border border-slate-700 flex items-center justify-center font-mono" type="button">-</button>
+<span class="w-6 text-center font-bold text-amber-300 font-mono text-xs">+1</span>
+<button aria-label="Increase Intellect" class="w-5 h-5 rounded bg-amber-500/30 text-amber-200 hover:bg-amber-500/50 border border-amber-500/60 flex items-center justify-center font-mono" type="button">+</button>
+</div>
+</div>
+<!-- Stepper: Focus -->
+<div class="flex items-center justify-between text-xs bg-slate-900/60 p-2 rounded-lg border border-slate-700/50">
+<div class="flex flex-col">
+<span class="font-medium text-slate-200">Focus Horizon</span>
+<span class="text-[10px] text-slate-400 font-mono">85 ➔ <strong class="text-amber-300">86</strong></span>
+</div>
+<div class="flex items-center gap-1.5">
+<button aria-label="Decrease Focus" class="w-5 h-5 rounded bg-slate-800 text-slate-400 hover:text-white border border-slate-700 flex items-center justify-center font-mono" type="button">-</button>
+<span class="w-6 text-center font-bold text-amber-300 font-mono text-xs">+1</span>
+<button aria-label="Increase Focus" class="w-5 h-5 rounded bg-amber-500/30 text-amber-200 hover:bg-amber-500/50 border border-amber-500/60 flex items-center justify-center font-mono" type="button">+</button>
+</div>
+</div>
+<!-- Stepper: Discipline -->
+<div class="flex items-center justify-between text-xs bg-slate-900/60 p-2 rounded-lg border border-slate-700/50">
+<div class="flex flex-col">
+<span class="font-medium text-slate-200">Discipline</span>
+<span class="text-[10px] text-slate-400 font-mono">92 ➔ <strong class="text-amber-300">93</strong></span>
+</div>
+<div class="flex items-center gap-1.5">
+<button aria-label="Decrease Discipline" class="w-5 h-5 rounded bg-slate-800 text-slate-400 hover:text-white border border-slate-700 flex items-center justify-center font-mono" type="button">-</button>
+<span class="w-6 text-center font-bold text-amber-300 font-mono text-xs">+1</span>
+<button aria-label="Increase Discipline" class="w-5 h-5 rounded bg-amber-500/30 text-amber-200 hover:bg-amber-500/50 border border-amber-500/60 flex items-center justify-center font-mono" type="button">+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-3 pt-2 border-t border-slate-800 text-right">
+<span class="text-[10px] text-cyan-300 font-mono">Allocated: 3/3 pts</span>
+</div>
+</article>
+<!-- CARD 2: Ascension Spoils Loot Drop -->
+<article class="card-glass-glow rounded-xl p-4 border border-cyan-500/30 flex flex-col justify-between hover:border-cyan-400/60 transition-colors duration-200">
+<div>
+<div class="flex items-center justify-between border-b border-cyan-500/20 pb-2 mb-3">
+<h2 class="text-sm font-display font-bold text-cyan-300 tracking-wide flex items-center gap-1.5">
+<span class="text-cyan-400">🎁</span> ASCENSION SPOILS
+              </h2>
+<span class="text-[11px] font-mono font-bold px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/40">
+                LOOT DROP
+              </span>
+</div>
+<!-- Spoils Items Stack -->
+<ul class="space-y-2.5">
+<!-- Item 1: Relic -->
+<li class="bg-gradient-to-r from-amber-950/40 to-slate-900/80 border border-amber-500/40 p-2.5 rounded-lg flex items-center gap-2.5">
+<div class="w-8 h-8 rounded bg-amber-500/20 border border-amber-400 flex items-center justify-center text-amber-300 text-base shadow-[0_0_8px_rgba(245,158,11,0.4)]">
+                  ⏳
+                </div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<p class="text-xs font-bold text-amber-200 truncate">Masterwork Chrono-Resonator</p>
+</div>
+<span class="inline-block text-[9px] font-mono font-semibold px-1.5 py-0.2 rounded bg-amber-500/30 text-amber-300 uppercase tracking-wide">Legendary Relic</span>
+</div>
+</li>
+<!-- Item 2: Gold Mint -->
+<li class="bg-slate-900/60 border border-slate-700/60 p-2.5 rounded-lg flex items-center gap-2.5">
+<div class="w-8 h-8 rounded bg-yellow-500/20 border border-yellow-400/60 flex items-center justify-center text-yellow-300 text-sm">
+                  🪙
+                </div>
+<div class="flex-1">
+<p class="text-xs font-bold text-slate-100">+250 Aureus Gold</p>
+<p class="text-[10px] text-slate-400 font-mono">Minted directly to vault cache</p>
+</div>
+</li>
+<!-- Item 3: Streak Ward -->
+<li class="bg-slate-900/60 border border-slate-700/60 p-2.5 rounded-lg flex items-center gap-2.5">
+<div class="w-8 h-8 rounded bg-cyan-500/20 border border-cyan-400/60 flex items-center justify-center text-cyan-300 text-sm">
+                  🛡️
+                </div>
+<div class="flex-1">
+<p class="text-xs font-bold text-slate-100">+1 Streak Ward Slot</p>
+<p class="text-[10px] text-slate-400 font-mono">Permanent habit loss protection</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="mt-3 pt-2 border-t border-slate-800 text-right">
+<span class="text-[10px] text-amber-400 font-mono">Tier IV Vault Sync: Ready</span>
+</div>
+</article>
+<!-- CARD 3: Passive Stat Amplifications -->
+<article class="card-glass-glow rounded-xl p-4 border border-purple-500/30 flex flex-col justify-between hover:border-purple-400/60 transition-colors duration-200">
+<div>
+<div class="flex items-center justify-between border-b border-purple-500/20 pb-2 mb-3">
+<h2 class="text-sm font-display font-bold text-purple-300 tracking-wide flex items-center gap-1.5">
+<span class="text-purple-400">⚡</span> STAT AMPLIFICATIONS
+              </h2>
+<span class="text-[11px] font-mono font-bold px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/40">
+                PASSIVE
+              </span>
+</div>
+<!-- Passive Perks List -->
+<div class="space-y-2.5 text-xs">
+<!-- Mana Cap -->
+<div class="p-2.5 rounded-lg bg-slate-900/60 border border-slate-700/50">
+<div class="flex justify-between items-center mb-1">
+<span class="text-slate-300 font-medium">Max Mana Reservoir</span>
+<span class="text-emerald-400 font-bold font-mono">+10 Mana</span>
+</div>
+<div class="text-[11px] font-mono text-slate-400 flex items-center gap-1.5">
+<span class="text-slate-400">90</span>
+<span class="text-cyan-400">➔</span>
+<span class="text-white font-bold">100 Capacity</span>
+</div>
+</div>
+<!-- Deep Work Focus Surge -->
+<div class="p-2.5 rounded-lg bg-slate-900/60 border border-slate-700/50">
+<div class="flex justify-between items-center mb-1">
+<span class="text-slate-300 font-medium">Deep Work Focus Surge</span>
+<span class="text-emerald-400 font-bold font-mono">+15m Boost</span>
+</div>
+<div class="text-[11px] text-slate-400 font-mono">
+                  Continuous session ceiling lengthened
+                </div>
+</div>
+<!-- Streak XP Multiplier -->
+<div class="p-2.5 rounded-lg bg-slate-900/60 border border-slate-700/50">
+<div class="flex justify-between items-center mb-1">
+<span class="text-slate-300 font-medium">Streak Multiplier</span>
+<span class="text-emerald-400 font-bold font-mono">+0.10x Buff</span>
+</div>
+<div class="text-[11px] font-mono text-slate-400 flex items-center gap-1.5">
+<span class="text-slate-400">1.15x</span>
+<span class="text-cyan-400">➔</span>
+<span class="text-amber-300 font-bold">1.25x Habit XP</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-3 pt-2 border-t border-slate-800 text-right">
+<span class="text-[10px] text-purple-300 font-mono">System Resonance: Overclocked</span>
+</div>
+</article>
+</section>
+<!-- END: Ascension Rewards & Unlocks Grid -->
+<!-- BEGIN: Bottom Action Dock -->
+<footer class="pt-4 border-t border-amber-500/20 flex flex-col items-center gap-3" data-purpose="modal-actions-footer">
+<div class="w-full flex flex-col sm:flex-row items-center justify-center gap-3">
+<!-- Primary Radiant Claim Button -->
+<button class="gold-shimmer-btn w-full sm:w-auto sm:min-w-[340px] px-6 py-3 rounded-xl font-display font-black text-sm tracking-wider text-slate-950 flex items-center justify-center gap-2 transition duration-200 uppercase" data-purpose="claim-ascension-rewards-btn" type="button">
+<span>⚡ CLAIM ALL REWARDS &amp; CALIBRATE (LVL 18)</span>
+</button>
+<!-- Secondary Guild Share Button -->
+<button class="w-full sm:w-auto px-5 py-3 rounded-xl font-mono text-xs font-bold text-slate-200 bg-slate-800/80 hover:bg-slate-700/80 border border-slate-600 hover:border-cyan-400 transition duration-200 flex items-center justify-center gap-2 tracking-wide" data-purpose="share-guild-btn" type="button">
+<svg class="w-4 h-4 text-cyan-400" fill="currentColor" viewbox="0 0 24 24">
+<path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"></path>
+</svg>
+            SHARE TO GUILD CODEX &amp; DISCORD
+          </button>
+</div>
+<!-- Escape / Return Link -->
+<a class="text-xs text-slate-400 hover:text-amber-300 font-mono transition-colors tracking-wide underline underline-offset-4 decoration-slate-600 hover:decoration-amber-400" data-purpose="dismiss-modal-link" href="#dashboard">
+          Return to Command Dashboard (Esc)
+        </a>
+</footer>
+<!-- END: Bottom Action Dock -->
+</main>
+<!-- END: Main Ascension Celebration Dialog -->
+<!-- Micro System Telemetry Footer Tag -->
+<div class="mt-3 flex items-center gap-4 text-[11px] font-mono text-slate-400">
+<span>SERVER: ARCANE-PRIME-04</span>
+<span>•</span>
+<span>LATENCY: 14MS</span>
+<span>•</span>
+<span>BUILD: v2.48.1-ZENITH</span>
+</div>
+</div>
+<!-- END: Modal Backdrop Wrapper -->
+<!-- BEGIN: Interactive Feedback Controller Script -->
+<script data-purpose="interaction-handlers">
+    document.addEventListener('DOMContentLoaded', () => {
+      // Audio or visual burst stub for button click
+      const claimBtn = document.querySelector('[data-purpose="claim-ascension-rewards-btn"]');
+      if (claimBtn) {
+        claimBtn.addEventListener('click', () => {
+          claimBtn.innerHTML = '✨ ASCENSION SYNCHRONIZED!';
+          claimBtn.classList.add('bg-emerald-500');
+          setTimeout(() => {
+            claimBtn.innerHTML = '⚡ CLAIM ALL REWARDS & CALIBRATE (LVL 18)';
+          }, 2400);
+        });
+      }
+
+      // Keyboard Esc key listener
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          const dialog = document.querySelector('[data-purpose="ascension-milestone-dialog"]');
+          if (dialog) {
+            dialog.classList.toggle('opacity-50');
+            setTimeout(() => dialog.classList.remove('opacity-50'), 400);
+          }
+        }
+      });
+    });
+  </script>
+<!-- END: Interactive Feedback Controller Script -->
+<script src="site.js"></script><script src="page-actions.js"></script><script src="world.js"></script><script src="live-ui.js"></script></body></html>

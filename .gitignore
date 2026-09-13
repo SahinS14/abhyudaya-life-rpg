@@ -1,0 +1,4 @@
+node_modules/
+lifequest.db
+.env
+.DS_Store
