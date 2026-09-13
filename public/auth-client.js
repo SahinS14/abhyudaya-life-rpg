@@ -18,8 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
     submit.disabled = true;
     try {
       const response = await fetch(signup ? '/api/auth/register' : '/api/auth/login', { method: 'POST', credentials: 'same-origin', headers: {'Content-Type':'application/json'}, body: JSON.stringify({ email, password, name }) });
-      const payload = await response.json().catch(() => ({}));
-      if (!response.ok) throw new Error(payload.error || 'Unable to connect to the realm.');
+      const raw = await response.text();
+      let payload = {}; try { payload = JSON.parse(raw); } catch { /* Vercel/route errors are often HTML. */ }
+      if (!response.ok) throw new Error(payload.error || `Realm request failed (${response.status}). ${raw.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 180)}`);
       if (payload.sessionToken) sessionStorage.setItem('abhyudaya_session', payload.sessionToken);
       location.href = payload.character.onboarding_completed ? 'dashboard.html' : 'onboarding.html';
     } catch (problem) { error.textContent = problem.message; submit.disabled = false; }

@@ -40,6 +40,6 @@ This is a same-origin Express application: deploy the pages and `/api/*` backend
 
 ### Vercel + Supabase production deployment
 
-The app now runs on Supabase Postgres, not a local SQLite file. In Supabase SQL Editor, run `supabase/schema.sql` once. In Vercel, add `DATABASE_URL` from **Supabase → Connect → Transaction pooler** (port 6543), `JWT_SECRET`, and `NODE_ENV=production` for Production and Preview. Do not set `DATABASE_PATH`, and do not expose the database URL, database password, or service-role key in browser code.
+The app now runs on Supabase Postgres, not a local SQLite file. In Supabase SQL Editor, run `supabase/schema.sql` once. In Vercel, add `DATABASE_URL` from **Supabase → Connect → Transaction pooler** (port 6543), `JWT_SECRET`, and `NODE_ENV=production` for Production and Preview. URL-encode special characters inside the password before inserting it in `DATABASE_URL` (`@` becomes `%40`, `#` becomes `%23`, `?` becomes `%3F`). Do not set `DATABASE_PATH`, and do not expose the database URL, database password, or service-role key in browser code.
 
 Vercel serves the app from `public/` and runs `api/[...path].js` for every `/api/*` route. The Postgres client is configured for serverless transaction pooling: one connection, TLS, and prepared statements disabled.
