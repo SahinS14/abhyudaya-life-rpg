@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary-fixed-dim":"#ffb95f","on-secondary-container":"#c4abff","error-container":"#93000a","inverse-on-surface":"#283044","tertiary-fixed":"#acedff","surface-bright":"#31394d","outline-variant":"#534434","on-primary-fixed":"#2a1700","on-background":"#dae2fd","error":"#ffb4ab","inverse-surface":"#dae2fd","tertiary-fixed-dim":"#4cd7f6","on-error":"#690005","on-primary":"#472a00","tertiary-container":"#29c1df","on-primary-fixed-variant":"#653e00","on-surface":"#dae2fd","secondary-fixed-dim":"#d0bcff","surface-tint":"#ffb95f","on-error-container":"#ffdad6","inverse-primary":"#855300","on-secondary-fixed-variant":"#5516be","surface-variant":"#2d3449","on-surface-variant":"#d8c3ad","secondary-fixed":"#e9ddff","tertiary":"#54ddfc","on-tertiary-fixed-variant":"#004e5c","on-tertiary-fixed":"#001f26","on-tertiary":"#003640","secondary":"#d0bcff","primary-fixed":"#ffddb8","surface-container":"#171f33","primary":"#ffc174","on-tertiary-container":"#004b58","surface-container-low":"#131b2e","surface-dim":"#0b1326","surface-container-high":"#222a3d","outline":"#a08e7a","surface-container-highest":"#2d3449","on-primary-container":"#613b00","surface-container-lowest":"#060e20","on-secondary-fixed":"#23005c","background":"#0b1326","surface":"#0b1326","on-secondary":"#3c0091","secondary-container":"#571bc1","primary-container":"#f59e0b"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{gutter:"1.25rem","space-xl":"2.5rem","space-md":"1rem","margin-mobile":"1rem",margin:"2rem","gutter-mobile":"0.75rem","space-xs":"0.25rem","space-sm":"0.5rem","space-lg":"1.5rem"},fontFamily:{"headline-xl":["Outfit"],"body-lg":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"label-lg":["Space Grotesk"],"headline-md":["Outfit"],"headline-xl-mobile":["Outfit"],"headline-lg":["Outfit"],"label-sm":["Space Grotesk"],"headline-sm":["Outfit"],"label-md":["Space Grotesk"],"headline-lg-mobile":["Outfit"],"body-sm":["Plus Jakarta Sans"]},fontSize:{"headline-xl":["40px",{lineHeight:"48px",letterSpacing:"-0.02em",fontWeight:"800"}],"body-lg":["16px",{lineHeight:"26px",fontWeight:"400"}],"body-md":["14px",{lineHeight:"22px",fontWeight:"400"}],"label-lg":["14px",{lineHeight:"20px",letterSpacing:"0.05em",fontWeight:"600"}],"headline-md":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"600"}],"headline-xl-mobile":["30px",{lineHeight:"38px",letterSpacing:"-0.02em",fontWeight:"800"}],"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.015em",fontWeight:"700"}],"label-sm":["10px",{lineHeight:"14px",letterSpacing:"0.08em",fontWeight:"700"}],"headline-sm":["18px",{lineHeight:"26px",letterSpacing:"0em",fontWeight:"600"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.06em",fontWeight:"600"}],"headline-lg-mobile":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"700"}],"body-sm":["12px",{lineHeight:"18px",fontWeight:"400"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface min-h-screen relative selection:bg-primary selection:text-on-primary"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest/95 backdrop-blur-2xl z-50 flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.4)]"><div class="flex flex-col"><div class="h-20 px-space-md flex items-center gap-space-sm bg-surface-container-low/40"><img alt="Abhyudaya Crest Logo" class="h-8 w-auto object-contain" src="logo.png"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm font-bold tracking-widest text-primary uppercase">ABHYUDAYA</span><span class="font-label-sm text-label-sm text-tertiary font-bold tracking-wider">HERO REALM</span></div></div><div class="px-space-md py-space-sm"><div class="p-space-sm rounded-lg bg-surface-container/70 flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Character</span><span class="font-label-sm text-label-sm text-primary font-bold">Lvl 18</span></div><div class="font-body-sm text-body-sm text-on-surface font-semibold truncate">Master Builder</div><div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden"><div class="bg-tertiary h-full w-[82%] rounded-full shadow-[0_0_8px_rgba(84,221,252,0.6)]"></div></div></div></div><nav class="flex flex-col gap-0.5 px-space-sm mt-space-xs overflow-y-auto" data-active-classes="bg-surface-container-high text-primary font-bold shadow-inner"><a class="px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md tracking-wider uppercase" data-path="dashboard" href="#">Dashboard</a><a class="px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md tracking-wider uppercase" data-path="quests" href="#">Quests</a><a class="px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md tracking-wider uppercase" data-path="character" href="#">Character</a><a class="px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md tracking-wider uppercase" data-path="inventory" href="#">Inventory</a><a class="px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md tracking-wider uppercase" data-path="shop" href="#">Shop</a><a class="px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md tracking-wider uppercase" data-path="achievements" href="#">Achievements</a><a class="px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md tracking-wider uppercase" data-path="progression" href="#">Progression</a><a class="px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md tracking-wider uppercase" data-path="activity" href="#">Activity</a><a class="px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md tracking-wider uppercase" data-path="guild-and-raids" href="#">Guild &amp; Raids</a><a aria-current="page" class="px-space-md py-2 rounded-lg transition-all tracking-wider uppercase bg-surface-container-high text-primary font-bold shadow-inner" data-path="settings" href="#">Settings</a></nav></div><div class="p-space-md bg-surface-container-low/60 m-space-sm rounded-xl flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary text-lg animate-pulse">bolt</span><span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Mana: 92/100</span></div><span class="font-label-sm text-label-sm text-primary font-bold">+5/h</span></div></aside><div class="pl-64 flex flex-col min-h-screen"><header class="fixed top-0 left-64 right-0 h-20 bg-surface-container-lowest/85 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.3)] px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-high"><span class="font-label-sm text-label-sm text-primary font-bold uppercase tracking-wider">LVL 18 APPRENTICE</span></div><div class="hidden xl:flex items-center gap-space-md px-space-md py-1.5 rounded-xl bg-surface-container-low/80"><div class="flex flex-col gap-1 min-w-[140px]"><div class="flex justify-between font-label-sm text-label-sm"><span class="text-tertiary font-bold">XP</span><span class="text-on-surface-variant">14,850 / 18k (82%)</span></div><div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden"><div class="bg-tertiary h-full w-[82%] rounded-full shadow-[0_0_8px_rgba(84,221,252,0.6)]"></div></div></div><div class="h-6 w-px bg-surface-variant"></div><div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-primary-container text-base">monetization_on</span><span class="font-label-md text-label-md text-primary font-bold">3,420</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Gold</span></div><div class="h-6 w-px bg-surface-variant"></div><div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-error text-base">local_fire_department</span><span class="font-label-md text-label-md text-on-surface font-bold">21</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Streak</span></div><div class="h-6 w-px bg-surface-variant"></div><div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-secondary text-base">vital_signs</span><span class="font-label-md text-label-md text-secondary font-bold">92%</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Mana</span></div></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-xs px-space-md py-2 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md font-bold uppercase tracking-wider shadow-[0_0_20px_-3px_rgba(245,158,11,0.45)] hover:bg-primary-fixed hover:text-on-primary-fixed transition-all" type="button"><span class="material-symbols-outlined text-base">add</span>Quick Quest</button><div class="relative flex items-center justify-center p-2 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-error text-on-error font-label-sm text-label-sm flex items-center justify-center font-bold">3</span></div><div class="flex items-center gap-space-sm pl-space-xs cursor-pointer"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-[0_0_12px_rgba(255,193,116,0.3)]" src="https://lh3.googleusercontent.com/aida/AEtjO1Un5KHrOuO6lJtk784KRKgIJapiSJAm9vYXk1jXVOmX7j8LOH_treR8UG-6MejUX5mOGR7YY2JmCTbSrp1h0jVIbSYsIv1Bq6KDxGzQ0TawFf3D_w2-VDgUTDuZqdzSAvjlpaI7_p8jKL8TlrXUAEsi_a_6f_JAtR_cYMIQyizsoBOZ8faqh7pg-OwLHJGfOh3tm_2WkoAQoE4qt_6C3Icm9Z4k_amSovd8EW_OHHHKc_zkW_7i7qbfOg"/><span class="material-symbols-outlined text-on-surface-variant text-base">expand_more</span></div></div></header><main class="w-full pt-20 px-space-lg pb-space-xl flex-1 bg-background"><div class="flex flex-col w-full">
+<!-- Dynamic Audio Visualizer & Ambient Background Accents -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-40 -left-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute top-60 right-0 w-80 h-80 bg-tertiary/10 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Header & Overline Metadata Strip -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-lg">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm mb-space-xs">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-tertiary font-label-sm text-label-sm uppercase tracking-widest flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-ping"></span>
+            SYS:CONFIG // SUB-SYSTEM 09
+          </span>
+<span class="text-on-surface-variant font-label-sm text-label-sm tracking-wider">REV 4.982.A</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-extrabold tracking-tight">
+          System Settings &amp; Operative Protocol Configuration
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl mt-1">
+          Calibrate sensory telemetry, adjust neural authentication, soundscape frequencies, and productivity integrations across all synchronized terminals.
+        </p>
+</div>
+<!-- Quick Telemetry Capsule -->
+<div class="flex items-center gap-space-sm bg-surface-container-low px-space-md py-space-sm rounded-xl border-none shadow-md self-start md:self-end">
+<span class="material-symbols-outlined text-primary text-xl">satellite_alt</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Quantum Link</span>
+<span class="font-label-md text-label-md text-primary font-bold">14ms // US-East</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-tertiary-container shadow-[0_0_8px_rgba(41,193,223,0.8)]"></span>
+</div>
+</div>
+<!-- Main Settings Architecture: 12-Column Grid -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg">
+<!-- Sub-Navigation Rail (Cols 1-3) -->
+<aside class="xl:col-span-3 flex flex-col gap-space-sm">
+<div class="bg-surface-container-low rounded-xl p-space-sm shadow-md flex flex-col gap-1">
+<div class="px-space-sm py-space-xs text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+            Operative Matrices
+          </div>
+<button class="w-full flex items-center justify-between px-space-md py-space-sm rounded-lg bg-surface-container-high text-primary font-label-md text-label-md font-bold uppercase tracking-wider shadow-inner transition-colors" type="button">
+<span class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-lg text-primary">swords</span>
+              RPG Rules &amp; Rigor
+            </span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md tracking-wider uppercase transition-colors" type="button">
+<span class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-lg">fingerprint</span>
+              Operative Profile &amp; Bio
+            </span>
+<span class="material-symbols-outlined text-sm opacity-40">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md tracking-wider uppercase transition-colors" type="button">
+<span class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-lg">lock</span>
+              Account &amp; Security
+            </span>
+<span class="material-symbols-outlined text-sm opacity-40">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md tracking-wider uppercase transition-colors" type="button">
+<span class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-lg">graphic_eq</span>
+              Sensory &amp; Audio/Haptic
+            </span>
+<span class="material-symbols-outlined text-sm opacity-40">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md tracking-wider uppercase transition-colors" type="button">
+<span class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-lg">hub</span>
+              Integrations &amp; Webhooks
+            </span>
+<span class="material-symbols-outlined text-sm opacity-40">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md tracking-wider uppercase transition-colors" type="button">
+<span class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-lg">database</span>
+              Data Vault &amp; Privacy
+            </span>
+<span class="material-symbols-outlined text-sm opacity-40">chevron_right</span>
+</button>
+</div>
+<!-- System Diagnostic Widget -->
+<div class="bg-surface-container-low/70 rounded-xl p-space-md shadow-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Core Load</span>
+<span class="font-label-sm text-label-sm text-tertiary font-bold">29.4% OPTIMAL</span>
+</div>
+<!-- Micro SVG telemetry graph -->
+<svg class="w-full h-12 text-tertiary" fill="none" preserveaspectratio="none" viewbox="0 0 200 48">
+<path d="M0 38 L25 32 L40 40 L65 20 L85 24 L100 12 L120 30 L145 15 L165 28 L185 10 L200 24" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+<path d="M0 38 L25 32 L40 40 L65 20 L85 24 L100 12 L120 30 L145 15 L165 28 L185 10 L200 24 L200 48 L0 48 Z" fill="currentColor" fill-opacity="0.1"></path>
+</svg>
+<div class="flex justify-between items-center text-on-surface-variant font-label-sm text-label-sm">
+<span>Neural Threads: 16</span>
+<span class="text-primary">Buffer: 4096KB</span>
+</div>
+</div>
+<!-- Banner Card with Generated Art Placeholder -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-high shadow-lg p-space-md flex flex-col justify-end min-h-[160px]">
+<div class="absolute inset-0 bg-cover bg-center opacity-30" data-alt="A glowing cybernetic arcane relic floating inside an obsidian high-tech console with intricate amber circuitry and cyan telemetry lasers, dark cyberpunk atmosphere." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCEYqhz25qE4prFDXvarOmXYVtmJgzcOuIf3zfI_VlartKyLF96hIOJ0yPd9j-xZFof0DXpUSa4FfBp1P-n1sq_SDelGT8e_DFuJ1b08NJVFKppdVkHmm_j2FIfPcEuFl7fZ_Kd_HNQdH3mVw63KflgrJwaV2dcSkQXiNXfbUTdcDgBvSyZR0hiZKXoLDtMN11dEHU1qzRuHcqtMS4Ia1AGA3OioG22fv8ETgSIpSNAqDg_bqXOjoo')"></div>
+<div class="relative z-10">
+<span class="font-label-sm text-label-sm text-primary font-bold uppercase tracking-wider">Ward Protocol v2.4</span>
+<p class="font-body-sm text-body-sm text-on-surface mt-1">Autonomous shielding guards your active streak even during local gateway outages.</p>
+</div>
+</div>
+</aside>
+<!-- Main Protocol Configuration Deck (Cols 4-12) -->
+<div class="xl:col-span-9 flex flex-col gap-space-lg">
+<!-- SECTION A: RPG GAMEPLAY & MECHANICS TUNING -->
+<section class="bg-surface-container-low/90 backdrop-blur-md rounded-xl p-space-lg shadow-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="p-2 rounded-lg bg-primary/10 text-primary material-symbols-outlined">shield_with_heart</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">RPG Gameplay &amp; Mechanics Tuning</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Calibrate habit stakes, experience yield modifiers, and sensory feedback.</p>
+</div>
+</div>
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm font-bold">TUNING 01</span>
+</div>
+<!-- Difficulty Multiplier Matrix -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-bold">Protocol Rigor Difficulty</label>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-xs">Adjust the severity of missed dailies and bounty multiplier scaling.</p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm">
+<!-- Casual -->
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col justify-between gap-space-sm cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-bold uppercase">Casual</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-bold">1.0x XP</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Zero HP penalty for missed tasks. Forgiving streak buffer window.</p>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+<span>Relaxed Stasis</span>
+</div>
+</div>
+<!-- Balanced (Active) -->
+<div class="p-space-md rounded-xl bg-surface-container-high shadow-[0_0_20px_-3px_rgba(245,158,11,0.25)] flex flex-col justify-between gap-space-sm cursor-pointer relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 bg-primary/10 rounded-bl-full pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-primary font-bold uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">verified</span> Balanced
+                  </span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-bold">1.25x XP</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">Standard calibrated penalty. -15 HP per missed priority ritual daily.</p>
+<div class="flex items-center gap-1.5 text-primary font-label-sm text-label-sm font-bold">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span>ACTIVE CALIBRATION</span>
+</div>
+</div>
+<!-- Hardcore -->
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col justify-between gap-space-sm cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-error font-bold uppercase">Hardcore</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-error-container text-on-error font-bold">2.0x XP</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">-45 HP &amp; gear durability decay per failure. High reward yield.</p>
+<div class="flex items-center gap-1.5 text-error font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span>Lethal Discipline</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Mechanised Switches Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md pt-space-xs">
+<!-- Streak Freeze Ward -->
+<div class="flex items-center justify-between p-space-md rounded-xl bg-surface-container">
+<div class="flex items-center gap-space-sm pr-space-sm">
+<span class="material-symbols-outlined text-secondary text-2xl">ac_unit</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold uppercase">Streak Grace Ward</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Auto-consume Cryo-Runes to save broken rituals.</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-primary-fixed after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Cinematic Particle Overlay -->
+<div class="flex items-center justify-between p-space-md rounded-xl bg-surface-container">
+<div class="flex items-center gap-space-sm pr-space-sm">
+<span class="material-symbols-outlined text-tertiary text-2xl">auto_awesome</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold uppercase">Level-Up Celebration FX</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Render full-screen arcane burst shader on rank up.</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-primary-fixed after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+<!-- Pomodoro Soundscapes Calibration -->
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col gap-space-sm">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-xs">
+<div>
+<span class="font-label-md text-label-md text-on-surface font-bold uppercase">Pomodoro Audio Soundscape Generator</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Continuous acoustic frequencies during active focus countdown sessions.</p>
+</div>
+<button class="flex items-center gap-1.5 px-space-md py-1.5 rounded-lg bg-surface-container-highest text-tertiary hover:text-on-surface transition-colors font-label-sm text-label-sm font-bold uppercase" type="button">
+<span class="material-symbols-outlined text-base">volume_up</span> Preview Frequency
+              </button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-sm mt-space-xs">
+<div class="p-space-sm rounded-lg bg-surface-container-high shadow-[0_0_12px_rgba(84,221,252,0.2)] flex items-center justify-between cursor-pointer">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-tertiary font-bold">Theta 40Hz</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cyber Ambient</span>
+</div>
+<span class="material-symbols-outlined text-tertiary text-lg">radio_button_checked</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest/80 flex items-center justify-between cursor-pointer hover:bg-surface-container-highest transition-colors">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-bold">Rain on Neon Glass</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Synthetic Storm</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-lg">radio_button_unchecked</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest/80 flex items-center justify-between cursor-pointer hover:bg-surface-container-highest transition-colors">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-bold">Arcane Sanctuary</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cathedral Drone</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-lg">radio_button_unchecked</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest/80 flex items-center justify-between cursor-pointer hover:bg-surface-container-highest transition-colors">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-bold">Silent Focus</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Void Baseline</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-lg">radio_button_unchecked</span>
+</div>
+</div>
+<!-- Sound Intensity Track -->
+<div class="flex items-center gap-space-md pt-space-xs">
+<span class="material-symbols-outlined text-on-surface-variant text-lg">volume_down</span>
+<div class="relative w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="bg-tertiary h-full w-[65%] rounded-full shadow-[0_0_8px_rgba(84,221,252,0.8)]"></div>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-bold min-w-[32px]">65%</span>
+</div>
+</div>
+</section>
+<!-- SECTION B: OPERATIVE IDENTITY & SYNAPSE SECURITY -->
+<section class="bg-surface-container-low/90 backdrop-blur-md rounded-xl p-space-lg shadow-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="p-2 rounded-lg bg-secondary-container/30 text-secondary material-symbols-outlined">badge</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Operative Identity &amp; Synapse Security</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Neural designations, cryptographic passkeys, and paired peripheral vaults.</p>
+</div>
+</div>
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm font-bold">SECURITY 02</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Operative Call-sign Input -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-bold">Operative Call-Sign</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-lg">alternate_email</span>
+<input class="w-full bg-surface-container text-on-surface pl-10 pr-space-md py-2.5 rounded-lg font-label-md text-label-md focus:outline-none focus:bg-surface-container-high transition-all shadow-inner" type="text" value="Nyx // Core-01"/>
+<span class="absolute right-3 font-label-sm text-label-sm text-tertiary uppercase font-bold">SECURE</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Displayed in public guild leaderboards and raid strike parties.</span>
+</div>
+<!-- Public Earned Title Dropdown -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-bold">Honored Pre-Title</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-primary text-lg">military_tech</span>
+<select class="w-full bg-surface-container text-primary font-bold pl-10 pr-space-lg py-2.5 rounded-lg font-label-md text-label-md focus:outline-none focus:bg-surface-container-high appearance-none transition-all cursor-pointer shadow-inner">
+<option selected="">Arcane Vanguard (Level 18)</option>
+<option>Syntax Sorcerer (Raid Victor)</option>
+<option>Centurion of Habits (Day 100+)</option>
+<option>Apprentice Builder (Novice)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 text-on-surface-variant pointer-events-none text-lg">expand_more</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Select titles unlocked through verified milestone deeds.</span>
+</div>
+</div>
+<!-- Two Factor Authentication & Hardware Security -->
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">key</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-bold uppercase">Hardware Neural Passkey (FIDO2 / WebAuthn)</span>
+<span class="px-2 py-0.5 rounded bg-tertiary-container/30 text-tertiary font-label-sm text-label-sm font-bold">ACTIVE / HARDENED</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Yubikey 5C NFC linked via bio-cipher token. Master key override active.</span>
+</div>
+</div>
+<button class="px-space-md py-2 rounded-lg bg-surface-container-highest text-on-surface hover:text-primary transition-colors font-label-sm text-label-sm font-bold uppercase whitespace-nowrap" type="button">
+              Manage Keys
+            </button>
+</div>
+<!-- Connected Synapse Gateways -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Connected Gateways &amp; OAuth Identifiers</span>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
+<!-- GitHub -->
+<div class="p-space-sm rounded-lg bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-on-surface text-lg">terminal</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-bold">GitHub</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">@nyx-operative</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-tertiary text-base">check_circle</span>
+</div>
+<!-- Google Workspace -->
+<div class="p-space-sm rounded-lg bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-on-surface text-lg">cloud_sync</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-bold">Google Calendar</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Active Sync</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-tertiary text-base">check_circle</span>
+</div>
+<!-- Apple Passkey -->
+<div class="p-space-sm rounded-lg bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-on-surface text-lg">phonelink_lock</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-bold">Apple Keychain</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Paired device</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-tertiary text-base">check_circle</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION C: HARDWARE & NOTIFICATION WARDS -->
+<section class="bg-surface-container-low/90 backdrop-blur-md rounded-xl p-space-lg shadow-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="p-2 rounded-lg bg-tertiary/10 text-tertiary material-symbols-outlined">notifications_active</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Hardware &amp; Notification Wards</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Precision temporal alarms, guild raid warning sirens, and device haptics.</p>
+</div>
+</div>
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm font-bold">TELEMETRY 03</span>
+</div>
+<div class="space-y-space-sm">
+<!-- Dawn Briefing -->
+<div class="flex items-center justify-between p-space-md rounded-xl bg-surface-container">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-xl">wb_twilight</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold uppercase">Dawn Briefing Dispatch</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Push summary of daily bounties, raid boss countdowns, and weather sync at 06:00 AM.</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="px-space-sm py-1 rounded bg-surface-container-high text-primary font-label-sm text-label-sm font-bold">06:00 AM</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-primary-fixed after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+<!-- Boss Raid Alert -->
+<div class="flex items-center justify-between p-space-md rounded-xl bg-surface-container">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-error text-xl">warning</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold uppercase">Boss Raid Purge Alert</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Critical alarm dispatch exactly 60 minutes before guild boss resets or expires.</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-primary-fixed after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Smart Cadence Haptics -->
+<div class="flex items-center justify-between p-space-md rounded-xl bg-surface-container">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-xl">vibration</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold uppercase">Habit Adaptive Haptic Bursts</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Sends micro-vibrations to wearable peripherals aligned to open calendar slots.</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-primary-fixed after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</section>
+<!-- SECTION D: DATA & CODEX SYNC / DANGER ZONE -->
+<section class="bg-surface-container-low/90 backdrop-blur-md rounded-xl p-space-lg shadow-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="p-2 rounded-lg bg-surface-variant text-on-surface material-symbols-outlined">storage</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Codex Vault &amp; Terminal Purge</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Export immutable operative records or enact complete character reincarnation.</p>
+</div>
+</div>
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm font-bold">SYSTEM 04</span>
+</div>
+<!-- Sync Node Status & Data Export -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col justify-between gap-space-sm">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-tertiary font-bold">Sync Gateway Node</span>
+<span class="font-body-md text-body-md text-on-surface font-bold">Planetary Realm: US-East Cluster</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">100% Cryptographically Synchronized. Last block verified 22 seconds ago.</span>
+</div>
+<button class="self-start flex items-center gap-1.5 px-space-md py-1.5 rounded-lg bg-surface-container-highest hover:bg-surface-bright text-tertiary transition-colors font-label-sm text-label-sm font-bold uppercase" type="button">
+<span class="material-symbols-outlined text-sm">refresh</span> Re-verify Integrity
+              </button>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col justify-between gap-space-sm">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Export Complete Codex</span>
+<span class="font-body-md text-body-md text-on-surface font-bold">Download Raw Character Lore &amp; Logs</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Includes all completed habit telemetry, boss battle turns, and inventory ledger.</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="flex items-center gap-1 px-space-md py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface transition-colors font-label-sm text-label-sm font-bold uppercase" type="button">
+<span class="material-symbols-outlined text-sm">download</span> JSON
+                </button>
+<button class="flex items-center gap-1 px-space-md py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface transition-colors font-label-sm text-label-sm font-bold uppercase" type="button">
+<span class="material-symbols-outlined text-sm">table_chart</span> CSV Logs
+                </button>
+</div>
+</div>
+</div>
+<!-- Danger Zone Chamber -->
+<div class="p-space-md rounded-xl bg-error-container/20 flex flex-col gap-space-md mt-space-xs">
+<div class="flex items-center gap-space-xs text-error">
+<span class="material-symbols-outlined text-xl">dangerous</span>
+<span class="font-label-md text-label-md font-bold uppercase tracking-wider">High Risk Operative Directives</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="flex flex-col justify-between gap-space-sm p-space-sm rounded-lg bg-surface-container-lowest/60">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">Initiate Character Rebirth (New Game+)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Resets Level 18 stats to Level 1. Retains all unlocked mythical titles and prestige cosmetics.</span>
+</div>
+<button class="self-start px-space-md py-1.5 rounded-lg bg-surface-container-high text-primary hover:bg-primary hover:text-on-primary font-label-sm text-label-sm font-bold uppercase transition-all" type="button">
+                  Perform Rebirth
+                </button>
+</div>
+<div class="flex flex-col justify-between gap-space-sm p-space-sm rounded-lg bg-surface-container-lowest/60">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-error font-bold">Sever Synapse Link (Delete Account)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Permanently atomizes character codex, guild affiliations, and inventory items. Irreversible.</span>
+</div>
+<button class="self-start px-space-md py-1.5 rounded-lg bg-error text-on-error hover:bg-error-container font-label-sm text-label-sm font-bold uppercase transition-all" type="button">
+                  Atomize Vault
+                </button>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<!-- Sticky Tactical Save Dock -->
+<div class="sticky bottom-4 z-40 w-full mt-space-lg">
+<div class="bg-surface-container-high/95 backdrop-blur-xl px-space-lg py-space-sm rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.6)] flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold uppercase tracking-wider">Unsaved Telemetry Changes Detected</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Rigor modification (1.25x Balanced) awaiting core sync.</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm w-full sm:w-auto justify-end">
+<button class="px-space-md py-2 rounded-lg bg-surface-container-highest text-on-surface hover:bg-surface-bright font-label-md text-label-md uppercase tracking-wider transition-colors font-bold" type="button">
+          Discard Changes
+        </button>
+<button class="flex items-center gap-1.5 px-space-lg py-2 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md font-bold uppercase tracking-wider shadow-[0_0_20px_-3px_rgba(245,158,11,0.45)] hover:bg-primary-fixed hover:text-on-primary-fixed transition-all" type="button">
+<span class="material-symbols-outlined text-base">save</span>
+          Save &amp; Calibrate Neural Core
+        </button>
+</div>
+</div>
+</div>
+</div></main></div><script src="site.js"></script><script src="page-actions.js"></script><script src="world.js"></script><script src="live-ui.js"></script></body></html>

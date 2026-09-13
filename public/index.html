@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-tint":"#ffb95f","surface-container":"#171f33","on-error-container":"#ffdad6","on-primary":"#472a00","inverse-primary":"#855300","tertiary-container":"#29c1df","on-surface-variant":"#d8c3ad","on-primary-container":"#613b00","secondary-container":"#571bc1","on-secondary-fixed":"#23005c","surface-dim":"#0b1326","outline-variant":"#534434","error":"#ffb4ab","on-error":"#690005","secondary":"#d0bcff","inverse-surface":"#dae2fd","outline":"#a08e7a","surface-bright":"#31394d","on-primary-fixed":"#2a1700","secondary-fixed-dim":"#d0bcff","on-tertiary":"#003640","on-tertiary-container":"#004b58","tertiary":"#54ddfc","primary":"#ffc174","surface":"#0b1326","inverse-on-surface":"#283044","primary-fixed":"#ffddb8","on-secondary-fixed-variant":"#5516be","surface-container-high":"#222a3d","on-background":"#dae2fd","tertiary-fixed-dim":"#4cd7f6","error-container":"#93000a","surface-container-highest":"#2d3449","on-tertiary-fixed":"#001f26","on-secondary-container":"#c4abff","surface-container-lowest":"#060e20","surface-variant":"#2d3449","on-primary-fixed-variant":"#653e00","background":"#0b1326","surface-container-low":"#131b2e","secondary-fixed":"#e9ddff","on-secondary":"#3c0091","primary-fixed-dim":"#ffb95f","tertiary-fixed":"#acedff","primary-container":"#f59e0b","on-tertiary-fixed-variant":"#004e5c","on-surface":"#dae2fd"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-md":"1rem","space-sm":"0.5rem",gutter:"1.25rem","gutter-mobile":"0.75rem",margin:"2rem","space-lg":"1.5rem","margin-mobile":"1rem","space-xs":"0.25rem","space-xl":"2.5rem"},fontFamily:{"headline-lg":["Outfit"],"headline-sm":["Outfit"],"body-lg":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"headline-xl":["Outfit"],"label-sm":["Space Grotesk"],"headline-xl-mobile":["Outfit"],"headline-md":["Outfit"],"label-lg":["Space Grotesk"],"headline-lg-mobile":["Outfit"],"body-md":["Plus Jakarta Sans"],"label-md":["Space Grotesk"]},fontSize:{"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.015em",fontWeight:"700"}],"headline-sm":["18px",{lineHeight:"26px",letterSpacing:"0em",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"26px",fontWeight:"400"}],"body-sm":["12px",{lineHeight:"18px",fontWeight:"400"}],"headline-xl":["40px",{lineHeight:"48px",letterSpacing:"-0.02em",fontWeight:"800"}],"label-sm":["10px",{lineHeight:"14px",letterSpacing:"0.08em",fontWeight:"700"}],"headline-xl-mobile":["30px",{lineHeight:"38px",letterSpacing:"-0.02em",fontWeight:"800"}],"headline-md":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"600"}],"label-lg":["14px",{lineHeight:"20px",letterSpacing:"0.05em",fontWeight:"600"}],"headline-lg-mobile":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"700"}],"body-md":["14px",{lineHeight:"22px",fontWeight:"400"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.06em",fontWeight:"600"}]}}}}</script></head><body class="bg-background font-body-md text-body-md text-on-surface min-h-screen selection:bg-primary selection:text-on-primary"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.5)]"><div class="h-20 max-w-7xl mx-auto px-margin-mobile lg:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md flex-shrink-0"><img alt="Abhyudaya logo" class="h-10 w-10 object-contain" src="logo.png"/><a class="font-headline-md text-headline-md font-bold tracking-tight text-on-surface" data-path="landing-page" href="#">Abhyudaya</a></div><nav class="hidden xl:flex items-center gap-space-lg" data-active-classes="text-primary font-bold"><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="how-it-works" href="#">How It Works</a><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="features" href="#">Features</a><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="rpg-progression" href="#">RPG Progression</a><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="rewards" href="#">Rewards</a><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="codex" href="#">Codex</a></nav><div class="flex items-center gap-space-md"><a class="hidden sm:inline-flex font-label-md text-label-md uppercase text-on-surface-variant hover:text-on-surface transition-colors px-space-sm py-space-xs" data-path="sign-in" href="#">Sign In</a><a class="relative inline-flex items-center justify-center px-space-lg py-space-sm rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg font-bold uppercase tracking-wider shadow-[0_0_20px_-3px_rgba(245,158,11,0.45)] hover:bg-primary transition-all active:translate-y-px" data-path="get-started" href="#">START YOUR QUEST</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-background"><div class="flex flex-col w-full">
+<!-- HERO SECTION -->
+<section class="relative w-full overflow-hidden bg-surface-container-lowest -mt-20 pt-28 pb-space-xl">
+<!-- Atmospheric Ambient Glows -->
+<div class="absolute top-12 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[128px] pointer-events-none"></div>
+<div class="absolute top-48 right-1/4 w-[32rem] h-[32rem] bg-secondary-container/20 rounded-full blur-[140px] pointer-events-none"></div>
+<div class="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-surface-container-lowest to-transparent pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter lg:gap-space-xl items-center">
+<!-- Hero Copy -->
+<div class="lg:col-span-6 flex flex-col items-start text-left space-y-space-md">
+<div class="inline-flex items-center gap-space-xs px-space-md py-1 rounded-full bg-surface-container-high/80 backdrop-blur-md shadow-inner">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">SYNAPSE RPG ECOSYSTEM // REAL LIFE GAMIFICATION</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl lg:text-[54px] lg:leading-[60px] font-extrabold tracking-tight text-on-surface">
+            TURN YOUR LIFE <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-fixed to-tertiary">INTO A GAME.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+            Everyday actions become quests, progress becomes XP, and consistency unlocks legendary character growth. Transcend task lists into an epic Arcane RPG adventure.
+          </p>
+<div class="flex flex-wrap items-center gap-space-md pt-space-sm w-full sm:w-auto">
+<a class="relative group inline-flex items-center justify-center px-space-xl py-space-md rounded-xl bg-gradient-to-r from-primary-container via-primary to-surface-tint text-on-primary font-label-lg text-label-lg font-bold uppercase tracking-wider shadow-[0_0_30px_-5px_rgba(245,158,11,0.5)] hover:shadow-[0_0_40px_rgba(245,158,11,0.7)] transition-all active:scale-95" data-path="get-started" href="#">
+<span class="material-symbols-outlined mr-space-xs text-[20px]" style="font-variation-settings: 'FILL' 1;">swords</span>
+              START YOUR QUEST
+            </a>
+<a class="inline-flex items-center justify-center px-space-lg py-space-md rounded-xl bg-surface-container/70 hover:bg-surface-container-high text-on-surface font-label-lg text-label-lg font-bold tracking-wider backdrop-blur-md transition-all" href="#how-it-works">
+<span class="material-symbols-outlined mr-space-xs text-primary text-[20px]">play_circle</span>
+              SEE HOW IT WORKS
+            </a>
+</div>
+<!-- Hero Metrics Micro-Bar -->
+<div class="pt-space-lg grid grid-cols-3 gap-space-md w-full max-w-lg">
+<div class="p-space-sm rounded-lg bg-surface-container-low/70 backdrop-blur-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Real operatives</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">142,800+</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low/70 backdrop-blur-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">XP Harvested</span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary">89.4M</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low/70 backdrop-blur-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Habit Rate</span>
+<span class="font-headline-sm text-headline-sm font-bold text-tertiary">+94.2%</span>
+</div>
+</div>
+</div>
+<!-- Hero Visual / Hologram HUD Frame -->
+<div class="lg:col-span-6 relative mt-space-lg lg:mt-0">
+<div class="relative rounded-2xl p-2 bg-gradient-to-b from-primary/30 via-surface-container to-surface-container-lowest shadow-[0_20px_50px_rgba(0,0,0,0.8)] backdrop-blur-xl">
+<div class="relative rounded-xl overflow-hidden bg-surface-container-lowest">
+<img alt="Operative HUD Dashboard" class="w-full h-auto object-cover rounded-lg transform transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDv3ByMi8xyplyEG3a8g5is89tH6fGiFOMs563-zQo_4uo49ijZPlK0uj1K1Taa7lgbYPyBseAEoU9KGKw2LZGkEbeL6cq8lnUzQY-8lQx7TZPt7GZwsnEFgTNGuTGIaxVJ3Be2HoFEsba8qG_lCsdgI95tgsii1dRKzyO7d0reUUqU96Tuuh6zzPGSupHp2cbG5px-isT2daFQpdaST6VZ5a0BW64kRnT6_KWEwQnppXy60n_mnM0"/>
+<!-- Floating Telemetry 1: XP Burst -->
+<div class="absolute top-4 left-4 p-space-sm rounded-lg bg-surface-container-lowest/90 backdrop-blur-md shadow-xl flex items-center gap-space-sm animate-pulse">
+<div class="w-8 h-8 rounded-md bg-tertiary-container flex items-center justify-center text-on-tertiary">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-tertiary font-bold tracking-wider">+250 XP GAINED</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Deep Work Sprint • 90m</div>
+</div>
+</div>
+<!-- Floating Telemetry 2: Level Status -->
+<div class="absolute top-4 right-4 p-space-sm rounded-lg bg-surface-container-lowest/90 backdrop-blur-md shadow-xl flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-md bg-primary-container flex items-center justify-center text-on-primary font-bold font-label-md">
+                  18
+                </div>
+<div>
+<div class="font-label-sm text-label-sm text-primary font-bold tracking-wider">VANGUARD OPERATIVE</div>
+<div class="w-24 h-1.5 bg-surface-container-high rounded-full overflow-hidden mt-1">
+<div class="h-full bg-primary rounded-full w-4/5"></div>
+</div>
+</div>
+</div>
+<!-- Floating Telemetry 3: Fire Streak Active -->
+<div class="absolute bottom-4 left-4 right-4 p-space-sm rounded-lg bg-surface-container-lowest/95 backdrop-blur-md flex items-center justify-between shadow-2xl">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-primary-container to-surface-tint flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface font-bold uppercase tracking-wider block">21-Day Fire Streak Active</span>
+<span class="font-body-sm text-body-sm text-primary-fixed-dim">3.2x Gold &amp; Loot Multiplier active today</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary px-space-sm py-1 bg-primary/10 rounded-full font-bold">UNBROKEN</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: THE CORE GAME LOOP -->
+<section class="w-full py-space-xl bg-surface-container-low relative" id="how-it-works">
+<div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
+<div>
+<div class="font-label-md text-label-md uppercase tracking-widest text-primary font-bold mb-space-xs">
+            ALGORITHMIC TRANSMUTATION
+          </div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface">
+            The Core Game Loop
+          </h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+          How simple real-life actions cycle through our neural RPG engine to yield compounding self-mastery.
+        </p>
+</div>
+<!-- Progression Pipeline Banner -->
+<div class="w-full mb-space-xl p-space-md rounded-2xl bg-surface-container shadow-inner flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest font-bold">LOOP PIPELINE //</span>
+</div>
+<div class="flex-1 flex flex-wrap items-center justify-around gap-space-sm">
+<span class="font-headline-sm text-headline-sm font-extrabold text-on-surface tracking-wider">DO</span>
+<span class="material-symbols-outlined text-primary text-[18px]">double_arrow</span>
+<span class="font-headline-sm text-headline-sm font-extrabold text-tertiary tracking-wider">EARN XP</span>
+<span class="material-symbols-outlined text-primary text-[18px]">double_arrow</span>
+<span class="font-headline-sm text-headline-sm font-extrabold text-primary tracking-wider">LEVEL UP</span>
+<span class="material-symbols-outlined text-primary text-[18px]">double_arrow</span>
+<span class="font-headline-sm text-headline-sm font-extrabold text-secondary tracking-wider">UNLOCK</span>
+<span class="material-symbols-outlined text-primary text-[18px]">double_arrow</span>
+<span class="font-headline-sm text-headline-sm font-extrabold text-surface-tint tracking-wider">BECOME BETTER</span>
+</div>
+</div>
+<!-- 5 Interactive Milestone Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-md">
+<!-- Step 1: DO -->
+<div class="p-space-lg rounded-xl bg-surface-container shadow-md hover:shadow-primary/20 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-sm text-label-sm font-bold text-on-surface-variant">PHASE 01</span>
+<span class="material-symbols-outlined text-primary text-[24px]">checklist</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mb-space-xs">Execute Habit</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Log weightlifting, study 60m, or crush bug backlogs. Real tasks become verified quest objectives.</p>
+</div>
+<div class="mt-space-lg pt-space-sm bg-surface-container-low p-space-xs rounded-md">
+<div class="font-label-sm text-label-sm text-primary font-mono uppercase">INPUT: REAL ACTION</div>
+</div>
+</div>
+<!-- Step 2: EARN XP -->
+<div class="p-space-lg rounded-xl bg-surface-container shadow-md hover:shadow-tertiary/20 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-sm text-label-sm font-bold text-on-surface-variant">PHASE 02</span>
+<span class="material-symbols-outlined text-tertiary text-[24px]">bolt</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mb-space-xs">Attribute Bounty</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Calculated difficulty generates dynamic XP points allocated across your 6 core RPG attributes.</p>
+</div>
+<div class="mt-space-lg pt-space-sm bg-surface-container-low p-space-xs rounded-md">
+<div class="font-label-sm text-label-sm text-tertiary font-mono uppercase">+350 STR / +120 DIS</div>
+</div>
+</div>
+<!-- Step 3: LEVEL UP -->
+<div class="p-space-lg rounded-xl bg-surface-container shadow-md hover:shadow-primary/20 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-sm text-label-sm font-bold text-on-surface-variant">PHASE 03</span>
+<span class="material-symbols-outlined text-primary-container text-[24px]">military_tech</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mb-space-xs">Ascend Tiers</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Fill your global mastery reservoir to trigger rank promotions, telemetry flares, and status glyphs.</p>
+</div>
+<div class="mt-space-lg pt-space-sm bg-surface-container-low p-space-xs rounded-md">
+<div class="font-label-sm text-label-sm text-primary-container font-mono uppercase">CLASS TIER UPGRADE</div>
+</div>
+</div>
+<!-- Step 4: UNLOCK -->
+<div class="p-space-lg rounded-xl bg-surface-container shadow-md hover:shadow-secondary/20 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-sm text-label-sm font-bold text-on-surface-variant">PHASE 04</span>
+<span class="material-symbols-outlined text-secondary text-[24px]">lock_open</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mb-space-xs">Forge Armory</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Extract gold bounties to purchase legendary HUD motifs, focus potions, and prestige badges.</p>
+</div>
+<div class="mt-space-lg pt-space-sm bg-surface-container-low p-space-xs rounded-md">
+<div class="font-label-sm text-label-sm text-secondary font-mono uppercase">EPIC LOOT ACQUIRED</div>
+</div>
+</div>
+<!-- Step 5: BECOME BETTER -->
+<div class="p-space-lg rounded-xl bg-surface-container shadow-md hover:shadow-surface-tint/20 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-sm text-label-sm font-bold text-on-surface-variant">PHASE 05</span>
+<span class="material-symbols-outlined text-surface-tint text-[24px]">psychology</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mb-space-xs">Transcend</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Subconscious resistance shatters. Your brain rewires daily grind into pure, unyielding dopamine.</p>
+</div>
+<div class="mt-space-lg pt-space-sm bg-surface-container-low p-space-xs rounded-md">
+<div class="font-label-sm text-label-sm text-surface-tint font-mono uppercase">IDENTITY EVOLVED</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: GAME MECHANICS & FEATURES (8 Obsidian Cyber Grid Cards) -->
+<section class="w-full py-space-xl bg-surface-container-lowest relative" id="features">
+<div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin">
+<div class="text-center max-w-3xl mx-auto mb-space-xl">
+<div class="font-label-md text-label-md uppercase tracking-widest text-tertiary font-bold mb-space-xs">
+          SYSTEM SPECIFICATIONS
+        </div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface mb-space-sm">
+          High-Velocity RPG Mechanics
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+          Engineered by behavioural psychologists and veteran game directors to eradicate procrastination forever.
+        </p>
+</div>
+<!-- 8-Card Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- 1. Quests & Bounties -->
+<div class="p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all group">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-space-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[28px]">assignment_turned_in</span>
+</div>
+<div class="font-label-sm text-label-sm text-primary uppercase tracking-wider font-bold mb-1">QUESTS &amp; BOUNTIES</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mb-space-xs">Daily Habit Operations</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Convert standard to-dos into Rank E to Rank S bounties, world bosses, and Pomodoro-style timed deep work runs.
+          </p>
+</div>
+<!-- 2. XP & Dynamic Levels -->
+<div class="p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all group">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-tertiary mb-space-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[28px]">trending_up</span>
+</div>
+<div class="font-label-sm text-label-sm text-tertiary uppercase tracking-wider font-bold mb-1">SCALING MASTERY</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mb-space-xs">Dynamic XP Algorithms</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Exponential curves prevent plateaus. Higher character levels require deeper real-world commitment and unlock class specializations.
+          </p>
+</div>
+<!-- 3. 6 Core Attributes -->
+<div class="p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all group">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-secondary mb-space-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[28px]">radar</span>
+</div>
+<div class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-bold mb-1">CHARACTER SHEET</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mb-space-xs">6 Core Attributes</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Balance Strength (fitness), Intellect (learning), Vitality (health), Discipline (routine), Creativity, and Laser Focus.
+          </p>
+</div>
+<!-- 4. Unbreakable Streaks -->
+<div class="p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all group">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary-fixed mb-space-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">shield</span>
+</div>
+<div class="font-label-sm text-label-sm text-primary-fixed uppercase tracking-wider font-bold mb-1">FIRE REPUTATION</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mb-space-xs">Streak Shield Wards</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Accumulate unbroken momentum to unlock exponential multipliers. Protect streaks during emergencies with arcane streak freeze wards.
+          </p>
+</div>
+<!-- 5. In-Game Gold Economy -->
+<div class="p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all group">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary-container mb-space-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[28px]">monetization_on</span>
+</div>
+<div class="font-label-sm text-label-sm text-primary-container uppercase tracking-wider font-bold mb-1">100% EARNED</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mb-space-xs">Zero Pay-to-Win Economy</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Gold cannot be bought with real money. Every coin in your treasury represents sweat, solved problems, and focused hours.
+          </p>
+</div>
+<!-- 6. RPG Inventory & Armory -->
+<div class="p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all group">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-tertiary mb-space-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[28px]">backpack</span>
+</div>
+<div class="font-label-sm text-label-sm text-tertiary uppercase tracking-wider font-bold mb-1">ARMORY VAULT</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mb-space-xs">Cosmetic Gear &amp; Elixirs</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Equip mythic cyber armor, bespoke animated UI themes, focus potions, and companion avatars to personalize your HUD.
+          </p>
+</div>
+<!-- 7. Achievement Sanctum -->
+<div class="p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all group">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-secondary mb-space-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[28px]">trophy</span>
+</div>
+<div class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-bold mb-1">SANCTUM REPOSITORY</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mb-space-xs">80+ Lore Badges</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Unravel secret accomplishments, monumental milestone trophies, and hidden season enigmas carved directly into your codex.
+          </p>
+</div>
+<!-- 8. Guild World Raids -->
+<div class="p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all group">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-space-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[28px]">groups_3</span>
+</div>
+<div class="font-label-sm text-label-sm text-primary uppercase tracking-wider font-bold mb-1">CO-OP BATTLES</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mb-space-xs">Guild World Bosses</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Form alliances with friends or colleagues. Slay colossal mythical beasts by pooling team study hours and completed deliverables.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: RPG PROGRESSION PREVIEW (Level 1 to Level 20) -->
+<section class="w-full py-space-xl bg-surface-container-low relative" id="rpg-progression">
+<div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin">
+<div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-space-md mb-space-xl">
+<div>
+<div class="font-label-md text-label-md uppercase tracking-widest text-primary font-bold mb-space-xs">
+            TRANSFORMATION TIMELINE
+          </div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface">
+            Character Evolution Track
+          </h2>
+</div>
+<div class="p-space-xs px-space-md bg-surface-container rounded-full">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">FROM ZERO TO RECKONING</span>
+</div>
+</div>
+<!-- Progression Timeline Comparison Cards -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-lg relative">
+<!-- Tier 1: Novice Drifter -->
+<div class="rounded-2xl p-space-lg bg-surface-container flex flex-col justify-between relative overflow-hidden shadow-lg">
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider px-space-sm py-1 bg-surface-container-high text-on-surface-variant rounded-md font-bold">LEVEL 01</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">0 XP / DAY</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Novice Drifter</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Starting point. Scattered focus, low stamina, rudimentary command interface.</p>
+</div>
+<!-- Avatar visual representation -->
+<div class="h-44 w-full rounded-xl bg-surface-container-lowest flex items-center justify-center p-space-md relative overflow-hidden">
+<img class="w-full h-full object-cover rounded-lg opacity-60" data-alt="Dark fantasy cyberpunk operative novice drifter dressed in humble ragged trench coat holding a basic unpowered neon data stylus in an alleyway, low saturation, slate and charcoal tones, digital art style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_I9XLn2_w2JcH51DuG1aDZ6y279oLn4FfoTkEWcRfxsgP0SSms2YmTo4dKvdgpDB3pCcm7tqNcW7qnZBZMxAljPpQTaXKnuhuJA935t5Ce7QAPS2oOgkY5mhvmYg_dqI-KsLnUFZHWNUbbrkltIx7kvas1D6FMzvrCLk680_kz9yzgOV7hYiJ8QXN414gYJOki7sJfGDl91G5xP33iNZJZBF9AoOIWeBc_xD6eogZ1T1iUMQttmM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent"></div>
+<span class="absolute bottom-2 left-3 font-label-sm text-label-sm text-on-surface-variant font-mono">FRAMEWORK: DEFAULT_TERMINAL</span>
+</div>
+<div class="space-y-space-xs pt-space-xs">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Discipline</span>
+<span>12 / 100</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-outline w-[12%]"></div>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Focus Res</span>
+<span>08 / 100</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-outline w-[8%]"></div>
+</div>
+</div>
+</div>
+<div class="pt-space-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">UNLOCKED PERKS</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Standard quest list, basic streak counter, common habit slots (3).</p>
+</div>
+</div>
+<!-- Tier 2: Adept Sentinel -->
+<div class="rounded-2xl p-space-lg bg-surface-container flex flex-col justify-between relative overflow-hidden shadow-xl shadow-tertiary/5">
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider px-space-sm py-1 bg-tertiary/20 text-tertiary rounded-md font-bold">LEVEL 10</span>
+<span class="font-label-sm text-label-sm text-tertiary font-mono">1,850 XP / DAY</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Adept Sentinel</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Consistency forged. Habit automation engaged, radiant cyber streak active.</p>
+</div>
+<!-- Avatar visual representation -->
+<div class="h-44 w-full rounded-xl bg-surface-container-lowest flex items-center justify-center p-space-md relative overflow-hidden">
+<img class="w-full h-full object-cover rounded-lg opacity-85" data-alt="Futuristic cyber sentinel hero warrior glowing with electric cyan energy conduits, wearing reinforced composite armor plates, atmospheric purple and cyan neon cityscape backdrop, digital high fantasy octane render." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjWhr9HS-f9geUCt3lKcN1xFK-dV4oHsuZlkuIL-FvDUk4pYHIxl16NJdcGlhq91TnuJ8UAtXJd1jrD38YhNlmmOpyCJN-qoshZ73lgu2Q2QpSuwxoJNmR20DMY-XINQEqJu_-tfvoqIk2oW3xSlGD71deS4kmJ3lq5TJU0_ypaMIlRaSZfcm4WWlP2TRJ3UIsWGoyYHybMTbFjbA9rAzRSjdKE4BxUcNaUPOzpLmDXNL_HOBcvJc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent"></div>
+<span class="absolute bottom-2 left-3 font-label-sm text-label-sm text-tertiary font-mono">STATUS: HIGH_SYNERGY</span>
+</div>
+<div class="space-y-space-xs pt-space-xs">
+<div class="flex justify-between font-label-sm text-label-sm text-tertiary">
+<span>Discipline</span>
+<span>58 / 100</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-[58%]"></div>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-tertiary">
+<span>Focus Res</span>
+<span>64 / 100</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-[64%]"></div>
+</div>
+</div>
+</div>
+<div class="pt-space-lg">
+<span class="font-label-sm text-label-sm text-tertiary uppercase tracking-wider block">UNLOCKED PERKS</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Guild creation, streak insurance runes, access to the Black Market vault.</p>
+</div>
+</div>
+<!-- Tier 3: Grandmaster Technomancer -->
+<div class="rounded-2xl p-space-lg bg-surface-container-high flex flex-col justify-between relative overflow-hidden shadow-2xl shadow-primary/20">
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider px-space-sm py-1 bg-primary-container text-on-primary rounded-md font-bold">LEVEL 20 (MAX RANK)</span>
+<span class="font-label-sm text-label-sm text-primary font-mono">5,000+ XP / DAY</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md font-bold text-primary">Grandmaster Technomancer</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Transcendent master of habit and time. Dual-stat resonance, mythic status aura.</p>
+</div>
+<!-- Avatar visual representation -->
+<div class="h-44 w-full rounded-xl bg-surface-container-lowest flex items-center justify-center p-space-md relative overflow-hidden">
+<img class="w-full h-full object-cover rounded-lg" data-alt="Grandmaster cyber technomancer in radiant obsidian and ornate gold-inlaid armor, floating holographic HUD halos, intense golden arcane eyes, dark fantasy cyberpunk supreme leader, cinematic masterpiece." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDXGJMwkFyCV_eB0Jdlm45VfQ3_H183LAFrvGa0dFXeHD--dfDOsOva-SyxjUrB04I0updql5hbyX1PdTBxmmBFlymq3pyj9Ge8hfm0mm8VUVgU8zaPA8-LZ-7Z7tSQDRVtNr3H_JzEBLrEPnifTpKkfiuzXWkDwE39Lva9hxdfs3hFWzeiFS0X0zV8B4c3aLNAW046OktgB7erLuQdoFEBn9vZKBllBtwH9knXNX7UZBFEcALshk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent"></div>
+<span class="absolute bottom-2 left-3 font-label-sm text-label-sm text-primary font-mono">STATUS: OVERCLOCK_MAX</span>
+</div>
+<div class="space-y-space-xs pt-space-xs">
+<div class="flex justify-between font-label-sm text-label-sm text-primary">
+<span>Discipline</span>
+<span>99 / 100</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container w-[99%]"></div>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-primary">
+<span>Focus Res</span>
+<span>96 / 100</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container w-[96%]"></div>
+</div>
+</div>
+</div>
+<div class="pt-space-lg">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider block">UNLOCKED PERKS</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">World raid commander, infinite streak multipliers, custom runic codex title.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: THE GUILD VAULT & VIRTUAL REWARDS -->
+<section class="w-full py-space-xl bg-surface-container-lowest relative" id="rewards">
+<div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin">
+<div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-space-md mb-space-xl">
+<div>
+<div class="font-label-md text-label-md uppercase tracking-widest text-primary-container font-bold mb-space-xs">
+            LOOT REPOSITORY // NO PAY-TO-WIN
+          </div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface">
+            The Guild Vault &amp; Armory
+          </h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+          Spend hard-earned discipline gold on rare cosmetics, consumable boosters, and glorious badges of honor.
+        </p>
+</div>
+<!-- Loot Showcase Cards (4 Items) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Item 1: Potion of Hyperfocus -->
+<div class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between">
+<div>
+<div class="aspect-square rounded-lg bg-surface-container-lowest p-space-md flex flex-col items-center justify-center relative overflow-hidden mb-space-md">
+<span class="material-symbols-outlined text-tertiary text-[48px] animate-bounce">science</span>
+<span class="absolute top-2 right-2 px-space-xs py-0.5 rounded text-[10px] font-bold bg-tertiary/20 text-tertiary uppercase">RARE</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Potion of Hyperfocus</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Consumable elixir that doubles focus attribute gains during 120m Pomodoro blocks.</p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<span class="font-label-md text-label-md text-primary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">monetization_on</span> 450 G
+            </span>
+<button class="px-space-md py-1 rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-label-sm text-label-sm font-bold uppercase transition-colors">
+              INSPECT
+            </button>
+</div>
+</div>
+<!-- Item 2: Obsidian Cyberplate -->
+<div class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between shadow-lg shadow-primary/5">
+<div>
+<div class="aspect-square rounded-lg bg-surface-container-lowest p-space-md flex flex-col items-center justify-center relative overflow-hidden mb-space-md">
+<span class="material-symbols-outlined text-primary text-[48px]">security</span>
+<span class="absolute top-2 right-2 px-space-xs py-0.5 rounded text-[10px] font-bold bg-primary-container text-on-primary uppercase">LEGENDARY</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Obsidian Cyberplate</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Full-body armored chassis skin equipped with reactive gold circuitry and ambient particle fog.</p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<span class="font-label-md text-label-md text-primary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">monetization_on</span> 2,800 G
+            </span>
+<button class="px-space-md py-1 rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-label-sm text-label-sm font-bold uppercase transition-colors">
+              INSPECT
+            </button>
+</div>
+</div>
+<!-- Item 3: Neon Synthwave UI Theme -->
+<div class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between">
+<div>
+<div class="aspect-square rounded-lg bg-surface-container-lowest p-space-md flex flex-col items-center justify-center relative overflow-hidden mb-space-md">
+<span class="material-symbols-outlined text-secondary text-[48px]">palette</span>
+<span class="absolute top-2 right-2 px-space-xs py-0.5 rounded text-[10px] font-bold bg-secondary-container text-on-secondary-container uppercase">EPIC</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Neon Synthwave Theme</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Complete HUD transformation with chromatic aberration edges and retro synth notification chimes.</p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<span class="font-label-md text-label-md text-primary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">monetization_on</span> 1,200 G
+            </span>
+<button class="px-space-md py-1 rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-label-sm text-label-sm font-bold uppercase transition-colors">
+              INSPECT
+            </button>
+</div>
+</div>
+<!-- Item 4: Solar Auric Title -->
+<div class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between shadow-lg shadow-primary-container/10">
+<div>
+<div class="aspect-square rounded-lg bg-surface-container-lowest p-space-md flex flex-col items-center justify-center relative overflow-hidden mb-space-md">
+<span class="material-symbols-outlined text-surface-tint text-[48px]">flare</span>
+<span class="absolute top-2 right-2 px-space-xs py-0.5 rounded text-[10px] font-bold bg-primary-container text-on-primary uppercase">MYTHIC</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Solar Auric Title</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Animated holographic guild title displaying 'The Unconquerable' with custom radial shine.</p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<span class="font-label-md text-label-md text-primary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">monetization_on</span> 5,000 G
+            </span>
+<button class="px-space-md py-1 rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-label-sm text-label-sm font-bold uppercase transition-colors">
+              INSPECT
+            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 6: FINAL CONVERSION CTA -->
+<section class="w-full py-space-xl bg-surface-container relative overflow-hidden">
+<!-- Atmospheric Background Radial Glow -->
+<div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[40rem] h-[40rem] bg-primary-container/15 rounded-full blur-[160px] pointer-events-none"></div>
+<div class="max-w-5xl mx-auto px-margin-mobile lg:px-margin text-center relative z-10 space-y-space-md">
+<div class="inline-flex items-center gap-space-xs px-space-md py-1 rounded-full bg-surface-container-lowest/80 text-primary font-label-sm text-label-sm uppercase tracking-widest font-bold">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+        SEASON 4 NOW ENROLLING
+      </div>
+<h2 class="font-headline-xl text-headline-xl lg:text-[50px] lg:leading-[58px] font-extrabold text-on-surface tracking-tight">
+        YOUR QUEST STARTS TODAY
+      </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+        Join 140,000+ operatives forging real-world discipline into legendary power. The dungeon of your future self awaits.
+      </p>
+<div class="pt-space-md flex flex-col sm:flex-row items-center justify-center gap-space-md">
+<a class="w-full sm:w-auto px-space-xl py-space-md rounded-xl bg-gradient-to-r from-primary-container via-primary to-surface-tint text-on-primary font-label-lg text-label-lg font-bold uppercase tracking-wider shadow-[0_0_30px_rgba(245,158,11,0.6)] hover:shadow-[0_0_50px_rgba(245,158,11,0.85)] hover:scale-105 active:scale-95 transition-all" data-path="get-started" href="#">
+          CREATE YOUR CHARACTER
+        </a>
+</div>
+<div class="pt-space-xs flex items-center justify-center gap-space-md font-body-sm text-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span> Free forever core pass
+        </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[18px]">credit_card_off</span> No credit card required
+        </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[18px]">sync</span> Instant sync iOS / Android / Web
+        </span>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // Dynamic counter and lightweight interactive hover effects for loot cards
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+      });
+    });
+  });
+</script></main><footer class="w-full bg-surface-container-lowest text-on-surface-variant"><div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin pt-space-xl pb-space-lg"><div class="grid grid-cols-2 md:grid-cols-5 gap-space-xl pb-space-xl"><div class="col-span-2 space-y-space-md"><div class="flex items-center gap-space-sm"><img src="logo.png" alt="Abhyudaya logo" class="w-9 h-9 object-contain"/><span class="font-headline-sm text-headline-sm font-bold text-on-surface">Abhyudaya</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Transform your daily tasks, habits, and ambition into an epic dark-fantasy RPG. Slay burnout, forge discipline, and level up reality.</p><div class="inline-flex items-center gap-space-sm px-space-md py-space-xs rounded-full bg-surface-container-low"><span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span><span class="font-label-sm text-label-sm uppercase tracking-widest text-tertiary">SERVERS ONLINE // SEASON 4 ACTIVE</span></div></div><div class="space-y-space-sm"><h3 class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface">Product</h3><ul class="space-y-space-xs font-body-md text-body-md"><li class="hover:text-on-surface transition-colors"><a data-path="how-it-works" href="#">How It Works</a></li><li class="hover:text-on-surface transition-colors"><a data-path="features" href="#">Core Engine</a></li><li class="hover:text-on-surface transition-colors"><a data-path="rewards" href="#">Loot &amp; Armory</a></li><li class="hover:text-on-surface transition-colors"><a data-path="pricing" href="#">Pass Tiers</a></li></ul></div><div class="space-y-space-sm"><h3 class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface">Mechanics</h3><ul class="space-y-space-xs font-body-md text-body-md"><li class="hover:text-on-surface transition-colors"><a data-path="rpg-progression" href="#">Progression Trees</a></li><li class="hover:text-on-surface transition-colors"><a data-path="codex" href="#">Class Codex</a></li><li class="hover:text-on-surface transition-colors"><a data-path="guild-raids" href="#">Guild Raids</a></li><li class="hover:text-on-surface transition-colors"><a data-path="seasonal-bosses" href="#">Seasonal Bosses</a></li></ul></div><div class="space-y-space-sm"><h3 class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface">Community</h3><ul class="space-y-space-xs font-body-md text-body-md"><li class="hover:text-on-surface transition-colors"><a data-path="hall-of-fame" href="#">Hall of Fame</a></li><li class="hover:text-on-surface transition-colors"><a data-path="discord-tavern" href="#">Discord Tavern</a></li><li class="hover:text-on-surface transition-colors"><a data-path="patch-notes" href="#">Patch Notes</a></li><li class="hover:text-on-surface transition-colors"><a data-path="creator-guild" href="#">Creator Guild</a></li></ul></div></div><div class="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md font-body-sm text-body-sm"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors cursor-pointer text-[20px]">hub</span><span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors cursor-pointer text-[20px]">forum</span><span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors cursor-pointer text-[20px]">videogame_asset</span><span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors cursor-pointer text-[20px]">terminal</span></div><p>© 2025 Abhyudaya Interactive. All rights reserved. Built for discipline architects.</p><div class="flex gap-space-md"><a class="hover:text-on-surface transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a><a class="hover:text-on-surface transition-colors" data-path="terms-of-service" href="#">Terms of Service</a><a class="hover:text-on-surface transition-colors" data-path="code-of-chivalry" href="#">Code of Chivalry</a></div></div></div></footer><script src="site.js"></script></body></html>

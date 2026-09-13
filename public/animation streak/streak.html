@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-[#060e20] text-slate-100 antialiased" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LifeQuest // Daily Streak &amp; Operative Login Celebration</title>
+<!-- Google Fonts: Outfit & JetBrains Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&amp;family=Outfit:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Outfit', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            void: '#060e20',
+            surface: {
+              DEFAULT: '#0b1326',
+              card: '#131b2e',
+              border: '#1e293b'
+            },
+            arcane: {
+              gold: '#f59e0b',
+              amber: '#fbbf24',
+              cyan: '#38bdf8',
+              cyanDark: '#0284c7',
+              emerald: '#10b981',
+              purple: '#a855f7',
+              crimson: '#ef4444'
+            }
+          },
+          boxShadow: {
+            'glow-gold': '0 0 25px -5px rgba(245, 158, 11, 0.45)',
+            'glow-cyan': '0 0 25px -5px rgba(56, 189, 248, 0.45)',
+            'glow-intense': '0 0 45px rgba(245, 158, 11, 0.6), 0 0 80px rgba(56, 189, 248, 0.3)',
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Styles: VFX, Glowing Borders & Custom Animations -->
+<style data-purpose="custom-vfx">
+    /* High-tech radial backdrop glows */
+    .bg-cyber-radial {
+      background: radial-gradient(circle at 50% 20%, rgba(245, 158, 11, 0.18) 0%, rgba(56, 189, 248, 0.08) 35%, rgba(6, 14, 32, 0.98) 75%);
+    }
+
+    /* Runic holographic grid overlay */
+    .hologram-grid {
+      background-size: 32px 32px;
+      background-image: 
+        linear-gradient(to right, rgba(56, 189, 248, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
+    }
+
+    /* Shimmering metallic borders */
+    .border-gradient-gold {
+      border-image: linear-gradient(135deg, #f59e0b, #38bdf8 50%, #f59e0b) 1;
+    }
+
+    /* Keyframe Pulse for celebratory badges */
+    @keyframes badgeGlowPulse {
+      0%, 100% { box-shadow: 0 0 15px rgba(245, 158, 11, 0.4); transform: scale(1); }
+      50% { box-shadow: 0 0 30px rgba(245, 158, 11, 0.85), 0 0 50px rgba(251, 191, 36, 0.5); transform: scale(1.02); }
+    }
+    .animate-badge-pulse {
+      animation: badgeGlowPulse 2.8s infinite ease-in-out;
+    }
+
+    /* Ambient drifting flame sparks */
+    @keyframes emberDrift {
+      0% { transform: translateY(0) translateX(0) scale(1); opacity: 0; }
+      20% { opacity: 0.9; }
+      80% { opacity: 0.8; }
+      100% { transform: translateY(-180px) translateX(var(--drift-x, 20px)) scale(0.2); opacity: 0; }
+    }
+    .ember-particle {
+      position: absolute;
+      pointer-events: none;
+      border-radius: 9999px;
+      animation: emberDrift 3.5s infinite ease-out;
+    }
+
+    /* Glassmorphism blur filter */
+    .glass-spec {
+      background: rgba(11, 19, 38, 0.82);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(245, 158, 11, 0.25);
+    }
+
+    /* Smooth custom scrollbars */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #060e20;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #f59e0b;
+    }
+  </style>
+</head>
+<body class="h-full w-full overflow-x-hidden font-sans select-none">
+<!-- BEGIN: SimulatedDashboardBackdrop -->
+<!-- Underlying Screen 54 layout dimmed and blurred into the atmospheric void -->
+<div class="fixed inset-0 z-0 flex h-full w-full overflow-hidden transition-all duration-700 pointer-events-none filter blur-[6px] opacity-25 scale-[0.985]" id="dashboardBackdrop">
+<!-- Sidebar HUD -->
+<aside class="w-64 border-r border-slate-800/80 bg-[#060e20] p-5 flex flex-col justify-between hidden lg:flex">
+<div class="space-y-6">
+<div class="flex items-center space-x-3">
+<div class="h-9 w-9 rounded-lg bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 font-bold text-lg">◈</div>
+<div>
+<div class="text-sm font-extrabold tracking-wider text-slate-100 uppercase">LifeQuest</div>
+<div class="text-[10px] text-cyan-400 font-mono tracking-widest">HERO REALM</div>
+</div>
+</div>
+<div class="bg-surface-card p-3 rounded-lg border border-slate-800">
+<div class="flex justify-between text-xs font-semibold text-slate-300">
+<span>Master Builder</span>
+<span class="text-amber-400 font-mono">Lvl 18</span>
+</div>
+<div class="mt-2 h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-cyan-400 w-[82%]"></div>
+</div>
+</div>
+<nav class="space-y-1.5 text-xs font-semibold text-slate-400">
+<div class="p-2.5 rounded-lg bg-amber-500/10 text-amber-400 border border-amber-500/20 flex items-center space-x-3">
+<span>⊞</span><span>DASHBOARD</span>
+</div>
+<div class="p-2.5 rounded-lg flex items-center space-x-3"><span>⚔</span><span>QUESTS</span></div>
+<div class="p-2.5 rounded-lg flex items-center space-x-3"><span>🛡</span><span>CHARACTER</span></div>
+<div class="p-2.5 rounded-lg flex items-center space-x-3"><span>🎒</span><span>INVENTORY</span></div>
+<div class="p-2.5 rounded-lg flex items-center space-x-3"><span>🛒</span><span>SHOP</span></div>
+</nav>
+</div>
+<div class="text-[11px] font-mono text-slate-500">MANA: 92/100 (+5/h)</div>
+</aside>
+<!-- Main Content Background Wireframe -->
+<main class="flex-1 p-8 space-y-6 overflow-hidden">
+<!-- Top HUD Bar -->
+<div class="flex items-center justify-between border-b border-slate-800 pb-4">
+<div class="flex items-center space-x-4">
+<span class="px-2.5 py-1 rounded bg-slate-800 text-[11px] font-mono text-cyan-400 border border-cyan-500/30">LVL 18 APPRENTICE</span>
+<span class="text-xs text-slate-400 font-mono">XP 14,850 / 18k (82%)</span>
+<span class="text-xs text-amber-400 font-mono">§ 3,420 GOLD</span>
+<span class="text-xs text-amber-500 font-mono">🔥 21 STREAK</span>
+</div>
+</div>
+<!-- Welcome Hero Banner -->
+<div class="p-8 rounded-2xl bg-surface-card border border-slate-800 relative">
+<h1 class="text-3xl font-extrabold text-white">Welcome back, Vanguard Kaelen</h1>
+<p class="text-sm text-slate-400 mt-2">Complete 3 more quests to trigger today's 2x XP Multiplier Overdrive.</p>
+</div>
+<!-- Quest Matrix Wireframe -->
+<div class="grid grid-cols-12 gap-6">
+<div class="col-span-8 space-y-4">
+<div class="h-20 bg-surface-card rounded-xl border border-slate-800"></div>
+<div class="h-20 bg-surface-card rounded-xl border border-slate-800"></div>
+<div class="h-20 bg-surface-card rounded-xl border border-slate-800"></div>
+</div>
+<div class="col-span-4 h-72 bg-surface-card rounded-xl border border-slate-800"></div>
+</div>
+</main>
+</div>
+<!-- END: SimulatedDashboardBackdrop -->
+<!-- BEGIN: AmbientCanvasParticles -->
+<!-- Dynamic floating ember and mana particles canvas behind celebration dialog -->
+<canvas class="fixed inset-0 z-10 pointer-events-none w-full h-full" id="emberCanvas"></canvas>
+<!-- END: AmbientCanvasParticles -->
+<!-- BEGIN: CelebrationModalContainer -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 md:p-8 overflow-y-auto bg-[#060e20]/80 backdrop-blur-md transition-opacity duration-500" data-purpose="streak-modal-wrapper" id="celebrationModal">
+<!-- Replay / Testing HUD Pill in Top Right Header -->
+<div class="fixed top-4 right-4 sm:top-6 sm:right-6 z-50 flex items-center space-x-2">
+<button class="group flex items-center space-x-2 rounded-full border border-amber-500/40 bg-surface/90 px-3.5 py-1.5 text-xs font-mono text-amber-400 shadow-glow-gold hover:bg-amber-500/10 hover:border-amber-400 transition-all active:scale-95" data-purpose="retrigger-celebration" id="retriggerBtn">
+<span class="inline-block transform group-hover:rotate-180 transition-transform duration-500">🔄</span>
+<span class="tracking-wider uppercase font-semibold">REPLAY CELEBRATION</span>
+</button>
+<button class="flex h-8 w-8 items-center justify-center rounded-full border border-slate-700 bg-surface/80 text-slate-400 hover:text-white hover:border-slate-500 transition-colors" id="closeModalCrossBtn">
+        ✕
+      </button>
+</div>
+<!-- Main Operative Dialog Frame -->
+<div class="relative w-full max-w-4xl my-auto rounded-3xl glass-spec hologram-grid border border-amber-500/40 p-6 sm:p-8 md:p-10 shadow-glow-intense overflow-hidden transition-all transform duration-500 scale-100">
+<!-- Tech Corner Reticle Accents -->
+<div class="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-amber-400"></div>
+<div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-cyan-400"></div>
+<div class="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-cyan-400"></div>
+<div class="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-amber-400"></div>
+<!-- Top Tactical Telemetry Header -->
+<!-- BEGIN: TelemetryHeader -->
+<div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800/80 pb-5">
+<div class="flex items-center space-x-2.5">
+<span class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+</span>
+<span class="font-mono text-xs tracking-widest text-emerald-400 font-bold uppercase">MOMENTUM PROTOCOL ENGAGED</span>
+<span class="text-slate-600">|</span>
+<span class="font-mono text-[11px] text-cyan-400 tracking-wider">SOLSTICE EPOCH // SYNAPSE V.24</span>
+</div>
+<div class="flex items-center space-x-2">
+<div class="flex items-center space-x-1.5 px-2.5 py-1 rounded-md bg-amber-500/10 border border-amber-500/30 text-[11px] font-mono font-bold text-amber-300">
+<span>⚡ MULTIPLIER:</span>
+<span class="text-white">2.0X APEX</span>
+</div>
+<div class="flex items-center space-x-1.5 px-2.5 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/30 text-[11px] font-mono text-cyan-300">
+<span>🛡 CRYO-WARD:</span>
+<span class="font-bold text-cyan-200">PRIMED (1/1)</span>
+</div>
+</div>
+</div>
+<!-- END: TelemetryHeader -->
+<!-- Centerpiece Hero: Flame & Streak Increment Celebration -->
+<!-- BEGIN: HeroCelebrationSection -->
+<div class="mt-4 flex flex-col items-center text-center relative">
+<!-- Radiant Background Flare Behind Center Flame -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-tr from-amber-500/25 via-amber-400/30 to-cyan-500/15 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse"></div>
+<!-- Flame Animation Centerpiece from Asset Library -->
+<div class="relative w-44 h-44 sm:w-52 sm:h-52 my-1 flex items-center justify-center">
+<!-- Animated SVG (Asset 58) Embedded Directly with Complete Reactive Flame Dynamics -->
+<svg class="w-full h-full drop-shadow-[0_0_28px_rgba(245,158,11,0.65)]" viewbox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialgradient cx="50%" cy="60%" id="flameCoreGlow" r="50%">
+<stop offset="0%" stop-color="#fef08a" stop-opacity="1"></stop>
+<stop offset="25%" stop-color="#f59e0b" stop-opacity="0.9"></stop>
+<stop offset="55%" stop-color="#f97316" stop-opacity="0.75"></stop>
+<stop offset="85%" stop-color="#ef4444" stop-opacity="0.3"></stop>
+<stop offset="100%" stop-color="#060e20" stop-opacity="0"></stop>
+</radialgradient>
+<lineargradient id="fireGradOuter" x1="50%" x2="50%" y1="100%" y2="0%">
+<stop offset="0%" stop-color="#b91c1c"></stop>
+<stop offset="30%" stop-color="#ea580c"></stop>
+<stop offset="70%" stop-color="#f59e0b"></stop>
+<stop offset="100%" stop-color="#fef08a"></stop>
+</lineargradient>
+<lineargradient id="fireGradInner" x1="50%" x2="50%" y1="100%" y2="0%">
+<stop offset="0%" stop-color="#ea580c"></stop>
+<stop offset="40%" stop-color="#f59e0b"></stop>
+<stop offset="85%" stop-color="#fef08a"></stop>
+<stop offset="100%" stop-color="#ffffff"></stop>
+</lineargradient>
+<filter height="200%" id="flameBloom" width="200%" x="-50%" y="-50%">
+<fegaussianblur result="blur1" stddeviation="8"></fegaussianblur>
+<fegaussianblur result="blur2" stddeviation="16"></fegaussianblur>
+<femerge>
+<femergenode in="blur2"></femergenode>
+<femergenode in="blur1"></femergenode>
+<femergenode in="SourceGraphic"></femergenode>
+</femerge>
+</filter>
+<filter height="160%" id="ringGlow" width="160%" x="-30%" y="-30%">
+<fedropshadow dx="0" dy="0" flood-color="#f59e0b" flood-opacity="0.6" stddeviation="6"></fedropshadow>
+</filter>
+</defs>
+<style>
+              @keyframes pulseRingLocal {
+                0% { transform: scale(0.96) rotate(0deg); opacity: 0.7; }
+                50% { transform: scale(1.03) rotate(180deg); opacity: 1; filter: drop-shadow(0 0 16px rgba(245, 158, 11, 0.8)); }
+                100% { transform: scale(0.96) rotate(360deg); opacity: 0.7; }
+              }
+              @keyframes flameFlickerALocal {
+                0% { transform: scale(1) translate(0, 0) skewX(0deg); }
+                25% { transform: scale(1.02, 0.98) translate(-2px, -3px) skewX(-1.5deg); }
+                50% { transform: scale(0.98, 1.03) translate(2px, -5px) skewX(1.5deg); }
+                75% { transform: scale(1.01, 0.99) translate(-1px, -2px) skewX(-1deg); }
+                100% { transform: scale(1) translate(0, 0) skewX(0deg); }
+              }
+              @keyframes flameFlickerBLocal {
+                0% { transform: scale(1) translate(0, 0) scaleX(1); opacity: 0.95; }
+                33% { transform: scale(0.96, 1.04) translate(3px, -4px) scaleX(0.98); opacity: 1; }
+                66% { transform: scale(1.03, 0.97) translate(-3px, -2px) scaleX(1.02); opacity: 0.85; }
+                100% { transform: scale(1) translate(0, 0) scaleX(1); opacity: 0.95; }
+              }
+              @keyframes sparkRise1Local {
+                0% { transform: translateY(0) scale(0.8); opacity: 0; }
+                30% { opacity: 1; }
+                80% { opacity: 0.8; }
+                100% { transform: translateY(-130px) scale(0.2); opacity: 0; }
+              }
+              @keyframes sparkRise2Local {
+                0% { transform: translateY(0) scale(1); opacity: 0; }
+                20% { opacity: 1; }
+                75% { opacity: 0.7; }
+                100% { transform: translateY(-160px) translateX(25px) scale(0.3); opacity: 0; }
+              }
+              @keyframes runicRotateLocal {
+                from { transform: rotate(360deg); }
+                to { transform: rotate(0deg); }
+              }
+              .anim-ring-elem { transform-origin: 250px 250px; animation: pulseRingLocal 12s linear infinite; }
+              .anim-rune-ring-elem { transform-origin: 250px 250px; animation: runicRotateLocal 24s linear infinite; }
+              .anim-flame-main-elem { transform-origin: 250px 330px; animation: flameFlickerALocal 2.6s ease-in-out infinite; }
+              .anim-flame-inner-elem { transform-origin: 250px 330px; animation: flameFlickerBLocal 1.8s ease-in-out infinite; }
+              .spark-elem-1 { animation: sparkRise1Local 2.2s cubic-bezier(0.2, 0.8, 0.3, 1) infinite; }
+              .spark-elem-2 { animation: sparkRise2Local 2.8s cubic-bezier(0.2, 0.8, 0.3, 1) infinite 0.6s; }
+            </style>
+<circle cx="250" cy="260" fill="url(#flameCoreGlow)" r="120"></circle>
+<g class="anim-ring-elem" filter="url(#ringGlow)">
+<circle cx="250" cy="250" fill="none" r="190" stroke="#f59e0b" stroke-dasharray="8 6" stroke-opacity="0.3" stroke-width="1.5"></circle>
+<circle cx="250" cy="250" fill="none" r="172" stroke="#38bdf8" stroke-dasharray="2 10" stroke-opacity="0.4" stroke-width="1"></circle>
+<circle cx="250" cy="250" fill="none" r="154" stroke="#f59e0b" stroke-dasharray="45 15 15 15" stroke-opacity="0.45" stroke-width="2"></circle>
+<path d="M250 50 L250 65 M250 435 L250 450 M50 250 L65 250 M435 250 L450 250" stroke="#f59e0b" stroke-linecap="round" stroke-width="3"></path>
+</g>
+<g class="anim-rune-ring-elem">
+<circle cx="250" cy="250" fill="none" r="138" stroke="#f59e0b" stroke-dasharray="6 14" stroke-opacity="0.35" stroke-width="1"></circle>
+<g fill="#f59e0b" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" opacity="0.75">
+<text text-anchor="middle" x="250" y="120">SYNAPSE-V24</text>
+<text text-anchor="middle" x="380" y="253">SOLAR-STREAK</text>
+<text text-anchor="middle" x="250" y="386">MOMENTUM-LOCK</text>
+<text text-anchor="middle" x="120" y="253">DISCIPLINE</text>
+</g>
+</g>
+<g filter="url(#flameBloom)">
+<circle class="spark-elem-1" cx="240" cy="300" fill="#fef08a" r="3.5"></circle>
+<circle class="spark-elem-2" cx="265" cy="315" fill="#f59e0b" r="4.5"></circle>
+<circle class="spark-elem-1" cx="230" cy="325" fill="#fbbf24" r="3"></circle>
+<circle class="spark-elem-2" cx="220" cy="310" fill="#38bdf8" r="2"></circle>
+</g>
+<g class="anim-flame-main-elem" filter="url(#flameBloom)">
+<path d="M250 110 C275 160 330 205 330 270 C330 335 285 375 250 375 C215 375 170 335 170 270 C170 215 210 170 220 150 C225 175 235 195 245 195 C255 195 260 175 255 150 Z" fill="url(#fireGradOuter)" opacity="0.95"></path>
+</g>
+<g class="anim-flame-inner-elem" filter="url(#flameBloom)">
+<path d="M250 150 C270 190 305 230 305 280 C305 335 270 365 250 365 C230 365 195 335 195 280 C195 240 220 205 235 180 C238 200 244 215 252 215 C260 215 262 195 255 170 Z" fill="url(#fireGradInner)"></path>
+</g>
+<g class="anim-flame-main-elem">
+<path d="M250 205 C262 235 280 265 280 298 C280 340 260 355 250 355 C240 355 220 340 220 298 C220 270 235 245 244 225 C246 238 250 248 254 248 C258 248 258 235 252 218 Z" fill="#ffffff" opacity="0.95"></path>
+<ellipse cx="250" cy="305" fill="#ffffff" filter="url(#flameBloom)" rx="18" ry="28"></ellipse>
+</g>
+<g transform="translate(190, 360)">
+<path d="M0 15 L15 0 H105 L120 15 L110 22 H10 Z" fill="#131b2e" stroke="#f59e0b" stroke-width="1.5"></path>
+<rect fill="#38bdf8" filter="url(#flameBloom)" height="4" rx="2" width="50" x="35" y="8"></rect>
+<circle cx="60" cy="18" fill="#f59e0b" r="3"></circle>
+</g>
+</svg>
+</div>
+<!-- Headline & Animated Counter -->
+<div class="space-y-1">
+<div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-gradient-to-r from-amber-500/20 via-amber-400/10 to-amber-500/20 border border-amber-400/40 text-[11px] font-mono text-amber-300 font-bold uppercase tracking-wider animate-badge-pulse">
+<span>✦</span>
+<span>STREAK CALIBRATED &amp; EXTENDED // +1 DAY LOGGED</span>
+<span>✦</span>
+</div>
+<div class="flex items-baseline justify-center space-x-2 pt-2">
+<h2 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-white uppercase drop-shadow-[0_0_20px_rgba(245,158,11,0.5)]">
+              DAY <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-200 to-amber-500 font-mono" id="streakCountNumber">22</span>
+</h2>
+<span class="text-base sm:text-lg font-bold text-amber-400 font-mono tracking-widest">/ 30D HORIZON</span>
+</div>
+<p class="text-sm text-slate-300 max-w-lg mx-auto leading-relaxed">
+            Neural momentum sustained. You have unlocked consecutive operative tier multipliers and charged your streak wards for another 24 hours.
+          </p>
+</div>
+</div>
+<!-- END: HeroCelebrationSection -->
+<!-- BEGIN: SevenDayMomentumMatrix -->
+<!-- Interactive 7-Node Progression Track (Days 16 - 22 Milestone Epoch) -->
+<div class="mt-6 rounded-2xl bg-[#060e20]/90 border border-slate-800 p-4 sm:p-5 relative overflow-hidden">
+<div class="flex items-center justify-between mb-3.5">
+<div class="flex items-center space-x-2">
+<span class="text-xs font-bold text-slate-200 uppercase tracking-wider">7-Day Momentum Wave</span>
+<span class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">CURRENT CYCLE</span>
+</div>
+<span class="text-xs font-mono text-slate-400">Milestone: <strong class="text-amber-400">Day 30 Mythic Cache</strong> (8 Days Left)</span>
+</div>
+<!-- 7-Node Track -->
+<div class="grid grid-cols-7 gap-2 relative">
+<!-- Connector line running across behind nodes -->
+<div class="absolute top-1/2 left-4 right-4 -translate-y-1/2 h-1 bg-slate-800 -z-0 rounded-full">
+<div class="h-full bg-gradient-to-r from-cyan-500 via-cyan-400 to-amber-400 w-full transition-all duration-1000" id="calendarProgressBar"></div>
+</div>
+<!-- Day 16: Checked -->
+<div class="relative z-10 flex flex-col items-center group cursor-default">
+<div class="h-9 w-9 rounded-xl bg-cyan-500/20 border border-cyan-400/60 flex items-center justify-center text-cyan-300 font-bold text-xs shadow-glow-cyan">
+              ✓
+            </div>
+<span class="text-[10px] font-mono font-semibold text-slate-400 mt-1.5">D16</span>
+</div>
+<!-- Day 17: Checked -->
+<div class="relative z-10 flex flex-col items-center group cursor-default">
+<div class="h-9 w-9 rounded-xl bg-cyan-500/20 border border-cyan-400/60 flex items-center justify-center text-cyan-300 font-bold text-xs shadow-glow-cyan">
+              ✓
+            </div>
+<span class="text-[10px] font-mono font-semibold text-slate-400 mt-1.5">D17</span>
+</div>
+<!-- Day 18: Checked -->
+<div class="relative z-10 flex flex-col items-center group cursor-default">
+<div class="h-9 w-9 rounded-xl bg-cyan-500/20 border border-cyan-400/60 flex items-center justify-center text-cyan-300 font-bold text-xs shadow-glow-cyan">
+              ✓
+            </div>
+<span class="text-[10px] font-mono font-semibold text-slate-400 mt-1.5">D18</span>
+</div>
+<!-- Day 19: Checked -->
+<div class="relative z-10 flex flex-col items-center group cursor-default">
+<div class="h-9 w-9 rounded-xl bg-cyan-500/20 border border-cyan-400/60 flex items-center justify-center text-cyan-300 font-bold text-xs shadow-glow-cyan">
+              ✓
+            </div>
+<span class="text-[10px] font-mono font-semibold text-slate-400 mt-1.5">D19</span>
+</div>
+<!-- Day 20: Checked -->
+<div class="relative z-10 flex flex-col items-center group cursor-default">
+<div class="h-9 w-9 rounded-xl bg-cyan-500/20 border border-cyan-400/60 flex items-center justify-center text-cyan-300 font-bold text-xs shadow-glow-cyan">
+              ✓
+            </div>
+<span class="text-[10px] font-mono font-semibold text-slate-400 mt-1.5">D20</span>
+</div>
+<!-- Day 21: Checked -->
+<div class="relative z-10 flex flex-col items-center group cursor-default">
+<div class="h-9 w-9 rounded-xl bg-cyan-500/20 border border-cyan-400/60 flex items-center justify-center text-cyan-300 font-bold text-xs shadow-glow-cyan">
+              ✓
+            </div>
+<span class="text-[10px] font-mono font-semibold text-slate-400 mt-1.5">D21</span>
+</div>
+<!-- Day 22: TODAY (Glowing Amber Fire Epoch) -->
+<div class="relative z-10 flex flex-col items-center cursor-pointer transform hover:scale-105 transition-transform">
+<div class="h-10 w-10 -mt-0.5 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 border-2 border-amber-200 flex items-center justify-center text-slate-950 font-black text-sm shadow-glow-intense animate-bounce">
+              🔥
+            </div>
+<span class="text-[11px] font-mono font-extrabold text-amber-400 mt-1">TODAY</span>
+</div>
+</div>
+</div>
+<!-- END: SevenDayMomentumMatrix -->
+<!-- BEGIN: DopamineRewardGrid -->
+<!-- Daily Login Bounty & Reward Unlocks (4 High-Impact Cyber Tactical Cards) -->
+<div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+<!-- Reward 1: XP Ascension Boost -->
+<div class="rounded-xl bg-surface-card/90 border border-cyan-500/30 p-3.5 flex flex-col justify-between hover:border-cyan-400 transition-colors group">
+<div class="flex items-start justify-between">
+<div class="h-10 w-10 rounded-lg bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-bold text-lg">
+              ⚡
+            </div>
+<span class="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300">UNLOCKED</span>
+</div>
+<div class="mt-3">
+<div class="text-xs font-semibold text-slate-400">XP Ascension Boost</div>
+<div class="text-xl font-extrabold text-white font-mono mt-0.5 group-hover:text-cyan-300 transition-colors">+250 XP</div>
+</div>
+<div class="mt-2.5">
+<div class="flex justify-between text-[10px] font-mono text-slate-400 mb-1">
+<span>Lvl 18 Progress</span>
+<span class="text-cyan-400 font-bold">15,100 / 18k</span>
+</div>
+<div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-cyan-500 to-cyan-300 w-[84%] transition-all duration-700"></div>
+</div>
+</div>
+</div>
+<!-- Reward 2: Aureus Gold -->
+<div class="rounded-xl bg-surface-card/90 border border-amber-500/30 p-3.5 flex flex-col justify-between hover:border-amber-400 transition-colors group">
+<div class="flex items-start justify-between">
+<div class="h-10 w-10 rounded-lg bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 font-black text-lg">
+              §
+            </div>
+<span class="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-amber-500/10 text-amber-300">MINTED</span>
+</div>
+<div class="mt-3">
+<div class="text-xs font-semibold text-slate-400">Aureus Gold Bounty</div>
+<div class="text-xl font-extrabold text-white font-mono mt-0.5 group-hover:text-amber-300 transition-colors">+120 Gold</div>
+</div>
+<div class="mt-2.5 flex items-center justify-between text-[10px] font-mono text-slate-400 pt-1 border-t border-slate-800">
+<span>Personal Vault:</span>
+<span class="text-amber-400 font-semibold">3,540 G Total</span>
+</div>
+</div>
+<!-- Reward 3: 2.0x Streak Multiplier -->
+<div class="rounded-xl bg-surface-card/90 border border-purple-500/30 p-3.5 flex flex-col justify-between hover:border-purple-400 transition-colors group">
+<div class="flex items-start justify-between">
+<div class="h-10 w-10 rounded-lg bg-purple-500/15 border border-purple-500/30 flex items-center justify-center text-purple-400 font-bold text-lg">
+              ✕
+            </div>
+<span class="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-purple-500/10 text-purple-300">ACTIVE</span>
+</div>
+<div class="mt-3">
+<div class="text-xs font-semibold text-slate-400">Streak Multiplier</div>
+<div class="text-xl font-extrabold text-white font-mono mt-0.5 group-hover:text-purple-300 transition-colors">2.0x All Day</div>
+</div>
+<div class="mt-2.5 flex items-center justify-between text-[10px] font-mono text-slate-400 pt-1 border-t border-slate-800">
+<span>Applies to:</span>
+<span class="text-purple-300 font-semibold">All Quests</span>
+</div>
+</div>
+<!-- Reward 4: Cryo-Ward Rune -->
+<div class="rounded-xl bg-surface-card/90 border border-cyan-400/30 p-3.5 flex flex-col justify-between hover:border-cyan-300 transition-colors group">
+<div class="flex items-start justify-between">
+<div class="h-10 w-10 rounded-lg bg-cyan-400/15 border border-cyan-400/30 flex items-center justify-center text-cyan-300 font-bold text-lg">
+              ❄
+            </div>
+<span class="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-cyan-400/10 text-cyan-300">SHIELDED</span>
+</div>
+<div class="mt-3">
+<div class="text-xs font-semibold text-slate-400">Cryo-Ward Recharged</div>
+<div class="text-xl font-extrabold text-white font-mono mt-0.5 group-hover:text-cyan-200 transition-colors">+1 Freeze</div>
+</div>
+<div class="mt-2.5 flex items-center justify-between text-[10px] font-mono text-slate-400 pt-1 border-t border-slate-800">
+<span>Status:</span>
+<span class="text-cyan-300 font-semibold">24h Safe Net</span>
+</div>
+</div>
+</div>
+<!-- END: DopamineRewardGrid -->
+<!-- BEGIN: OperativeActionFooter -->
+<!-- Interactive CTA Buttons with Neon Glow and Click Trigger -->
+<div class="mt-7 pt-5 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center space-x-2 text-xs font-mono text-slate-400">
+<span class="text-amber-400">⚔</span>
+<span>Next daily cycle resets in <strong class="text-slate-200" id="countdownClock">14h 32m 08s</strong></span>
+</div>
+<div class="flex items-center space-x-3 w-full sm:w-auto">
+<!-- Secondary Codex Button -->
+<button class="w-1/2 sm:w-auto px-4 py-3 rounded-xl border border-slate-700 bg-surface text-xs font-semibold text-slate-300 hover:text-white hover:border-slate-500 hover:bg-slate-800 transition-all active:scale-95" id="viewCodexBtn">
+            🛡 Streak Protection Codex
+          </button>
+<!-- Primary Claim Rewards Button -->
+<button class="w-1/2 sm:w-auto px-7 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 hover:from-amber-400 hover:to-amber-300 text-slate-950 font-black text-xs sm:text-sm tracking-wide uppercase shadow-glow-intense transform hover:-translate-y-0.5 transition-all duration-200 active:scale-95 flex items-center justify-center space-x-2" data-purpose="primary-claim-action" id="claimRewardsBtn">
+<span>⚡ CLAIM REWARDS &amp; ENTER REALM</span>
+</button>
+</div>
+</div>
+<!-- END: OperativeActionFooter -->
+</div>
+</div>
+<!-- END: CelebrationModalContainer -->
+<!-- BEGIN: SuccessToastNotification -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-500 pointer-events-none flex items-center space-x-3 bg-surface border border-emerald-500/50 px-5 py-3.5 rounded-xl shadow-2xl" id="claimToast">
+<div class="h-8 w-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">✓</div>
+<div>
+<div class="text-xs font-bold text-white uppercase tracking-wider">Rewards Claimed &amp; Minted</div>
+<div class="text-[11px] font-mono text-slate-400">+250 XP, +120 Gold, 2.0x Multiplier applied. Welcome back Vanguard!</div>
+</div>
+</div>
+<!-- END: SuccessToastNotification -->
+<!-- Interactive Particle Canvas Engine & Celebration Logic -->
+<script data-purpose="particle-vfx-engine">
+    // Canvas Ember Particle Physics
+    const canvas = document.getElementById('emberCanvas');
+    const ctx = canvas.getContext('2d');
+
+    let particles = [];
+    let width = 0;
+    let height = 0;
+
+    function resizeCanvas() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    class EmberParticle {
+      constructor(x, y, burst = false) {
+        this.burst = burst;
+        this.x = x !== undefined ? x : Math.random() * width;
+        this.y = y !== undefined ? y : height + Math.random() * 20;
+        
+        if (burst) {
+          const angle = Math.random() * Math.PI * 2;
+          const speed = Math.random() * 9 + 2;
+          this.vx = Math.cos(angle) * speed;
+          this.vy = Math.sin(angle) * speed;
+          this.decay = Math.random() * 0.02 + 0.01;
+        } else {
+          this.vx = (Math.random() - 0.5) * 1.5;
+          this.vy = -(Math.random() * 2.2 + 0.8);
+          this.decay = 0.003 + Math.random() * 0.005;
+        }
+
+        this.size = Math.random() * 3 + 1.2;
+        this.alpha = 1;
+        
+        // Color palette: Gold, Cyan, Amber, White
+        const colors = [
+          '245, 158, 11',
+          '251, 191, 36',
+          '56, 189, 248',
+          '255, 255, 255'
+        ];
+        this.color = colors[Math.floor(Math.random() * colors.length)];
+      }
+
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        this.alpha -= this.decay;
+        if (this.burst) {
+          this.vx *= 0.96;
+          this.vy *= 0.96;
+        }
+      }
+
+      draw() {
+        ctx.save();
+        ctx.globalAlpha = Math.max(this.alpha, 0);
+        ctx.fillStyle = `rgb(${this.color})`;
+        ctx.shadowBlur = 12;
+        ctx.shadowColor = `rgb(${this.color})`;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+    }
+
+    function initAmbientParticles(count = 70) {
+      particles = [];
+      for (let i = 0; i < count; i++) {
+        const p = new EmberParticle();
+        p.y = Math.random() * height; // Spread initially
+        p.alpha = Math.random();
+        particles.push(p);
+      }
+    }
+    initAmbientParticles();
+
+    function triggerBurst(originX, originY, count = 120) {
+      for (let i = 0; i < count; i++) {
+        particles.push(new EmberParticle(originX, originY, true));
+      }
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, width, height);
+
+      // Keep ambient particle flow alive
+      if (particles.filter(p => !p.burst).length < 60) {
+        particles.push(new EmberParticle());
+      }
+
+      for (let i = particles.length - 1; i >= 0; i--) {
+        const p = particles[i];
+        p.update();
+        p.draw();
+        if (p.alpha <= 0 || p.y < -30) {
+          particles.splice(i, 1);
+        }
+      }
+      requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+  </script>
+<!-- Interactive Controls, Modal Replay, and Audio-Visual Feedback -->
+<script data-purpose="modal-interactions">
+    const celebrationModal = document.getElementById('celebrationModal');
+    const claimRewardsBtn = document.getElementById('claimRewardsBtn');
+    const retriggerBtn = document.getElementById('retriggerBtn');
+    const closeModalCrossBtn = document.getElementById('closeModalCrossBtn');
+    const dashboardBackdrop = document.getElementById('dashboardBackdrop');
+    const streakCountNumber = document.getElementById('streakCountNumber');
+    const claimToast = document.getElementById('claimToast');
+
+    // Simulate streak counter numerical rolling animation
+    function animateStreakCounter(targetNumber = 22) {
+      let current = targetNumber - 1;
+      streakCountNumber.innerText = current;
+      const interval = setTimeout(() => {
+        streakCountNumber.innerText = targetNumber;
+        streakCountNumber.classList.add('scale-125', 'transition-transform');
+        setTimeout(() => {
+          streakCountNumber.classList.remove('scale-125');
+        }, 300);
+      }, 450);
+    }
+
+    // Dismiss modal and return to dashboard
+    function closeCelebrationModal() {
+      // Trigger golden particle burst at button coordinates
+      const rect = claimRewardsBtn.getBoundingClientRect();
+      triggerBurst(rect.left + rect.width / 2, rect.top + rect.height / 2, 140);
+
+      celebrationModal.classList.add('opacity-0', 'pointer-events-none');
+      
+      // Un-blur the dashboard
+      dashboardBackdrop.classList.remove('filter', 'blur-[6px]', 'opacity-25', 'scale-[0.985]');
+      dashboardBackdrop.classList.add('opacity-100', 'scale-100', 'pointer-events-auto');
+
+      // Show Toast Notification
+      claimToast.classList.remove('translate-y-24', 'opacity-0');
+      claimToast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        claimToast.classList.add('translate-y-24', 'opacity-0');
+        claimToast.classList.remove('translate-y-0', 'opacity-100');
+      }, 4500);
+    }
+
+    // Open/Replay celebration anytime
+    function openCelebrationModal() {
+      celebrationModal.classList.remove('opacity-0', 'pointer-events-none');
+      dashboardBackdrop.classList.add('filter', 'blur-[6px]', 'opacity-25', 'scale-[0.985]');
+      dashboardBackdrop.classList.remove('opacity-100', 'scale-100', 'pointer-events-auto');
+      
+      // Fireworks burst in center
+      triggerBurst(window.innerWidth / 2, window.innerHeight * 0.35, 100);
+      animateStreakCounter(22);
+    }
+
+    // Event listeners
+    claimRewardsBtn.addEventListener('click', closeCelebrationModal);
+    closeModalCrossBtn.addEventListener('click', closeCelebrationModal);
+    retriggerBtn.addEventListener('click', openCelebrationModal);
+
+    // Dynamic countdown timer
+    function updateCountdown() {
+      const timerElem = document.getElementById('countdownClock');
+      if (!timerElem) return;
+      const now = new Date();
+      const endOfDay = new Date();
+      endOfDay.setHours(23, 59, 59, 999);
+      const diff = endOfDay - now;
+
+      const hours = Math.floor(diff / (1000 * 60 * 60));
+      const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+      timerElem.textContent = `${hours}h ${String(mins).padStart(2, '0')}m ${String(secs).padStart(2, '0')}s`;
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Initial load burst
+    window.addEventListener('DOMContentLoaded', () => {
+      animateStreakCounter(22);
+      triggerBurst(window.innerWidth / 2, window.innerHeight * 0.36, 80);
+    });
+  </script>
+</body></html>

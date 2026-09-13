@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Abhyudaya - Character Genesis Terminal</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-tint": "#ffb95f",
+            "surface-container": "#171f33",
+            "on-error-container": "#ffdad6",
+            "on-primary": "#472a00",
+            "inverse-primary": "#855300",
+            "tertiary-container": "#29c1df",
+            "on-surface-variant": "#d8c3ad",
+            "on-primary-container": "#613b00",
+            "secondary-container": "#571bc1",
+            "on-secondary-fixed": "#23005c",
+            "surface-dim": "#0b1326",
+            "outline-variant": "#534434",
+            "error": "#ffb4ab",
+            "on-error": "#690005",
+            "secondary": "#d0bcff",
+            "inverse-surface": "#dae2fd",
+            "outline": "#a08e7a",
+            "surface-bright": "#31394d",
+            "on-primary-fixed": "#2a1700",
+            "secondary-fixed-dim": "#d0bcff",
+            "on-tertiary": "#003640",
+            "on-tertiary-container": "#004b58",
+            "tertiary": "#54ddfc",
+            "primary": "#ffc174",
+            "surface": "#0b1326",
+            "inverse-on-surface": "#283044",
+            "primary-fixed": "#ffddb8",
+            "on-secondary-fixed-variant": "#5516be",
+            "surface-container-high": "#222a3d",
+            "on-background": "#dae2fd",
+            "tertiary-fixed-dim": "#4cd7f6",
+            "error-container": "#93000a",
+            "surface-container-highest": "#2d3449",
+            "on-tertiary-fixed": "#001f26",
+            "on-secondary-container": "#c4abff",
+            "surface-container-lowest": "#060e20",
+            "surface-variant": "#2d3449",
+            "on-primary-fixed-variant": "#653e00",
+            "background": "#0b1326",
+            "surface-container-low": "#131b2e",
+            "secondary-fixed": "#e9ddff",
+            "on-secondary": "#3c0091",
+            "primary-fixed-dim": "#ffb95f",
+            "tertiary-fixed": "#acedff",
+            "primary-container": "#f59e0b",
+            "on-tertiary-fixed-variant": "#004e5c",
+            "on-surface": "#dae2fd"
+          },
+          fontFamily: {
+            "headline-xl": ["Outfit", "sans-serif"],
+            "headline-lg": ["Outfit", "sans-serif"],
+            "headline-md": ["Outfit", "sans-serif"],
+            "headline-sm": ["Outfit", "sans-serif"],
+            "body-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "body-md": ["Plus Jakarta Sans", "sans-serif"],
+            "body-sm": ["Plus Jakarta Sans", "sans-serif"],
+            "label-lg": ["Space Grotesk", "sans-serif"],
+            "label-md": ["Space Grotesk", "sans-serif"],
+            "label-sm": ["Space Grotesk", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #0b1326;
+      }
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0b1326;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #222a3d;
+        border-radius: 9999px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #ffb95f;
+      }
+    }
+    .circuit-grid {
+      background-image: radial-gradient(rgba(84, 221, 252, 0.08) 1px, transparent 0);
+      background-size: 24px 24px;
+    }
+    .gold-glow {
+      box-shadow: 0 0 25px -5px rgba(255, 193, 116, 0.25);
+    }
+    .cyan-glow {
+      box-shadow: 0 0 25px -5px rgba(84, 221, 252, 0.25);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen circuit-grid selection:bg-primary selection:text-on-primary antialiased flex flex-col justify-between">
+<!-- TOP HUD TELEMETRY & APP BAR -->
+<header class="w-full border-b border-surface-container-highest/60 bg-surface-container-lowest/80 backdrop-blur-xl sticky top-0 z-50">
+<div class="max-w-[1680px] mx-auto px-4 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-4">
+<!-- Brand & Genesis Terminal Matrix -->
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-lg bg-gradient-to-br from-primary via-primary-container to-amber-700 flex items-center justify-center text-on-primary font-headline-md font-extrabold shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-xl">token</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-md font-bold tracking-tight text-white text-lg">ABHYUDAYA</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-label-sm font-bold bg-tertiary/15 text-tertiary border border-tertiary/30 uppercase tracking-widest">GENESIS v2.4</span>
+</div>
+<p class="font-label-sm text-[11px] text-outline uppercase tracking-wider">Neural Construct Matrix • Operator Protocol</p>
+</div>
+</div>
+</div>
+<!-- Center Stepper HUD -->
+<nav class="hidden md:flex items-center gap-2 lg:gap-3 bg-surface-container-low/70 px-4 py-1.5 rounded-full border border-surface-container-high">
+<!-- Step 1 Complete -->
+<div class="flex items-center gap-2 text-tertiary opacity-90 group cursor-pointer hover:opacity-100 transition-opacity">
+<div class="w-5 h-5 rounded-full bg-tertiary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-label-sm text-xs font-semibold uppercase tracking-wider text-on-surface">1. Lore &amp; Origins</span>
+</div>
+<div class="w-4 h-[1px] bg-outline-variant"></div>
+<!-- Step 2 Active -->
+<div class="flex items-center gap-2 bg-primary/10 border border-primary/40 px-3 py-1 rounded-full shadow-sm">
+<div class="w-5 h-5 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-[11px]">02</div>
+<span class="font-label-sm text-xs font-bold uppercase tracking-wider text-primary">Avatar &amp; Archetype</span>
+</div>
+<div class="w-4 h-[1px] bg-outline-variant"></div>
+<!-- Step 3 In Progress / Merged -->
+<div class="flex items-center gap-2 text-outline group cursor-pointer hover:text-on-surface transition-colors">
+<div class="w-5 h-5 rounded-full bg-surface-container-highest text-outline flex items-center justify-center text-[11px] font-bold">03</div>
+<span class="font-label-sm text-xs font-medium uppercase tracking-wider">Directives</span>
+</div>
+<div class="w-4 h-[1px] bg-outline-variant"></div>
+<!-- Step 4 -->
+<div class="flex items-center gap-2 text-outline/70">
+<div class="w-5 h-5 rounded-full bg-surface-container-highest/60 text-outline/60 flex items-center justify-center text-[11px] font-bold">04</div>
+<span class="font-label-sm text-xs uppercase tracking-wider">Attribute Sync</span>
+</div>
+</nav>
+<!-- Player Initial HUD Balances -->
+<div class="flex items-center gap-2.5">
+<div class="flex items-center gap-1.5 bg-surface-container-high/80 border border-surface-container-highest px-3 py-1.5 rounded-lg">
+<span class="material-symbols-outlined text-primary text-sm">toll</span>
+<div class="flex flex-col text-left">
+<span class="font-label-sm text-[10px] text-outline uppercase tracking-wider leading-none">Starting Gold</span>
+<span class="font-label-md text-xs font-bold text-primary leading-tight">100 G</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 bg-surface-container-high/80 border border-surface-container-highest px-3 py-1.5 rounded-lg">
+<span class="material-symbols-outlined text-tertiary text-sm">bolt</span>
+<div class="flex flex-col text-left">
+<span class="font-label-sm text-[10px] text-outline uppercase tracking-wider leading-none">Level Status</span>
+<span class="font-label-md text-xs font-bold text-tertiary leading-tight">LVL 1 • 0 XP</span>
+</div>
+</div>
+<div class="hidden xl:flex items-center gap-2 bg-surface-container-low px-3 py-1.5 rounded-lg border border-surface-container-high">
+<div class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></div>
+<span class="font-label-sm text-[11px] text-outline font-mono">LINK: 99.8% STABLE</span>
+</div>
+</div>
+</div>
+</header>
+<!-- MAIN EXPANSIVE 3-COLUMN RPG CREATION DECK -->
+<main class="max-w-[1680px] mx-auto px-4 lg:px-8 py-6 w-full flex-1">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- =============================================== -->
+<!-- COLUMN 1: CHARACTER HOLO-CHAMBER (Lg cols: 4)   -->
+<!-- =============================================== -->
+<section class="lg:col-span-4 flex flex-col gap-5">
+<!-- Hologram Frame -->
+<div class="relative bg-surface-container-low rounded-2xl p-4 border border-surface-container-highest/80 shadow-2xl overflow-hidden flex flex-col">
+<!-- Ambient Glows -->
+<div class="absolute -top-16 -left-16 w-56 h-56 rounded-full bg-tertiary/15 blur-3xl pointer-events-none"></div>
+<div class="absolute top-1/2 -right-20 w-60 h-60 rounded-full bg-primary/10 blur-3xl pointer-events-none"></div>
+<!-- Chamber Telemetry Header -->
+<div class="w-full flex items-center justify-between z-10 mb-3">
+<div class="flex items-center gap-2 bg-surface-container-high/90 border border-tertiary/30 px-3 py-1 rounded-full backdrop-blur-md">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-ping"></span>
+<span class="font-label-sm text-[11px] uppercase tracking-wider text-tertiary font-bold">Holo-Chamber // Synced</span>
+</div>
+<span class="font-label-sm text-xs font-mono text-outline uppercase bg-surface-container-lowest/80 px-2 py-0.5 rounded border border-surface-container-highest">NODE // 0x48F2</span>
+</div>
+<!-- Hero 3D Display Canvas -->
+<div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-lowest border border-surface-container-highest flex items-center justify-center group shadow-inner">
+<!-- Background Radial Arcane Circle -->
+<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-surface-container-high/40 via-surface-container-lowest to-surface-container-lowest pointer-events-none"></div>
+<!-- Avatars Switchable Stack -->
+<div class="relative w-full h-full" id="character-canvas">
+<img alt="Elara Arcane Technomancer" class="absolute inset-0 w-full h-full object-cover object-top transition-all duration-700 opacity-100 scale-100" id="avatar-technomancer" src="https://lh3.googleusercontent.com/aida/AEtjO1WYfz1Ci4lWJtNt9ORxdCwDg3tWFxQMPN8Bk-f6DB2IZXn7-8FABQ2ZiTtOWBCNRoIeIhYoCL9iBTt-pH_DbFD9nGh2DNFgCleYiGvZEmGPc0zAMURladbdO_t24PdThEBT2U2nYagiJIHF3faB85WR8tWgrygqXlrbZmKIMleZQMWqL8jAx8V9_SjFcr2m8pPKi207LU30Bal8OSat7KpVSCIMWYNRouIhMseJGRSlm2Giy9uMP50M"/>
+<img alt="Kaelen Cyber Paladin" class="absolute inset-0 w-full h-full object-cover object-center transition-all duration-700 opacity-0 scale-105 pointer-events-none" id="avatar-paladin" src="https://lh3.googleusercontent.com/aida/AEtjO1Un5KHrOuO6lJtk784KRKgIJapiSJAm9vYXk1jXVOmX7j8LOH_treR8UG-6MejUX5mOGR7YY2JmCTbSrp1h0jVIbSYsIv1Bq6KDxGzQ0TawFf3D_w2-VDgUTDuZqdzSAvjlpaI7_p8jKL8TlrXUAEsi_a_6f_JAtR_cYMIQyizsoBOZ8faqh7pg-OwLHJGfOh3tm_2WkoAQoE4qt_6C3Icm9Z4k_amSovd8EW_OHHHKc_zkW_7i7qbfOg"/>
+<img alt="Neural Rogue" class="absolute inset-0 w-full h-full object-cover object-top transition-all duration-700 opacity-0 scale-105 pointer-events-none filter hue-rotate-90" id="avatar-rogue" src="https://lh3.googleusercontent.com/aida/AEtjO1WYfz1Ci4lWJtNt9ORxdCwDg3tWFxQMPN8Bk-f6DB2IZXn7-8FABQ2ZiTtOWBCNRoIeIhYoCL9iBTt-pH_DbFD9nGh2DNFgCleYiGvZEmGPc0zAMURladbdO_t24PdThEBT2U2nYagiJIHF3faB85WR8tWgrygqXlrbZmKIMleZQMWqL8jAx8V9_SjFcr2m8pPKi207LU30Bal8OSat7KpVSCIMWYNRouIhMseJGRSlm2Giy9uMP50M"/>
+<img alt="Chrono Alchemist" class="absolute inset-0 w-full h-full object-cover object-center transition-all duration-700 opacity-0 scale-105 pointer-events-none filter sepia contrast-125" id="avatar-alchemist" src="https://lh3.googleusercontent.com/aida/AEtjO1Un5KHrOuO6lJtk784KRKgIJapiSJAm9vYXk1jXVOmX7j8LOH_treR8UG-6MejUX5mOGR7YY2JmCTbSrp1h0jVIbSYsIv1Bq6KDxGzQ0TawFf3D_w2-VDgUTDuZqdzSAvjlpaI7_p8jKL8TlrXUAEsi_a_6f_JAtR_cYMIQyizsoBOZ8faqh7pg-OwLHJGfOh3tm_2WkoAQoE4qt_6C3Icm9Z4k_amSovd8EW_OHHHKc_zkW_7i7qbfOg"/>
+</div>
+<!-- Scanline / Holographic Grid Overlay -->
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-surface-container-lowest/90 pointer-events-none"></div>
+<div class="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-tertiary/60 to-transparent animate-pulse"></div>
+<!-- Inset HUD Telemetry Badge at Bottom of Art -->
+<div class="absolute bottom-3 inset-x-3 bg-surface-container/90 backdrop-blur-md p-3.5 rounded-xl border border-surface-container-highest flex flex-col gap-2 z-10 shadow-xl">
+<div class="flex items-center justify-between">
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-md text-lg font-bold text-primary tracking-wide uppercase" id="hero-display-name">ELARA</h3>
+<span class="px-2 py-0.5 rounded text-[10px] font-label-sm font-bold bg-primary/20 text-primary border border-primary/30">STARTER</span>
+</div>
+<p class="font-body-sm text-xs text-tertiary font-medium" id="hero-display-title">The Void Weaver // Arcane Logic</p>
+</div>
+<div class="text-right">
+<span class="block font-label-sm text-[10px] text-outline uppercase">Archetype</span>
+<span class="font-label-md text-xs font-bold text-on-surface" id="hero-display-class-badge">TECHNOMANCER</span>
+</div>
+</div>
+<!-- Runic Frequency Meter -->
+<div class="w-full bg-surface-container-lowest h-1.5 rounded-full overflow-hidden flex">
+<div class="bg-gradient-to-r from-tertiary to-primary h-full w-[84%] transition-all duration-500"></div>
+</div>
+<div class="flex items-center justify-between text-[11px] font-label-sm text-outline">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs text-tertiary">tune</span>FLOW RESONANCE: 98%</span>
+<span class="text-on-surface-variant font-mono">INITIATIVE +4</span>
+</div>
+</div>
+</div>
+<!-- Archetype Carousel Switcher (4 Classes) -->
+<div class="mt-4 flex flex-col gap-2">
+<span class="font-label-sm text-xs uppercase tracking-wider text-outline">Select Class Archetype</span>
+<div class="grid grid-cols-2 gap-2" id="archetype-selector">
+<!-- Class 1: Technomancer (Active) -->
+<button class="class-card text-left p-2.5 rounded-xl bg-tertiary/15 border-2 border-tertiary/80 text-on-surface transition-all flex items-center gap-2.5 shadow-sm group" data-class="technomancer" type="button">
+<div class="w-8 h-8 rounded-lg bg-tertiary/20 text-tertiary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-base">auto_fix_high</span>
+</div>
+<div class="min-w-0">
+<div class="font-headline-sm text-xs font-bold text-tertiary truncate">Technomancer</div>
+<div class="font-label-sm text-[10px] text-outline truncate">+INT • +FOC Core</div>
+</div>
+</button>
+<!-- Class 2: Cyber Paladin -->
+<button class="class-card text-left p-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high border border-surface-container-highest text-on-surface transition-all flex items-center gap-2.5 group" data-class="paladin" type="button">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest text-outline group-hover:text-primary flex items-center justify-center shrink-0 transition-colors">
+<span class="material-symbols-outlined text-base">shield</span>
+</div>
+<div class="min-w-0">
+<div class="font-headline-sm text-xs font-bold text-on-surface truncate group-hover:text-primary">Cyber Paladin</div>
+<div class="font-label-sm text-[10px] text-outline truncate">+STR • +VIT Core</div>
+</div>
+</button>
+<!-- Class 3: Neural Rogue -->
+<button class="class-card text-left p-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high border border-surface-container-highest text-on-surface transition-all flex items-center gap-2.5 group" data-class="rogue" type="button">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest text-outline group-hover:text-secondary flex items-center justify-center shrink-0 transition-colors">
+<span class="material-symbols-outlined text-base">vpn_key</span>
+</div>
+<div class="min-w-0">
+<div class="font-headline-sm text-xs font-bold text-on-surface truncate group-hover:text-secondary">Neural Rogue</div>
+<div class="font-label-sm text-[10px] text-outline truncate">+DIS • +CRE Core</div>
+</div>
+</button>
+<!-- Class 4: Chrono Alchemist -->
+<button class="class-card text-left p-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high border border-surface-container-highest text-on-surface transition-all flex items-center gap-2.5 group" data-class="alchemist" type="button">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest text-outline group-hover:text-amber-400 flex items-center justify-center shrink-0 transition-colors">
+<span class="material-symbols-outlined text-base">hourglass_top</span>
+</div>
+<div class="min-w-0">
+<div class="font-headline-sm text-xs font-bold text-on-surface truncate group-hover:text-amber-400">Chrono Alchemist</div>
+<div class="font-label-sm text-[10px] text-outline truncate">+FOC • +DIS Core</div>
+</div>
+</button>
+</div>
+</div>
+<!-- Hero Name & Call-Sign Input -->
+<div class="mt-4 pt-4 border-t border-surface-container-highest/60 flex flex-col gap-2">
+<label class="font-label-sm text-xs uppercase tracking-wider text-outline flex items-center justify-between" for="hero-callsign-input">
+<span>Hero Identity Call-Sign</span>
+<span class="text-tertiary text-[10px]">REQUIRED NODE</span>
+</label>
+<div class="relative">
+<input class="w-full bg-surface-container-highest/60 hover:bg-surface-container-highest/80 focus:bg-surface-container-highest text-on-surface font-body-md text-sm px-3.5 py-2.5 rounded-lg border border-surface-container-highest focus:border-tertiary focus:outline-none transition-colors pr-10" id="hero-callsign-input" type="text" value="Elara The Void Weaver"/>
+<span class="material-symbols-outlined text-tertiary text-lg absolute right-3 top-1/2 -translate-y-1/2">fingerprint</span>
+</div>
+</div>
+<!-- Lore & Origin: persisted as the player’s narrative anchor -->
+<div class="mt-3 flex flex-col gap-2">
+<label class="font-label-sm text-xs uppercase tracking-wider text-outline flex items-center justify-between" for="origin-story-input"><span>Lore &amp; Origin Signal</span><span class="text-tertiary text-[10px]">OPTIONAL // SAVED</span></label>
+<textarea class="w-full min-h-[76px] bg-surface-container-highest/60 hover:bg-surface-container-highest/80 focus:bg-surface-container-highest text-on-surface font-body-md text-sm px-3.5 py-2.5 rounded-lg border border-surface-container-highest focus:border-tertiary focus:outline-none transition-colors" id="origin-story-input" maxlength="500" placeholder="What future are you building? Example: I am rebuilding my focus through daily deep work and movement."></textarea>
+</div>
+<!-- Class Lore Summary -->
+<div class="mt-3 p-3 bg-surface-container-lowest/60 rounded-xl border border-surface-container-highest/50 text-xs">
+<div class="flex items-center justify-between text-outline mb-1 font-label-sm text-[10px] uppercase">
+<span class="text-tertiary font-bold">Class Passive Trait</span>
+<span>SYNTAX OVERCLOCK</span>
+</div>
+<p class="text-on-surface-variant leading-relaxed" id="class-perk-summary">
+              Arcane Logic &amp; Deep Systems. Coding quests and algorithmic tasks grant +15% bonus EXP and trigger flow state cascades.
+            </p>
+</div>
+</div>
+<!-- Starting Gear & Perks Preview Box -->
+<div class="bg-surface-container-low rounded-2xl p-4 border border-surface-container-highest/80 shadow-lg flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<h4 class="font-headline-sm text-xs font-bold text-on-surface uppercase tracking-wider flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">inventory_2</span>
+              Starter Inventory &amp; Implants
+            </h4>
+<span class="font-label-sm text-[10px] text-primary bg-primary/10 border border-primary/20 px-2 py-0.5 rounded">2/2 EQUIPPED</span>
+</div>
+<div class="grid grid-cols-2 gap-2.5">
+<!-- Gear 1 -->
+<div class="bg-surface-container p-2.5 rounded-xl border border-surface-container-highest flex items-center gap-2.5 hover:border-primary/40 transition-colors">
+<div class="w-9 h-9 rounded-lg bg-primary/15 text-primary flex items-center justify-center shrink-0 border border-primary/20">
+<span class="material-symbols-outlined text-lg">ring_volume</span>
+</div>
+<div class="min-w-0">
+<span class="block font-headline-sm text-xs font-bold text-on-surface truncate">Novice Focus Ring</span>
+<span class="block font-label-sm text-[10px] text-primary truncate">+2 Focus • Flow Aura</span>
+</div>
+</div>
+<!-- Gear 2 -->
+<div class="bg-surface-container p-2.5 rounded-xl border border-surface-container-highest flex items-center gap-2.5 hover:border-tertiary/40 transition-colors">
+<div class="w-9 h-9 rounded-lg bg-tertiary/15 text-tertiary flex items-center justify-center shrink-0 border border-tertiary/20">
+<span class="material-symbols-outlined text-lg">shield_moon</span>
+</div>
+<div class="min-w-0">
+<span class="block font-headline-sm text-xs font-bold text-on-surface truncate">Acolyte Cyber Cloak</span>
+<span class="block font-label-sm text-[10px] text-tertiary truncate">+5% Distraction Shield</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- =============================================== -->
+<!-- COLUMN 2: ATTRIBUTE MATRIX & RADAR (Lg cols: 4) -->
+<!-- =============================================== -->
+<section class="lg:col-span-4 flex flex-col gap-5">
+<div class="bg-surface-container-low rounded-2xl p-5 border border-surface-container-highest/80 shadow-2xl flex flex-col gap-4">
+<!-- Header with Point Pool -->
+<div class="flex items-center justify-between pb-3 border-b border-surface-container-highest/60">
+<div>
+<h3 class="font-headline-md text-base font-bold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-lg">tune</span>
+                Attribute Calibration
+              </h3>
+<p class="font-body-sm text-xs text-on-surface-variant">Allocate cognitive and kinetic points to hone your playstyle.</p>
+</div>
+<div class="flex flex-col items-end">
+<div class="flex items-center gap-1.5 bg-primary/10 border border-primary/40 px-3 py-1.5 rounded-lg shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-lg text-sm font-bold text-primary" id="stat-points-available">4</span>
+<span class="font-label-sm text-[10px] uppercase font-bold text-primary">PTS</span>
+</div>
+</div>
+</div>
+<!-- Mini SVG Polygon Radar Visualizer -->
+<div class="bg-surface-container-lowest/80 rounded-xl p-3 border border-surface-container-highest flex flex-col items-center justify-center relative overflow-hidden">
+<span class="absolute top-2 left-3 font-label-sm text-[10px] text-outline uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-tertiary">radar</span>
+              Neural Stat Radar
+            </span>
+<span class="absolute top-2 right-3 font-label-sm text-[10px] text-tertiary font-mono" id="radar-power-rating">POWER RATING: 78</span>
+<svg class="w-48 h-40 mt-3 overflow-visible" viewbox="0 0 200 180">
+<!-- Radar Background webs -->
+<polygon fill="none" points="100,20 170,55 170,125 100,160 30,125 30,55" stroke="#222a3d" stroke-width="1"></polygon>
+<polygon fill="none" points="100,45 145,70 145,115 100,140 55,115 55,70" stroke="#222a3d" stroke-dasharray="2,2" stroke-width="1"></polygon>
+<line stroke="#222a3d" stroke-width="1" x1="100" x2="100" y1="90" y2="20"></line>
+<line stroke="#222a3d" stroke-width="1" x1="100" x2="170" y1="90" y2="55"></line>
+<line stroke="#222a3d" stroke-width="1" x1="100" x2="170" y1="90" y2="125"></line>
+<line stroke="#222a3d" stroke-width="1" x1="100" x2="100" y1="90" y2="160"></line>
+<line stroke="#222a3d" stroke-width="1" x1="100" x2="30" y1="90" y2="125"></line>
+<line stroke="#222a3d" stroke-width="1" x1="100" x2="30" y1="90" y2="55"></line>
+<!-- Dynamic Filled Radar Polygon -->
+<polygon class="transition-all duration-300" fill="rgba(84, 221, 252, 0.25)" id="radar-polygon" points="100,32 155,62 140,118 100,145 42,112 45,68" stroke="#54ddfc" stroke-width="2"></polygon>
+<!-- Axis Labels -->
+<text fill="#a08e7a" font-family="Space Grotesk" font-size="8" text-anchor="middle" x="100" y="14">INT</text>
+<text fill="#a08e7a" font-family="Space Grotesk" font-size="8" text-anchor="start" x="180" y="55">FOC</text>
+<text fill="#a08e7a" font-family="Space Grotesk" font-size="8" text-anchor="start" x="180" y="130">DIS</text>
+<text fill="#a08e7a" font-family="Space Grotesk" font-size="8" text-anchor="middle" x="100" y="174">VIT</text>
+<text fill="#a08e7a" font-family="Space Grotesk" font-size="8" text-anchor="end" x="20" y="130">STR</text>
+<text fill="#a08e7a" font-family="Space Grotesk" font-size="8" text-anchor="end" x="20" y="55">CRE</text>
+</svg>
+</div>
+<!-- Stat List with Interactive Steppers -->
+<div class="flex flex-col gap-2.5" id="stats-container">
+<!-- 1. INTELLECT -->
+<div class="bg-surface-container p-3 rounded-xl border border-surface-container-highest flex flex-col gap-1.5 transition-all hover:border-tertiary/40" data-stat-row="int">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-tertiary text-lg">memory</span>
+<div>
+<span class="font-headline-sm text-xs font-bold text-on-surface">Intellect (INT)</span>
+<span class="block font-label-sm text-[10px] text-tertiary">Mental synthesis &amp; code efficiency</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="stat-btn w-6 h-6 rounded bg-surface-container-highest hover:bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-xs transition-colors" data-delta="-1" data-stat="int" type="button">-</button>
+<span class="font-label-lg text-sm font-bold text-primary w-6 text-center stat-val" id="val-int">15</span>
+<button class="stat-btn w-6 h-6 rounded bg-surface-container-highest hover:bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-xs transition-colors" data-delta="1" data-stat="int" type="button">+</button>
+</div>
+</div>
+<div class="w-full bg-surface-container-lowest h-1 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full transition-all duration-300 stat-bar" id="bar-int" style="width: 75%;"></div>
+</div>
+<span class="font-body-sm text-[11px] text-on-surface-variant italic stat-impact" id="impact-int">Increases coding quest XP multiplier by +15%</span>
+</div>
+<!-- 2. FOCUS -->
+<div class="bg-surface-container p-3 rounded-xl border border-surface-container-highest flex flex-col gap-1.5 transition-all hover:border-tertiary/40" data-stat-row="foc">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-tertiary text-lg">center_focus_strong</span>
+<div>
+<span class="font-headline-sm text-xs font-bold text-on-surface">Focus (FOC)</span>
+<span class="block font-label-sm text-[10px] text-tertiary">Deep work stamina &amp; flow state locks</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="stat-btn w-6 h-6 rounded bg-surface-container-highest hover:bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-xs transition-colors" data-delta="-1" data-stat="foc" type="button">-</button>
+<span class="font-label-lg text-sm font-bold text-primary w-6 text-center stat-val" id="val-foc">16</span>
+<button class="stat-btn w-6 h-6 rounded bg-surface-container-highest hover:bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-xs transition-colors" data-delta="1" data-stat="foc" type="button">+</button>
+</div>
+</div>
+<div class="w-full bg-surface-container-lowest h-1 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full transition-all duration-300 stat-bar" id="bar-foc" style="width: 80%;"></div>
+</div>
+<span class="font-body-sm text-[11px] text-on-surface-variant italic stat-impact" id="impact-foc">Pomodoro session duration boosted +16 min before fatigue</span>
+</div>
+<!-- 3. DISCIPLINE -->
+<div class="bg-surface-container p-3 rounded-xl border border-surface-container-highest flex flex-col gap-1.5 transition-all hover:border-secondary/40" data-stat-row="dis">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-lg">shield_lock</span>
+<div>
+<span class="font-headline-sm text-xs font-bold text-on-surface">Discipline (DIS)</span>
+<span class="block font-label-sm text-[10px] text-secondary">Streak shields &amp; habit defense</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="stat-btn w-6 h-6 rounded bg-surface-container-highest hover:bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-xs transition-colors" data-delta="-1" data-stat="dis" type="button">-</button>
+<span class="font-label-lg text-sm font-bold text-primary w-6 text-center stat-val" id="val-dis">13</span>
+<button class="stat-btn w-6 h-6 rounded bg-surface-container-highest hover:bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-xs transition-colors" data-delta="1" data-stat="dis" type="button">+</button>
+</div>
+</div>
+<div class="w-full bg-surface-container-lowest h-1 rounded-full overflow-hidden">
+<div class="bg-secondary h-full transition-all duration-300 stat-bar" id="bar-dis" style="width: 65%;"></div>
+</div>
+<span class="font-body-sm text-[11px] text-on-surface-variant italic stat-impact" id="impact-dis">Provides 1 free automatic streak freeze per week</span>
+</div>
+<!-- 4. VITALITY -->
+<div class="bg-surface-container p-3 rounded-xl border border-surface-container-highest flex flex-col gap-1.5 transition-all hover:border-outline/40" data-stat-row="vit">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-outline text-lg">favorite</span>
+<div>
+<span class="font-headline-sm text-xs font-bold text-on-surface">Vitality (VIT)</span>
+<span class="block font-label-sm text-[10px] text-outline">Energy capacity &amp; circadian resilience</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="stat-btn w-6 h-6 rounded bg-surface-container-highest hover:bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-xs transition-colors" data-delta="-1" data-stat="vit" type="button">-</button>
+<span class="font-label-lg text-sm font-bold text-on-surface w-6 text-center stat-val" id="val-vit">11</span>
+<button class="stat-btn w-6 h-6 rounded bg-surface-container-highest hover:bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-xs transition-colors" data-delta="1" data-stat="vit" type="button">+</button>
+</div>
+</div>
+<div class="w-full bg-surface-container-lowest h-1 rounded-full overflow-hidden">
+<div class="bg-outline h-full transition-all duration-300 stat-bar" id="bar-vit" style="width: 55%;"></div>
+</div>
+<span class="font-body-sm text-[11px] text-on-surface-variant italic stat-impact" id="impact-vit">Reduces energy penalty for sleep dips by 11%</span>
+</div>
+<!-- 5. STRENGTH -->
+<div class="bg-surface-container p-3 rounded-xl border border-surface-container-highest flex flex-col gap-1.5 transition-all hover:border-outline/40" data-stat-row="str">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-outline text-lg">swords</span>
+<div>
+<span class="font-headline-sm text-xs font-bold text-on-surface">Strength (STR)</span>
+<span class="block font-label-sm text-[10px] text-outline">Kinetic exertion &amp; physical volume</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="stat-btn w-6 h-6 rounded bg-surface-container-highest hover:bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-xs transition-colors" data-delta="-1" data-stat="str" type="button">-</button>
+<span class="font-label-lg text-sm font-bold text-on-surface w-6 text-center stat-val" id="val-str">10</span>
+<button class="stat-btn w-6 h-6 rounded bg-surface-container-highest hover:bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-xs transition-colors" data-delta="1" data-stat="str" type="button">+</button>
+</div>
+</div>
+<div class="w-full bg-surface-container-lowest h-1 rounded-full overflow-hidden">
+<div class="bg-outline h-full transition-all duration-300 stat-bar" id="bar-str" style="width: 50%;"></div>
+</div>
+<span class="font-body-sm text-[11px] text-on-surface-variant italic stat-impact" id="impact-str">Gym &amp; conditioning quests reward +10 bonus Gold</span>
+</div>
+<!-- 6. CREATIVITY -->
+<div class="bg-surface-container p-3 rounded-xl border border-surface-container-highest flex flex-col gap-1.5 transition-all hover:border-outline/40" data-stat-row="cre">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-outline text-lg">brush</span>
+<div>
+<span class="font-headline-sm text-xs font-bold text-on-surface">Creativity (CRE)</span>
+<span class="block font-label-sm text-[10px] text-outline">Lateral ideation &amp; project output</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="stat-btn w-6 h-6 rounded bg-surface-container-highest hover:bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-xs transition-colors" data-delta="-1" data-stat="cre" type="button">-</button>
+<span class="font-label-lg text-sm font-bold text-on-surface w-6 text-center stat-val" id="val-cre">11</span>
+<button class="stat-btn w-6 h-6 rounded bg-surface-container-highest hover:bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-xs transition-colors" data-delta="1" data-stat="cre" type="button">+</button>
+</div>
+</div>
+<div class="w-full bg-surface-container-lowest h-1 rounded-full overflow-hidden">
+<div class="bg-outline h-full transition-all duration-300 stat-bar" id="bar-cre" style="width: 55%;"></div>
+</div>
+<span class="font-body-sm text-[11px] text-on-surface-variant italic stat-impact" id="impact-cre">Unlocks legendary loot chances upon writing completions</span>
+</div>
+</div>
+</div>
+</section>
+<!-- =============================================== -->
+<!-- COLUMN 3: GOAL MATRIX & DIFFICULTY (Lg cols: 4) -->
+<!-- =============================================== -->
+<section class="lg:col-span-4 flex flex-col gap-5">
+<!-- Primary Life Goals Selection (8 Rich Cards) -->
+<div class="bg-surface-container-low rounded-2xl p-5 border border-surface-container-highest/80 shadow-2xl flex flex-col gap-4">
+<div class="flex items-center justify-between pb-3 border-b border-surface-container-highest/60">
+<div>
+<h3 class="font-headline-md text-base font-bold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-lg">explore</span>
+                Neural Directives Matrix
+              </h3>
+<p class="font-body-sm text-xs text-on-surface-variant">Calibrate 3-4 Focus Nodes to sculpt your auto-generated quest line.</p>
+</div>
+<span class="bg-tertiary/15 text-tertiary border border-tertiary/30 px-2.5 py-1 rounded-full font-label-sm text-[11px] font-bold" id="goals-counter">3 / 4 LINKED</span>
+</div>
+<!-- 8 Goals Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5" id="goals-grid">
+<!-- Goal 1: Deep Work (Active) -->
+<div class="goal-card cursor-pointer p-3 rounded-xl bg-surface-container-high border-2 border-tertiary/70 shadow-sm transition-all flex flex-col gap-1.5 select-none relative group" data-active="true" data-goal-id="deep-work">
+<div class="flex items-center justify-between">
+<div class="w-7 h-7 rounded-lg bg-tertiary/20 text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-base">psychology</span>
+</div>
+<span class="font-label-sm text-[10px] font-bold bg-tertiary/20 text-tertiary px-1.5 py-0.5 rounded">+FOC</span>
+</div>
+<div>
+<span class="font-headline-sm text-xs font-bold text-on-surface group-hover:text-tertiary">Deep Work</span>
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-tight mt-0.5">High-cognitive flow blocks &amp; distraction shields.</p>
+</div>
+</div>
+<!-- Goal 2: Code Architecture (Active) -->
+<div class="goal-card cursor-pointer p-3 rounded-xl bg-surface-container-high border-2 border-primary/70 shadow-sm transition-all flex flex-col gap-1.5 select-none relative group" data-active="true" data-goal-id="code-arch">
+<div class="flex items-center justify-between">
+<div class="w-7 h-7 rounded-lg bg-primary/20 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-base">terminal</span>
+</div>
+<span class="font-label-sm text-[10px] font-bold bg-primary/20 text-primary px-1.5 py-0.5 rounded">+INT</span>
+</div>
+<div>
+<span class="font-headline-sm text-xs font-bold text-on-surface group-hover:text-primary">Code Architecture</span>
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-tight mt-0.5">Algorithms, repos, and distributed systems.</p>
+</div>
+</div>
+<!-- Goal 3: Habit Mastery (Active) -->
+<div class="goal-card cursor-pointer p-3 rounded-xl bg-surface-container-high border-2 border-secondary/70 shadow-sm transition-all flex flex-col gap-1.5 select-none relative group" data-active="true" data-goal-id="habits">
+<div class="flex items-center justify-between">
+<div class="w-7 h-7 rounded-lg bg-secondary/20 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-base">check_circle</span>
+</div>
+<span class="font-label-sm text-[10px] font-bold bg-secondary/20 text-secondary px-1.5 py-0.5 rounded">+DIS</span>
+</div>
+<div>
+<span class="font-headline-sm text-xs font-bold text-on-surface group-hover:text-secondary">Habit Mastery</span>
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-tight mt-0.5">Morning rituals, zero-break chains, discipline.</p>
+</div>
+</div>
+<!-- Goal 4: Strength & Cardio -->
+<div class="goal-card cursor-pointer p-3 rounded-xl bg-surface-container hover:bg-surface-container-high border border-surface-container-highest transition-all flex flex-col gap-1.5 select-none relative group" data-active="false" data-goal-id="fitness">
+<div class="flex items-center justify-between">
+<div class="w-7 h-7 rounded-lg bg-surface-container-highest text-outline group-hover:text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-base">fitness_center</span>
+</div>
+<span class="font-label-sm text-[10px] font-bold bg-surface-container-highest text-outline px-1.5 py-0.5 rounded">+STR</span>
+</div>
+<div>
+<span class="font-headline-sm text-xs font-bold text-on-surface group-hover:text-primary">Strength &amp; Cardio</span>
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-tight mt-0.5">Progressive overload and aerobic base building.</p>
+</div>
+</div>
+<!-- Goal 5: Mindfulness & Sleep -->
+<div class="goal-card cursor-pointer p-3 rounded-xl bg-surface-container hover:bg-surface-container-high border border-surface-container-highest transition-all flex flex-col gap-1.5 select-none relative group" data-active="false" data-goal-id="mindfulness">
+<div class="flex items-center justify-between">
+<div class="w-7 h-7 rounded-lg bg-surface-container-highest text-outline group-hover:text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-base">self_improvement</span>
+</div>
+<span class="font-label-sm text-[10px] font-bold bg-surface-container-highest text-outline px-1.5 py-0.5 rounded">+VIT</span>
+</div>
+<div>
+<span class="font-headline-sm text-xs font-bold text-on-surface group-hover:text-tertiary">Mindfulness &amp; Sleep</span>
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-tight mt-0.5">8h REM restorative locks &amp; stoic meditation.</p>
+</div>
+</div>
+<!-- Goal 6: Fasting & Nutrition -->
+<div class="goal-card cursor-pointer p-3 rounded-xl bg-surface-container hover:bg-surface-container-high border border-surface-container-highest transition-all flex flex-col gap-1.5 select-none relative group" data-active="false" data-goal-id="nutrition">
+<div class="flex items-center justify-between">
+<div class="w-7 h-7 rounded-lg bg-surface-container-highest text-outline group-hover:text-amber-400 flex items-center justify-center">
+<span class="material-symbols-outlined text-base">restaurant</span>
+</div>
+<span class="font-label-sm text-[10px] font-bold bg-surface-container-highest text-outline px-1.5 py-0.5 rounded">+VIT</span>
+</div>
+<div>
+<span class="font-headline-sm text-xs font-bold text-on-surface group-hover:text-amber-400">Fasting &amp; Nutrition</span>
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-tight mt-0.5">Intermittent windows &amp; micronutrient fueling.</p>
+</div>
+</div>
+<!-- Goal 7: Creative Synthesis -->
+<div class="goal-card cursor-pointer p-3 rounded-xl bg-surface-container hover:bg-surface-container-high border border-surface-container-highest transition-all flex flex-col gap-1.5 select-none relative group" data-active="false" data-goal-id="creative">
+<div class="flex items-center justify-between">
+<div class="w-7 h-7 rounded-lg bg-surface-container-highest text-outline group-hover:text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-base">palette</span>
+</div>
+<span class="font-label-sm text-[10px] font-bold bg-surface-container-highest text-outline px-1.5 py-0.5 rounded">+CRE</span>
+</div>
+<div>
+<span class="font-headline-sm text-xs font-bold text-on-surface group-hover:text-secondary">Creative Synthesis</span>
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-tight mt-0.5">Worldbuilding, essays, composition, art.</p>
+</div>
+</div>
+<!-- Goal 8: Accelerated Learning -->
+<div class="goal-card cursor-pointer p-3 rounded-xl bg-surface-container hover:bg-surface-container-high border border-surface-container-highest transition-all flex flex-col gap-1.5 select-none relative group" data-active="false" data-goal-id="learning">
+<div class="flex items-center justify-between">
+<div class="w-7 h-7 rounded-lg bg-surface-container-highest text-outline group-hover:text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-base">school</span>
+</div>
+<span class="font-label-sm text-[10px] font-bold bg-surface-container-highest text-outline px-1.5 py-0.5 rounded">+INT</span>
+</div>
+<div>
+<span class="font-headline-sm text-xs font-bold text-on-surface group-hover:text-tertiary">Accelerated Learning</span>
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-tight mt-0.5">Spaced repetition, paper digests, languages.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Protocol Rigor / Difficulty Selector -->
+<div class="bg-surface-container-low rounded-2xl p-5 border border-surface-container-highest/80 shadow-2xl flex flex-col gap-3">
+<div class="flex items-center justify-between pb-2 border-b border-surface-container-highest/60">
+<div>
+<h4 class="font-headline-sm text-xs font-bold text-on-surface uppercase tracking-wider flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">speed</span>
+                Protocol Rigor (Difficulty)
+              </h4>
+<p class="font-body-sm text-xs text-on-surface-variant">Sets streak decay severity &amp; world drop multipliers.</p>
+</div>
+<span class="font-label-sm text-[10px] text-primary font-bold uppercase tracking-wider" id="difficulty-badge">STANDARD LINK</span>
+</div>
+<div class="grid grid-cols-3 gap-2" id="difficulty-container">
+<!-- Casual -->
+<div class="diff-card cursor-pointer p-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high border border-surface-container-highest flex flex-col gap-1 transition-all" data-diff="casual">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-xs font-bold text-on-surface">Casual</span>
+<span class="font-label-sm text-[10px] text-outline font-bold">1.0x</span>
+</div>
+<p class="font-body-sm text-[10px] text-on-surface-variant leading-tight">Forgiving decay, flexible quest timers.</p>
+</div>
+<!-- Balanced (Active) -->
+<div class="diff-card cursor-pointer p-2.5 rounded-xl bg-primary/10 border-2 border-primary/80 shadow-sm flex flex-col gap-1 transition-all" data-diff="balanced" data-selected="true">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-xs font-bold text-primary">Balanced</span>
+<span class="font-label-sm text-[10px] text-primary font-bold">1.25x</span>
+</div>
+<p class="font-body-sm text-[10px] text-on-surface leading-tight">Daily bosses, standard streak rules.</p>
+</div>
+<!-- Hardcore -->
+<div class="diff-card cursor-pointer p-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high border border-surface-container-highest flex flex-col gap-1 transition-all" data-diff="hardcore">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-xs font-bold text-on-surface">Hardcore</span>
+<span class="font-label-sm text-[10px] text-error font-bold">2.0x</span>
+</div>
+<p class="font-body-sm text-[10px] text-on-surface-variant leading-tight">Missed quests drain HP. Mythic drops.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- =============================================== -->
+<!-- BOTTOM PERSISTENT HUD ACTION DOCK               -->
+<!-- =============================================== -->
+<footer class="w-full border-t border-surface-container-highest/80 bg-surface-container-lowest/90 backdrop-blur-2xl sticky bottom-0 z-50">
+<div class="max-w-[1680px] mx-auto px-4 lg:px-8 py-3.5 flex flex-col md:flex-row items-center justify-between gap-4">
+<!-- Live Validation Telemetry Chips -->
+<div class="flex flex-wrap items-center gap-2.5 text-xs">
+<div class="flex items-center gap-2 bg-surface-container-high/90 px-3 py-1.5 rounded-lg border border-surface-container-highest">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="text-outline font-label-sm">Class:</span>
+<span class="font-headline-sm font-semibold text-on-surface" id="footer-class-val">Arcane Technomancer</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-high/90 px-3 py-1.5 rounded-lg border border-surface-container-highest">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="text-outline font-label-sm">Directives:</span>
+<span class="font-headline-sm font-semibold text-on-surface" id="footer-goals-val">3 Focus Nodes</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-high/90 px-3 py-1.5 rounded-lg border border-surface-container-highest">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-outline font-label-sm">Point Pool:</span>
+<span class="font-headline-sm font-semibold text-primary" id="footer-points-val">4 Pts Left</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-3 w-full md:w-auto justify-end">
+<button class="px-4 py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-headline-sm text-xs font-semibold tracking-wide border border-surface-container-highest transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-sm text-outline">arrow_back</span>
+<span>Back to Lore</span>
+</button>
+<button class="px-7 py-3 rounded-xl bg-gradient-to-r from-primary-container via-primary to-amber-400 text-on-primary font-headline-sm text-sm font-bold tracking-wider uppercase flex items-center justify-center gap-2 shadow-xl shadow-primary-container/25 hover:brightness-110 active:scale-[0.98] transition-all gold-glow" id="btn-forge-character" type="button">
+<span class="material-symbols-outlined text-lg">bolt</span>
+<span>FORGE CHARACTER &amp; ENTER REALM</span>
+</button>
+</div>
+</div>
+</footer>
+<!-- =============================================== -->
+<!-- JAVASCRIPT LOGIC & STATE HANDLING               -->
+<!-- =============================================== -->
+<script>
+    (function () {
+      // 1. Archetype Class Switcher
+      const classesData = {
+        technomancer: {
+          name: "ELARA",
+          title: "The Void Weaver // Arcane Logic",
+          classBadge: "TECHNOMANCER",
+          badgeText: "Arcane Technomancer",
+          callsign: "Elara The Void Weaver",
+          perk: "Arcane Logic & Deep Systems. Coding quests and algorithmic tasks grant +15% bonus EXP and trigger flow state cascades.",
+          avatarId: "avatar-technomancer",
+          statBonus: { int: 15, foc: 16, dis: 13, vit: 11, str: 10, cre: 11 }
+        },
+        paladin: {
+          name: "KAELEN",
+          title: "The Vanguard Sentinel // Heavy Protocols",
+          classBadge: "CYBER PALADIN",
+          badgeText: "Cyber Paladin",
+          callsign: "Kaelen Vanguard Guardian",
+          perk: "Kinetic Armor & Habit Fortification. Gym workouts, daily hydration, and sleep routines receive +20% Gold multiplier.",
+          avatarId: "avatar-paladin",
+          statBonus: { int: 11, foc: 12, dis: 15, vit: 16, str: 15, cre: 9 }
+        },
+        rogue: {
+          name: "NYX",
+          title: "The Zero-Day Phantom // Shadow Ops",
+          classBadge: "NEURAL ROGUE",
+          badgeText: "Neural Rogue",
+          callsign: "Nyx Cyber Infiltrator",
+          perk: "Rapid Task Execution. Short sprints (sub-25 min) grant critical EXP strikes with a 35% chance to double rewards.",
+          avatarId: "avatar-rogue",
+          statBonus: { int: 13, foc: 14, dis: 16, vit: 10, str: 11, cre: 14 }
+        },
+        alchemist: {
+          name: "ZANE",
+          title: "The Chrono Splicer // Temporal Loops",
+          classBadge: "CHRONO ALCHEMIST",
+          badgeText: "Chrono Alchemist",
+          callsign: "Zane The Chrono Weaver",
+          perk: "Circadian Manipulation. Automatically converts consistent streaks into rare temporal tokens for shop discounts.",
+          avatarId: "avatar-alchemist",
+          statBonus: { int: 14, foc: 15, dis: 14, vit: 12, str: 9, cre: 14 }
+        }
+      };
+
+      const heroDisplayName = document.getElementById("hero-display-name");
+      const heroDisplayTitle = document.getElementById("hero-display-title");
+      const heroDisplayBadge = document.getElementById("hero-display-class-badge");
+      const heroCallsignInput = document.getElementById("hero-callsign-input");
+      const classPerkSummary = document.getElementById("class-perk-summary");
+      const footerClassVal = document.getElementById("footer-class-val");
+
+      const classButtons = document.querySelectorAll(".class-card");
+      const avatarImages = {
+        technomancer: document.getElementById("avatar-technomancer"),
+        paladin: document.getElementById("avatar-paladin"),
+        rogue: document.getElementById("avatar-rogue"),
+        alchemist: document.getElementById("avatar-alchemist")
+      };
+
+      classButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+          const selected = btn.getAttribute("data-class");
+          const config = classesData[selected];
+          if (!config) return;
+          classButtons.forEach(item => item.dataset.selected = "false");
+          btn.dataset.selected = "true";
+
+          // Highlight class button
+          classButtons.forEach(b => {
+            b.classList.remove("bg-tertiary/15", "border-2", "border-tertiary/80");
+            b.classList.add("bg-surface-container", "border", "border-surface-container-highest");
+            const heading = b.querySelector(".font-headline-sm");
+            if (heading) heading.classList.remove("text-tertiary");
+          });
+          btn.classList.add("bg-tertiary/15", "border-2", "border-tertiary/80");
+          btn.classList.remove("bg-surface-container", "border-surface-container-highest");
+          const activeHeading = btn.querySelector(".font-headline-sm");
+          if (activeHeading) activeHeading.classList.add("text-tertiary");
+
+          // Switch Avatar with fade
+          Object.keys(avatarImages).forEach(k => {
+            const img = avatarImages[k];
+            if (k === selected) {
+              img.classList.remove("opacity-0", "scale-105", "pointer-events-none");
+              img.classList.add("opacity-100", "scale-100");
+            } else {
+              img.classList.remove("opacity-100", "scale-100");
+              img.classList.add("opacity-0", "scale-105", "pointer-events-none");
+            }
+          });
+
+          // Update texts
+          heroDisplayName.textContent = config.name;
+          heroDisplayTitle.textContent = config.title;
+          heroDisplayBadge.textContent = config.classBadge;
+          heroCallsignInput.value = config.callsign;
+          classPerkSummary.textContent = config.perk;
+          footerClassVal.textContent = config.badgeText;
+        });
+      });
+
+      // Name input sync
+      heroCallsignInput.addEventListener("input", (e) => {
+        const val = e.target.value.trim();
+        heroDisplayName.textContent = val ? val.split(" ")[0].toUpperCase() : "OPERATIVE";
+      });
+
+      // 2. Interactive Attribute Stepper & Dynamic Radar
+      let pointsAvailable = 4;
+      const statValues = {
+        int: 15,
+        foc: 16,
+        dis: 13,
+        vit: 11,
+        str: 10,
+        cre: 11
+      };
+
+      const statImpactDescriptions = {
+        int: v => `Increases coding quest XP multiplier by +${v}%`,
+        foc: v => `Pomodoro session duration boosted +${v} min before fatigue`,
+        dis: v => `Provides ${Math.floor(v / 12)} free automatic streak freeze per week`,
+        vit: v => `Reduces energy penalty for sleep dips by ${v}%`,
+        str: v => `Gym & conditioning quests reward +${v} bonus Gold`,
+        cre: v => `Unlocks legendary loot chance (${v * 2}%) on writing quests`
+      };
+
+      const pointsAvailableDisplay = document.getElementById("stat-points-available");
+      const footerPointsVal = document.getElementById("footer-points-val");
+      const radarPolygon = document.getElementById("radar-polygon");
+      const radarRating = document.getElementById("radar-power-rating");
+
+      function updateRadar() {
+        // Radar center: 100, 90. Max radius ~70
+        // INT: top (100, 90 - r)
+        // FOC: top-right (100 + r*0.866, 90 - r*0.5)
+        // DIS: bot-right (100 + r*0.866, 90 + r*0.5)
+        // VIT: bottom (100, 90 + r)
+        // STR: bot-left (100 - r*0.866, 90 + r*0.5)
+        // CRE: top-left (100 - r*0.866, 90 - r*0.5)
+        function getRadius(val) {
+          const clamped = Math.max(8, Math.min(20, val));
+          return 25 + ((clamped - 8) / 12) * 45;
+        }
+
+        const rInt = getRadius(statValues.int);
+        const rFoc = getRadius(statValues.foc);
+        const rDis = getRadius(statValues.dis);
+        const rVit = getRadius(statValues.vit);
+        const rStr = getRadius(statValues.str);
+        const rCre = getRadius(statValues.cre);
+
+        const p1 = `${100},${(90 - rInt).toFixed(1)}`;
+        const p2 = `${(100 + rFoc * 0.866).toFixed(1)},${(90 - rFoc * 0.5).toFixed(1)}`;
+        const p3 = `${(100 + rDis * 0.866).toFixed(1)},${(90 + rDis * 0.5).toFixed(1)}`;
+        const p4 = `${100},${(90 + rVit).toFixed(1)}`;
+        const p5 = `${(100 - rStr * 0.866).toFixed(1)},${(90 + rStr * 0.5).toFixed(1)}`;
+        const p6 = `${(100 - rCre * 0.866).toFixed(1)},${(90 - rCre * 0.5).toFixed(1)}`;
+
+        radarPolygon.setAttribute("points", `${p1} ${p2} ${p3} ${p4} ${p5} ${p6}`);
+
+        const totalRating = Object.values(statValues).reduce((a, b) => a + b, 0);
+        radarRating.textContent = `POWER RATING: ${totalRating}`;
+      }
+
+      document.querySelectorAll(".stat-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const stat = btn.getAttribute("data-stat");
+          const delta = parseInt(btn.getAttribute("data-delta"), 10);
+
+          if (delta > 0) {
+            if (pointsAvailable > 0 && statValues[stat] < 20) {
+              pointsAvailable--;
+              statValues[stat]++;
+            }
+          } else if (delta < 0) {
+            if (statValues[stat] > 8) {
+              pointsAvailable++;
+              statValues[stat]--;
+            }
+          }
+
+          // Update displays
+          pointsAvailableDisplay.textContent = pointsAvailable;
+          footerPointsVal.textContent = pointsAvailable > 0 ? `${pointsAvailable} Pts Left` : "Allocated";
+
+          const valEl = document.getElementById(`val-${stat}`);
+          if (valEl) valEl.textContent = statValues[stat];
+
+          const barEl = document.getElementById(`bar-${stat}`);
+          if (barEl) {
+            const pct = Math.round((statValues[stat] / 20) * 100);
+            barEl.style.width = `${pct}%`;
+          }
+
+          const impactEl = document.getElementById(`impact-${stat}`);
+          if (impactEl && statImpactDescriptions[stat]) {
+            impactEl.textContent = statImpactDescriptions[stat](statValues[stat]);
+          }
+
+          updateRadar();
+        });
+      });
+
+      // 3. Goals & Directives Selection
+      const goalCards = document.querySelectorAll(".goal-card");
+      const goalsCounter = document.getElementById("goals-counter");
+      const footerGoalsVal = document.getElementById("footer-goals-val");
+
+      goalCards.forEach(card => {
+        card.addEventListener("click", () => {
+          const isActive = card.getAttribute("data-active") === "true";
+          const currentCount = Array.from(goalCards).filter(c => c.getAttribute("data-active") === "true").length;
+
+          if (!isActive && currentCount >= 4) {
+            // max 4
+            return;
+          }
+
+          const newState = !isActive;
+          card.setAttribute("data-active", newState ? "true" : "false");
+
+          if (newState) {
+            card.classList.remove("bg-surface-container", "border-surface-container-highest");
+            card.classList.add("bg-surface-container-high", "border-2", "border-tertiary/70", "shadow-sm");
+          } else {
+            card.classList.remove("bg-surface-container-high", "border-2", "border-tertiary/70", "shadow-sm");
+            card.classList.add("bg-surface-container", "border", "border-surface-container-highest");
+          }
+
+          const newCount = Array.from(goalCards).filter(c => c.getAttribute("data-active") === "true").length;
+          goalsCounter.textContent = `${newCount} / 4 LINKED`;
+          footerGoalsVal.textContent = `${newCount} Focus Nodes`;
+        });
+      });
+
+      // 4. Protocol Rigor (Difficulty)
+      const diffCards = document.querySelectorAll(".diff-card");
+      const diffBadge = document.getElementById("difficulty-badge");
+
+      const diffTitles = {
+        casual: "RELAXED SYNC",
+        balanced: "STANDARD LINK",
+        hardcore: "PERMADEATH PROTOCOL"
+      };
+
+      diffCards.forEach(card => {
+        card.addEventListener("click", () => {
+          diffCards.forEach(item => item.dataset.selected = "false");
+          card.dataset.selected = "true";
+          diffCards.forEach(c => {
+            c.classList.remove("bg-primary/10", "border-2", "border-primary/80", "shadow-sm");
+            c.classList.add("bg-surface-container", "border", "border-surface-container-highest");
+            const title = c.querySelector(".font-headline-sm");
+            if (title) title.classList.remove("text-primary");
+          });
+
+          card.classList.add("bg-primary/10", "border-2", "border-primary/80", "shadow-sm");
+          card.classList.remove("bg-surface-container", "border-surface-container-highest");
+          const activeTitle = card.querySelector(".font-headline-sm");
+          if (activeTitle) activeTitle.classList.add("text-primary");
+
+          const selectedDiff = card.getAttribute("data-diff");
+          diffBadge.textContent = diffTitles[selectedDiff] || "PROTOCOL ACTIVE";
+        });
+      });
+
+      // 5. Forge Character Action
+      const forgeBtn = document.getElementById("btn-forge-character");
+      forgeBtn.addEventListener("click", () => {
+        forgeBtn.classList.add("scale-95");
+        setTimeout(() => {
+          forgeBtn.classList.remove("scale-95");
+          forgeBtn.innerHTML = '<span class="material-symbols-outlined text-lg animate-spin">sync</span><span>SYNCHRONIZING CONSTRUCT...</span>';
+          setTimeout(() => {
+            forgeBtn.innerHTML = '<span class="material-symbols-outlined text-lg">check_circle</span><span>AVATAR FORGED &bull; ENTERING REALM...</span>';
+            forgeBtn.classList.remove("from-primary-container", "via-primary", "to-amber-400");
+            forgeBtn.classList.add("bg-tertiary", "text-on-tertiary");
+          }, 1400);
+        }, 120);
+      });
+
+      // Initialize radar
+      updateRadar();
+    })();
+  </script>
+<script src="site.js"></script><script src="onboarding-client.js"></script></body></html>

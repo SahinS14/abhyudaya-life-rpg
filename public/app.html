@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en" class="dark"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Abhyudaya — Command Centre</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css">
+</head><body>
+<header><a class="brand" href="index.html"><img src="logo.png" alt="Abhyudaya logo"><span>ABHYUDAYA</span></a><div class="status" id="status" aria-live="polite">Synchronizing realm…</div><button id="logout" class="subtle">Log out</button></header>
+<main>
+<section class="hero"><div><p class="eyebrow">OPERATIVE COMMAND CENTRE</p><h1 id="hero-name">Welcome, Operative</h1><p id="hero-class">Loading character telemetry…</p></div><div class="level"><span>LEVEL</span><strong id="level">1</strong><small id="xp">0 XP</small></div></section>
+<section class="stats" aria-label="Character stats"><article><span>Gold</span><b id="gold">0</b></article><article><span>Streak</span><b id="streak">0 days</b></article><article><span>Strength</span><b id="strength">1</b></article><article><span>Intellect</span><b id="intellect">1</b></article><article><span>Focus</span><b id="focus">1</b></article><article><span>Discipline</span><b id="discipline">1</b></article></section>
+<section class="grid"><div class="panel quests"><div class="panel-head"><div><p class="eyebrow">ACTIVE OPERATIONS</p><h2>Quest log</h2></div><button id="new-quest">+ New quest</button></div><div id="task-list" aria-live="polite"><p class="empty">Loading quests…</p></div></div>
+<aside class="panel"><p class="eyebrow">REWARDS</p><h2>Armory shop</h2><div id="shop-list" class="shop-list"></div></aside></section>
+<section class="panel"><p class="eyebrow">HISTORY</p><h2>Recent transmissions</h2><div id="activity-list"></div></section>
+</main>
+<dialog id="quest-dialog"><form id="quest-form" method="dialog"><div class="dialog-head"><h2>Forge a quest</h2><button type="button" class="subtle" id="close-dialog">×</button></div><label>Quest title<input required maxlength="120" name="title" placeholder="Complete a 45-minute study sprint"></label><label>Description<textarea name="description" maxlength="500" placeholder="What does success look like?"></textarea></label><div class="form-grid"><label>Attribute<select name="attribute"><option value="focus">Focus</option><option value="intellect">Intellect</option><option value="strength">Strength</option><option value="discipline">Discipline</option></select></label><label>Difficulty<select name="difficulty"><option value="25">Standard — 25 XP</option><option value="60">Elite — 60 XP</option><option value="150">Legendary — 150 XP</option></select></label></div><div class="actions"><button type="button" class="subtle" id="cancel-dialog">Cancel</button><button class="primary">Create quest</button></div><p id="form-error" class="error" aria-live="polite"></p></form></dialog>
+<script src="app.js"></script></body></html>
