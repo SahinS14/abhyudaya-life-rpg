@@ -1,358 +1,55 @@
-<!DOCTYPE html>
-
-<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "inverse-on-surface": "#283044", "inverse-surface": "#dae2fd", "on-error": "#690005", "tertiary-container": "#29c1df", "surface": "#0b1326", "surface-container": "#171f33", "surface-container-lowest": "#060e20", "secondary-fixed-dim": "#d0bcff", "surface-container-high": "#222a3d", "primary": "#ffc174", "on-primary-fixed-variant": "#653e00", "surface-container-low": "#131b2e", "tertiary": "#54ddfc", "outline-variant": "#534434", "on-primary-fixed": "#2a1700", "primary-fixed-dim": "#ffb95f", "on-secondary": "#3c0091", "tertiary-fixed": "#acedff", "secondary-fixed": "#e9ddff", "on-secondary-fixed-variant": "#5516be", "on-surface-variant": "#d8c3ad", "background": "#0b1326", "on-surface": "#dae2fd", "on-primary-container": "#613b00", "tertiary-fixed-dim": "#4cd7f6", "surface-container-highest": "#2d3449", "primary-fixed": "#ffddb8", "on-secondary-fixed": "#23005c", "on-tertiary-fixed": "#001f26", "error": "#ffb4ab", "surface-dim": "#0b1326", "on-error-container": "#ffdad6", "primary-container": "#f59e0b", "surface-bright": "#31394d", "outline": "#a08e7a", "on-tertiary-container": "#004b58", "surface-variant": "#2d3449", "on-primary": "#472a00", "surface-tint": "#ffb95f", "secondary-container": "#571bc1", "on-tertiary-fixed-variant": "#004e5c", "on-tertiary": "#003640", "on-background": "#dae2fd", "inverse-primary": "#855300", "on-secondary-container": "#c4abff", "error-container": "#93000a", "secondary": "#d0bcff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "gutter-mobile": "0.75rem", "margin-mobile": "1rem", "gutter": "1.25rem", "space-lg": "1.5rem", "space-xl": "2.5rem", "space-md": "1rem", "margin": "2rem", "space-sm": "0.5rem", "space-xs": "0.25rem" }, fontFamily: { "label-lg": ["Space Grotesk"], "label-sm": ["Space Grotesk"], "body-sm": ["Plus Jakarta Sans"], "headline-lg": ["Outfit"], "headline-md": ["Outfit"], "body-md": ["Plus Jakarta Sans"], "headline-xl": ["Outfit"], "headline-lg-mobile": ["Outfit"], "body-lg": ["Plus Jakarta Sans"], "headline-sm": ["Outfit"], "headline-xl-mobile": ["Outfit"], "label-md": ["Space Grotesk"] }, fontSize: { "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "600" }], "label-sm": ["10px", { lineHeight: "14px", letterSpacing: "0.08em", fontWeight: "700" }], "body-sm": ["12px", { lineHeight: "18px", fontWeight: "400" }], "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.015em", fontWeight: "700" }], "headline-md": ["24px", { lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "600" }], "body-md": ["14px", { lineHeight: "22px", fontWeight: "400" }], "headline-xl": ["40px", { lineHeight: "48px", letterSpacing: "-0.02em", fontWeight: "800" }], "headline-lg-mobile": ["24px", { lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "700" }], "body-lg": ["16px", { lineHeight: "26px", fontWeight: "400" }], "headline-sm": ["18px", { lineHeight: "26px", letterSpacing: "0em", fontWeight: "600" }], "headline-xl-mobile": ["30px", { lineHeight: "38px", letterSpacing: "-0.02em", fontWeight: "800" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.06em", fontWeight: "600" }] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><main class="w-full min-h-screen flex items-center justify-center p-space-margin bg-surface"><div class="flex flex-col w-full">
-<div class="relative w-full max-w-7xl mx-auto my-auto px-4 py-8 lg:py-12">
-<!-- Ambient Luminous Background Orbs -->
-<div class="absolute -top-24 -left-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
-<div class="absolute top-1/2 -right-24 w-[30rem] h-[30rem] bg-secondary-container/20 rounded-full blur-3xl pointer-events-none"></div>
-<div class="absolute -bottom-24 left-1/3 w-80 h-80 bg-tertiary-container/10 rounded-full blur-3xl pointer-events-none"></div>
-<!-- Main Command Console -->
-<div class="relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-<!-- Left Column: Authentication Citadel (7 Cols) -->
-<div class="lg:col-span-7 flex flex-col justify-between bg-surface-container-lowest/90 backdrop-blur-xl p-6 sm:p-10 rounded-xl shadow-2xl relative overflow-hidden">
-<!-- Top Status Bar & Node Telemetry -->
-<div class="flex flex-wrap items-center justify-between gap-4 pb-6">
-<div class="flex items-center gap-3">
-<div class="relative flex items-center justify-center w-12 h-12 rounded-lg bg-surface-container-high overflow-hidden shadow-md">
-<img alt="Abhyudaya Brand Emblem" class="w-10 h-10 object-contain drop-shadow-[0_0_8px_rgba(245,158,11,0.5)]" src="logo.png"/>
-</div>
-<div>
-<div class="flex items-center gap-2">
-<span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">ABHYUDAYA</span>
-<span class="px-2 py-0.5 rounded text-[10px] font-label-sm bg-primary/20 text-primary uppercase">v2.4 Core</span>
-</div>
-<p class="font-label-sm text-label-sm text-outline tracking-wider uppercase">Turn Your Life Into An Arcane RPG</p>
-</div>
-</div>
-<div class="flex items-center gap-2 px-3 py-1.5 rounded bg-surface-container text-tertiary shadow-inner">
-<span class="inline-block w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
-<span class="font-label-sm text-label-sm tracking-wider">NEURAL LINK: ENCRYPTED (AES-GCM-256)</span>
-</div>
-</div>
-<!-- Protocol Mode Switcher (Sign In / Sign Up) -->
-<div class="mt-2 mb-8">
-<div class="grid grid-cols-2 p-1.5 rounded-lg bg-surface-container-low shadow-inner">
-<button class="flex items-center justify-center gap-2 py-2.5 rounded font-label-lg text-label-lg transition-all duration-300 bg-primary-container text-on-primary font-bold shadow-md" id="tab-signin" onclick="switchProtocol('signin')">
-<span class="material-symbols-outlined text-[18px]">vpn_key</span>
-<span>ACCESS CONSTRUCT</span>
-</button>
-<button class="flex items-center justify-center gap-2 py-2.5 rounded font-label-lg text-label-lg transition-all duration-300 text-on-surface-variant hover:text-on-surface hover:bg-surface-container" id="tab-signup" onclick="switchProtocol('signup')">
-<span class="material-symbols-outlined text-[18px]">person_add</span>
-<span>INITIATE OPERATIVE</span>
-</button>
-</div>
-</div>
-<!-- OAuth Gateways (Cyber Vaults) -->
-<section class="mb-6 rounded-xl border border-tertiary/20 bg-surface-container p-4" aria-labelledby="auth-welcome-title">
-<p class="font-label-sm text-label-sm uppercase tracking-widest text-tertiary">Welcome to Abhyudaya</p>
-<h1 class="mt-1 font-headline-md text-headline-md font-bold text-on-surface" id="auth-welcome-title">Sign in to continue your real-life RPG.</h1>
-<p class="mt-1 font-body-sm text-body-sm text-on-surface-variant">Use your email and password below. New here? Select <strong class="text-on-surface">Create account</strong>, then build your character before entering the Dashboard.</p>
-</section>
-<div class="flex flex-col gap-3 mb-6">
-<span class="font-label-sm text-label-sm text-outline uppercase tracking-widest text-center">Fast-Sync Neural Gateways</span>
-<div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-<button class="group flex items-center justify-center gap-2.5 px-3 py-3 rounded-lg bg-surface-container hover:bg-surface-container-high transition-all shadow-sm">
-<span class="material-symbols-outlined text-primary text-[20px] group-hover:scale-110 transition-transform">terminal</span>
-<span class="font-label-sm text-label-sm text-on-surface">CyberLink / Git</span>
-</button>
-<button class="group flex items-center justify-center gap-2.5 px-3 py-3 rounded-lg bg-surface-container hover:bg-surface-container-high transition-all shadow-sm">
-<span class="material-symbols-outlined text-tertiary text-[20px] group-hover:scale-110 transition-transform">cloud_sync</span>
-<span class="font-label-sm text-label-sm text-on-surface">Google Cloud</span>
-</button>
-<button class="group flex items-center justify-center gap-2.5 px-3 py-3 rounded-lg bg-surface-container hover:bg-surface-container-high transition-all shadow-sm">
-<span class="material-symbols-outlined text-secondary text-[20px] group-hover:scale-110 transition-transform">fingerprint</span>
-<span class="font-label-sm text-label-sm text-on-surface">Apple Passkey</span>
-</button>
-</div>
-</div>
-<div class="relative flex items-center justify-center my-4">
-<div class="w-full h-px bg-surface-container-highest"></div>
-<span class="absolute px-4 bg-surface-container-lowest font-label-sm text-label-sm text-outline uppercase tracking-widest">or manual protocol</span>
-</div>
-<!-- Interactive Form Section -->
-<form class="flex flex-col gap-4 mt-2" onsubmit="event.preventDefault();">
-<!-- Sign Up Exclusive Handle Field -->
-<div class="hidden flex-col gap-1.5 transition-all" id="field-handle">
-<label class="flex items-center justify-between font-label-md text-label-md text-on-surface">
-<span>OPERATIVE CALL-SIGN</span>
-<span class="text-tertiary font-label-sm text-label-sm">UNIQUE IDENTITY</span>
-</label>
-<div class="relative flex items-center">
-<span class="absolute left-3.5 material-symbols-outlined text-outline text-[20px]">badge</span>
-<input class="w-full pl-11 pr-4 py-3 bg-surface-container text-on-surface rounded-lg placeholder:text-outline/60 focus:bg-surface-container-high focus:outline-none transition-all font-body-md text-body-md shadow-inner" placeholder="Valkyrie-Zero" type="text"/>
-</div>
-</div>
-<!-- Email Field -->
-<div class="flex flex-col gap-1.5">
-<label class="flex items-center justify-between font-label-md text-label-md text-on-surface">
-<span id="label-email">SYNAPSE ADDRESS</span>
-<span class="text-primary font-label-sm text-label-sm">NODE REQUIRED</span>
-</label>
-<div class="relative flex items-center">
-<span class="absolute left-3.5 material-symbols-outlined text-outline text-[20px]">alternate_email</span>
-<input class="w-full pl-11 pr-4 py-3 bg-surface-container text-on-surface rounded-lg placeholder:text-outline/60 focus:bg-surface-container-high focus:outline-none transition-all font-body-md text-body-md shadow-inner" type="email" placeholder="you@example.com"/>
-</div>
-</div>
-<!-- Password Field -->
-<div class="flex flex-col gap-1.5">
-<label class="flex items-center justify-between font-label-md text-label-md text-on-surface">
-<span>NEURAL PASSKEY</span>
-<span class="text-tertiary hover:underline cursor-pointer font-label-sm text-label-sm" id="forgot-link">Lost Neural Cipher?</span>
-</label>
-<div class="relative flex items-center">
-<span class="absolute left-3.5 material-symbols-outlined text-outline text-[20px]">lock</span>
-<input class="w-full pl-11 pr-11 py-3 bg-surface-container text-on-surface rounded-lg placeholder:text-outline/60 focus:bg-surface-container-high focus:outline-none transition-all font-body-md text-body-md shadow-inner" id="input-password" oninput="evaluateCipher(this.value)" type="password" placeholder="At least 8 characters"/>
-<button class="absolute right-3 text-outline hover:text-on-surface transition-colors flex items-center" onclick="togglePassVisibility()" type="button">
-<span class="material-symbols-outlined text-[20px]" id="pass-icon">visibility</span>
-</button>
-</div>
-</div>
-<!-- Sign Up Exclusive: Confirm Password & Entropy Matrix -->
-<div class="hidden flex-col gap-3 transition-all" id="field-confirm">
-<div class="flex flex-col gap-1.5">
-<label class="font-label-md text-label-md text-on-surface">CONFIRM PASSKEY CIPHER</label>
-<div class="relative flex items-center">
-<span class="absolute left-3.5 material-symbols-outlined text-outline text-[20px]">verified_user</span>
-<input class="w-full pl-11 pr-4 py-3 bg-surface-container text-on-surface rounded-lg placeholder:text-outline/60 focus:bg-surface-container-high focus:outline-none transition-all font-body-md text-body-md shadow-inner" placeholder="Re-enter cipher sequence" type="password"/>
-</div>
-</div>
-<!-- Password Strength Matrix -->
-<div class="p-3.5 rounded-lg bg-surface-container-low flex flex-col gap-2">
-<div class="flex justify-between items-center">
-<span class="font-label-sm text-label-sm text-outline">ENTROPY INTEGRITY:</span>
-<span class="font-label-sm text-label-sm text-primary font-bold tracking-widest" id="strength-label">OPTIMAL (94%)</span>
-</div>
-<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden flex">
-<div class="h-full bg-gradient-to-r from-primary via-tertiary to-tertiary-container transition-all duration-300" id="strength-bar" style="width: 94%;"></div>
-</div>
-<div class="grid grid-cols-2 gap-2 mt-1">
-<div class="flex items-center gap-1.5 text-tertiary">
-<span class="material-symbols-outlined text-[14px]">check_circle</span>
-<span class="font-label-sm text-[11px]">8+ Characters Matrix</span>
-</div>
-<div class="flex items-center gap-1.5 text-tertiary">
-<span class="material-symbols-outlined text-[14px]">check_circle</span>
-<span class="font-label-sm text-[11px]">Runic / Special Symbol</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Persistence Checkbox -->
-<div class="flex items-center justify-between pt-1">
-<label class="flex items-center gap-2.5 cursor-pointer select-none">
-<input checked="" class="w-4 h-4 rounded bg-surface-container accent-primary cursor-pointer" type="checkbox"/>
-<span class="font-label-sm text-label-sm text-on-surface-variant">Maintain Synapse Link (30 Solar Cycles)</span>
-</label>
-</div>
-<!-- Caution Callout -->
-<div class="flex items-start gap-3 p-3.5 rounded-lg bg-surface-container-high text-on-surface-variant shadow-md">
-<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">security_update_warning</span>
-<div class="flex flex-col">
-<span class="font-label-sm text-label-sm text-primary font-bold uppercase tracking-wider">Security Advisory</span>
-<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-                Two-Factor Bio-Token required for Level 15+ Operatives during planetary crossover phases.
-              </p>
-</div>
-</div>
-<!-- Primary Submit CTA -->
-<button class="group relative mt-2 w-full py-4 rounded-lg bg-gradient-to-r from-primary-container via-primary to-primary-fixed-dim text-on-primary font-headline-sm text-headline-sm tracking-wide shadow-xl hover:shadow-primary/30 transition-all flex items-center justify-center gap-3 active:scale-[0.99]" type="submit">
-<span class="material-symbols-outlined text-[24px] text-on-primary group-hover:rotate-12 transition-transform">bolt</span>
-<span id="cta-label">SYNAPSE INITIATION // ENTER REALM</span>
-</button>
-</form>
-<!-- Micro-Telemetry Footer -->
-<div class="flex flex-wrap items-center justify-between gap-2 pt-6 mt-6 border-t border-surface-container font-label-sm text-label-sm text-outline">
-<div class="flex items-center gap-2">
-<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-<span>GATEWAY: GENESIS-01</span>
-</div>
-<span>LATENCY: 12ms // PACKET LOSS 0%</span>
-<span class="text-tertiary">SYSTEM ARCHITECTURE STABLE</span>
-</div>
-</div>
-<!-- Right Column: Operative Bounty & Rewards Showcase (5 Cols) -->
-<div class="lg:col-span-5 flex flex-col justify-between gap-6">
-<!-- Hero Lore Card with Image Backdrop -->
-<div class="relative flex flex-col justify-end p-8 rounded-xl overflow-hidden min-h-[280px] bg-surface-container-low shadow-xl">
-<div class="absolute inset-0 bg-cover bg-center mix-blend-luminosity opacity-40" data-alt="Dark fantasy cyberpunk city glowing with arcane gold runes, towering obsidian monoliths, neon cyan holographic projections, and epic sci-fi atmospheric fog." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBcP1_pBYSZHanAXbxh4zRVXsPpB5CHeRisf19MZSTdTBvrIzNtcz5cDIYksEPhiKg6CKd58pH3JuGM7UC5N6V04AmRjOvJAZTr0qLY_0HUYPYgSJMhUDhbikpr7nruFfns3urGxMWnF82I-1mHrbLffCQWIYP-rAWRrKgRW5cLJoUdLZh6HbQCAhokKWFJAm1kNu1GgIN0DUWO0pyu8dMFNSFOqp4T8f2Y9Ftvxlo6T9YYzn3Ngeg')"></div>
-<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/70 to-transparent"></div>
-<div class="relative z-10 flex flex-col gap-2">
-<div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-secondary-container/60 text-secondary-fixed w-max shadow-sm">
-<span class="material-symbols-outlined text-[16px]">military_tech</span>
-<span class="font-label-sm text-label-sm uppercase">Operative Deployment Tier</span>
-</div>
-<h2 class="font-headline-lg text-headline-lg text-on-surface">The Realm Awaits Your Command</h2>
-<p class="font-body-md text-body-md text-on-surface-variant">Synchronize real-world milestones into XP, transmute discipline into mythic gear, and rise through the planetary guild registers.</p>
-</div>
-</div>
-<!-- Genesis Bounty Bundle Card -->
-<div class="flex flex-col gap-4 p-6 rounded-xl bg-surface-container-low shadow-xl">
-<div class="flex items-center justify-between pb-3 border-b border-surface-container-high">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-primary text-[22px]">card_giftcard</span>
-<span class="font-headline-sm text-headline-sm text-on-surface">Genesis Initiator Cache</span>
-</div>
-<span class="font-label-sm text-label-sm text-primary font-bold px-2 py-0.5 rounded bg-primary/10">FREE UNLOCK</span>
-</div>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Claim these legendary artifacts immediately upon establishing your neural linkage:</p>
-<!-- Reward Slots -->
-<div class="grid grid-cols-1 gap-3">
-<!-- Reward 1: Currency -->
-<div class="flex items-center gap-4 p-3 rounded-lg bg-surface-container shadow-md hover:bg-surface-container-high transition-colors">
-<div class="relative flex items-center justify-center w-12 h-12 rounded bg-surface-container-lowest text-primary shadow-inner">
-<span class="material-symbols-outlined text-[28px]">toll</span>
-<span class="absolute -bottom-1 -right-1 px-1 rounded text-[9px] font-label-sm bg-primary text-on-primary font-black">+100</span>
-</div>
-<div class="flex flex-col">
-<div class="flex items-center gap-2">
-<span class="font-label-md text-label-md text-on-surface">100 Aureus Gold</span>
-<span class="px-1.5 py-0.2 rounded text-[10px] font-label-sm bg-primary/20 text-primary uppercase">Currency</span>
-</div>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Immediate liquidity for apprentice alchemy items</span>
-</div>
-</div>
-<!-- Reward 2: Relic -->
-<div class="flex items-center gap-4 p-3 rounded-lg bg-surface-container shadow-md hover:bg-surface-container-high transition-colors">
-<div class="relative flex items-center justify-center w-12 h-12 rounded bg-surface-container-lowest text-secondary shadow-inner">
-<span class="material-symbols-outlined text-[28px]">token</span>
-<span class="absolute -bottom-1 -right-1 px-1 rounded text-[9px] font-label-sm bg-secondary-container text-on-secondary-container font-black">EPIC</span>
-</div>
-<div class="flex flex-col">
-<div class="flex items-center gap-2">
-<span class="font-label-md text-label-md text-on-surface">Starter Class Relic</span>
-<span class="px-1.5 py-0.2 rounded text-[10px] font-label-sm bg-secondary/20 text-secondary uppercase">Relic</span>
-</div>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Grants +15% Focus Surge to daily morning habits</span>
-</div>
-</div>
-<!-- Reward 3: Spell -->
-<div class="flex items-center gap-4 p-3 rounded-lg bg-surface-container shadow-md hover:bg-surface-container-high transition-colors">
-<div class="relative flex items-center justify-center w-12 h-12 rounded bg-surface-container-lowest text-tertiary shadow-inner">
-<span class="material-symbols-outlined text-[28px]">auto_fix_high</span>
-<span class="absolute -bottom-1 -right-1 px-1 rounded text-[9px] font-label-sm bg-tertiary-container text-on-tertiary-container font-black">RARE</span>
-</div>
-<div class="flex flex-col">
-<div class="flex items-center gap-2">
-<span class="font-label-md text-label-md text-on-surface">First Habit Warding Spell</span>
-<span class="px-1.5 py-0.2 rounded text-[10px] font-label-sm bg-tertiary/20 text-tertiary uppercase">Grimoire</span>
-</div>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Protects your active streak against accidental reset</span>
-</div>
-</div>
-</div>
-<!-- Operative Testimonial snippet -->
-<div class="p-4 rounded-lg bg-surface-container-high flex flex-col gap-2 shadow-inner">
-<div class="flex items-center justify-between">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-primary text-[18px]">workspace_premium</span>
-<span class="font-label-sm text-label-sm text-on-surface">Operative Vance // Lvl 42 Paladin</span>
-</div>
-<div class="flex text-primary">
-<span class="material-symbols-outlined text-[16px]">star</span>
-<span class="material-symbols-outlined text-[16px]">star</span>
-<span class="material-symbols-outlined text-[16px]">star</span>
-<span class="material-symbols-outlined text-[16px]">star</span>
-<span class="material-symbols-outlined text-[16px]">star</span>
-</div>
-</div>
-<p class="font-body-sm text-body-sm text-on-surface-variant italic">
-              "Turned my real-world engineering sprints into dragon hunts. The streak shields saved my momentum three cycles in a row."
-            </p>
-</div>
-</div>
-<!-- Realm Telemetry Sparkline mini-bar -->
-<div class="p-4 rounded-xl bg-surface-container-low flex items-center justify-between shadow-lg">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-tertiary text-[24px]">hub</span>
-<div class="flex flex-col">
-<span class="font-label-sm text-label-sm text-on-surface">GLOBAL GUILD CONCURRENCY</span>
-<span class="font-body-sm text-body-sm text-outline">18,492 Operatives Currently In Quest</span>
-</div>
-</div>
-<!-- Sparkline representation -->
-<svg class="w-24 h-8 text-primary overflow-visible" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 100 30">
-<path d="M0 20 L15 18 L30 24 L45 8 L60 14 L75 4 L90 12 L100 6" stroke-linecap="round" stroke-linejoin="round"></path>
-<circle cx="100" cy="6" fill="currentColor" r="3"></circle>
-</svg>
-</div>
-</div>
-</div>
-</div>
-</div>
-<script>
-  let currentProtocol = 'signin';
-
-  function switchProtocol(mode) {
-    currentProtocol = mode;
-    const tabSignIn = document.getElementById('tab-signin');
-    const tabSignUp = document.getElementById('tab-signup');
-    const fieldHandle = document.getElementById('field-handle');
-    const fieldConfirm = document.getElementById('field-confirm');
-    const forgotLink = document.getElementById('forgot-link');
-    const ctaLabel = document.getElementById('cta-label');
-    const labelEmail = document.getElementById('label-email');
-
-    if (mode === 'signup') {
-      tabSignUp.className = "flex items-center justify-center gap-2 py-2.5 rounded font-label-lg text-label-lg transition-all duration-300 bg-primary-container text-on-primary font-bold shadow-md";
-      tabSignIn.className = "flex items-center justify-center gap-2 py-2.5 rounded font-label-lg text-label-lg transition-all duration-300 text-on-surface-variant hover:text-on-surface hover:bg-surface-container";
-      
-      fieldHandle.classList.remove('hidden');
-      fieldHandle.classList.add('flex');
-      fieldConfirm.classList.remove('hidden');
-      fieldConfirm.classList.add('flex');
-      forgotLink.classList.add('hidden');
-      
-      ctaLabel.textContent = "⚡ CONSECRATE OPERATIVE // CLAIM BOUNTY";
-      labelEmail.textContent = "REGISTER SYNAPSE EMAIL";
-    } else {
-      tabSignIn.className = "flex items-center justify-center gap-2 py-2.5 rounded font-label-lg text-label-lg transition-all duration-300 bg-primary-container text-on-primary font-bold shadow-md";
-      tabSignUp.className = "flex items-center justify-center gap-2 py-2.5 rounded font-label-lg text-label-lg transition-all duration-300 text-on-surface-variant hover:text-on-surface hover:bg-surface-container";
-      
-      fieldHandle.classList.add('hidden');
-      fieldHandle.classList.remove('flex');
-      fieldConfirm.classList.add('hidden');
-      fieldConfirm.classList.remove('flex');
-      forgotLink.classList.remove('hidden');
-      
-      ctaLabel.textContent = "⚡ SYNAPSE INITIATION // ENTER REALM";
-      labelEmail.textContent = "SYNAPSE ADDRESS";
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08070e">
+  <meta name="description" content="Sign in to Abhyudaya LifeQuest.">
+  <title>Enter Sanctuary — Abhyudaya</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,600;1,600&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--gold:#d9a44b;--pale:#ffe9b3;--bg:#08070e;--line:rgba(223,168,74,.26);--copy:#b4b0bb}*{box-sizing:border-box}body{min-width:320px;margin:0;color:#f8eedc;background:var(--bg);font-family:Manrope,system-ui,sans-serif}.page{min-height:100svh;padding:0 18px;position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(circle at 51% 46%,#171421 0,#0a0911 40%,#06070d 100%)}.stars{position:absolute;inset:0;z-index:-2;opacity:.25;background-image:radial-gradient(#e5c27c .7px,transparent .8px);background-size:25px 25px}.container{width:min(1320px,100%);margin:auto}.top{height:99px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(234,194,110,.13)}.brand{display:flex;align-items:center;gap:12px;color:inherit;text-decoration:none}.brand img{width:39px;height:39px;object-fit:contain;filter:drop-shadow(0 0 8px rgba(224,165,72,.6))}.brand b{display:block;font:700 1.1rem/1 Cinzel,serif;letter-spacing:.17em}.brand small{display:block;margin-top:6px;color:var(--gold);font:500 .58rem/1 'DM Mono',monospace;letter-spacing:.22em}.status{border:1px solid var(--line);border-radius:30px;padding:10px 14px;color:#cdb174;font:500 .6rem/1 'DM Mono',monospace;letter-spacing:.07em}.dot{display:inline-block;width:6px;height:6px;margin-right:7px;background:#e3a624;border-radius:50%;box-shadow:0 0 9px #e3a624}.auth-shell{display:grid;grid-template-columns:1fr 1fr;width:min(1084px,100%);min-height:690px;margin:100px auto 76px;border:1px solid rgba(233,190,102,.22);border-radius:13px;overflow:hidden;background:rgba(10,10,17,.72);box-shadow:0 28px 90px rgba(0,0,0,.48)}.scene{position:relative;min-height:400px;overflow:hidden;border-right:1px solid rgba(233,190,102,.19);background:#10101a}.scene img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.54) saturate(.64);transform:scale(1.03)}.scene::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(5,5,10,.93),rgba(7,8,15,.04) 58%),linear-gradient(90deg,rgba(4,5,11,.37),transparent)}.scene-quote{position:absolute;z-index:1;left:32px;right:32px;bottom:33px;padding:20px 24px;border:1px solid var(--line);border-radius:7px;background:rgba(5,6,12,.62);box-shadow:0 8px 25px rgba(0,0,0,.35)}.scene-quote q{display:block;color:#f6e2ad;font:600 1.22rem/1.15 'Cormorant Garamond',serif;font-style:italic;letter-spacing:.04em}.scene-quote span{display:block;margin-top:12px;color:var(--gold);font:500 .57rem/1 'DM Mono',monospace;letter-spacing:.17em}.panel{display:flex;align-items:center;justify-content:center;padding:42px clamp(27px,5vw,50px);background:linear-gradient(140deg,rgba(21,21,31,.97),rgba(8,9,15,.97))}.form-wrap{width:min(100%,440px)}.rune{color:var(--gold);text-align:center;font:500 .8rem/1 'DM Mono',monospace;letter-spacing:.2em}.form-wrap h1{margin:12px 0 5px;text-align:center;font:600 clamp(1.7rem,3vw,2.2rem)/1.2 Cinzel,serif;letter-spacing:.09em}.subtitle{margin:0 0 32px;color:#9998a7;text-align:center;font-size:.78rem;letter-spacing:.07em}.tabs{display:grid;grid-template-columns:1fr 1fr;margin-bottom:29px;border:1px solid rgba(219,165,68,.28);border-radius:8px;padding:3px;background:#07070c}.tab{border:0;border-radius:5px;background:transparent;color:#888597;cursor:pointer;padding:12px 8px;font:600 .69rem/1 Cinzel,serif;letter-spacing:.05em}.tab.active{background:linear-gradient(90deg,#30170c,#42200c);color:#ffe5a3;box-shadow:inset 0 0 0 1px rgba(226,155,45,.46)}.field{display:block;margin:0 0 18px}.field label{display:flex;justify-content:space-between;margin-bottom:8px;color:#d6b46d;font:500 .62rem/1 'DM Mono',monospace;letter-spacing:.15em}.field label em{color:#9c7d42;font-style:normal;letter-spacing:0}.field input{width:100%;height:48px;border:1px solid rgba(218,163,63,.3);border-radius:6px;padding:0 14px;background:#08090f;color:#f6ead0;font:500 .9rem/1 Manrope,sans-serif;outline:none;transition:border .2s,box-shadow .2s}.field input::placeholder{color:#666475}.field input:focus{border-color:#d89f45;box-shadow:0 0 0 3px rgba(218,163,63,.1)}.password{position:relative}.password input{padding-right:50px}.eye{position:absolute;right:0;bottom:0;width:48px;height:48px;border:0;background:transparent;color:#97885f;cursor:pointer;font-size:1rem}.hidden{display:none!important}.remember{display:flex;align-items:center;gap:9px;margin:0 0 24px;color:#aaa7b1;font-size:.74rem;cursor:pointer}.remember input{accent-color:#d99e3c}.submit{display:flex;width:100%;min-height:52px;align-items:center;justify-content:center;gap:10px;border:1px solid #e7a745;border-radius:6px;color:#fff1c9;cursor:pointer;background:linear-gradient(96deg,#7c1f1b,#9c311f 54%,#6b1717);box-shadow:0 7px 21px rgba(133,39,21,.28),inset 0 1px rgba(255,240,180,.34);font:600 .8rem/1 Cinzel,serif;letter-spacing:.1em;transition:transform .18s,filter .18s}.submit:hover{transform:translateY(-2px);filter:brightness(1.12)}.submit:disabled{cursor:wait;opacity:.65}.text-error{margin:14px 0 0;color:#ffaba2;text-align:center;font-size:.77rem;line-height:1.45}.register-link{margin:27px 0 0;color:#9996a2;text-align:center;font-size:.75rem}.register-link button{border:0;border-bottom:1px solid #d8a13f;padding:0 0 2px;color:#f3c961;background:transparent;cursor:pointer;font:600 .72rem/1 Cinzel,serif;letter-spacing:.04em}.secure{margin-top:24px;padding-top:16px;border-top:1px solid rgba(229,194,129,.15);color:#777583;text-align:center;font:500 .55rem/1.4 'DM Mono',monospace;letter-spacing:.08em}@media(max-width:760px){.page{padding:0 13px}.top{height:76px}.brand img{width:33px;height:33px}.brand b{font-size:.89rem}.brand small{font-size:.47rem}.status{font-size:.49rem;padding:8px}.auth-shell{display:block;min-height:0;margin:30px auto 40px}.scene{min-height:240px;border-right:0;border-bottom:1px solid rgba(233,190,102,.19)}.scene-quote{left:18px;right:18px;bottom:18px;padding:15px 17px}.scene-quote q{font-size:1.05rem}.panel{padding:36px 22px}.form-wrap h1{font-size:1.55rem}.subtitle{margin-bottom:25px}.status span:last-child{display:none}}@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+  </style>
+</head>
+<body>
+  <div class="page"><div class="stars"></div><div class="container">
+    <header class="top"><a class="brand" href="index.html"><img src="logo.png" alt=""><span><b>ABHYUDAYA</b><small>THE ASHEN CODES</small></span></a><div class="status"><span class="dot"></span><span>SANCTUARY LINK SECURE</span></div></header>
+    <main class="auth-shell">
+      <aside class="scene" aria-label="Abhyudaya sanctuary artwork"><img src="hero.png" alt="An illuminated sanctuary in the Abhyudaya realm"><div class="scene-quote"><q>Small steps. Light great fires.</q><span>THE SURYA ARCHIVES&nbsp;&nbsp; / /  अभ्युदय</span></div></aside>
+      <section class="panel" aria-labelledby="auth-welcome-title"><div class="form-wrap">
+        <div class="rune">✦ &nbsp;ॐ&nbsp; ✦</div><h1 id="auth-welcome-title">ENTER SANCTUARY</h1><p class="subtitle">REKINDLE YOUR SACRED DISCIPLINE</p>
+        <div class="tabs" role="tablist" aria-label="Authentication mode"><button class="tab active" id="tab-signin" type="button" role="tab" aria-selected="true" onclick="switchProtocol('signin')">SIGN IN</button><button class="tab" id="tab-signup" type="button" role="tab" aria-selected="false" onclick="switchProtocol('signup')">CREATE CHAMPION</button></div>
+        <form novalidate>
+          <label class="field hidden" id="field-handle"><span><label for="input-name">CHAMPION NAME <em>YOUR IDENTITY</em></label><input id="input-name" type="text" autocomplete="nickname" placeholder="Your chosen name" disabled></span></label>
+          <label class="field"><span><label for="input-email">SEEKER ID / EMAIL <em>REQUIRED</em></label><input id="input-email" type="email" autocomplete="email" placeholder="you@example.com" required></span></label>
+          <div class="field"><label for="input-password">SECRET MANTRA / PASSWORD <em id="forgot-link">At least 8 characters</em></label><div class="password"><input id="input-password" type="password" autocomplete="current-password" placeholder="Enter your password" required minlength="8"><button class="eye" type="button" onclick="togglePassVisibility()" aria-label="Show password" id="pass-icon">◉</button></div></div>
+          <label class="field hidden" id="field-confirm"><span><label for="input-confirm">CONFIRM PASSWORD</label><input id="input-confirm" type="password" autocomplete="new-password" placeholder="Repeat your password" disabled></span></label>
+          <label class="remember"><input type="checkbox" checked> Keep presence remembered</label>
+          <button class="submit" type="submit"><span id="cta-label">SIGN IN TO SANCTUARY</span><span>→</span></button>
+        </form>
+        <p class="register-link" id="register-copy">New to the realm? <button type="button" onclick="switchProtocol('signup')">CREATE YOUR CHAMPION →</button></p><p class="secure">YOUR ACCOUNT, QUESTS, AND REWARDS ARE PRIVATE TO YOUR REALM.</p>
+      </div></section>
+    </main>
+  </div></div>
+  <script>
+    function switchProtocol(mode) {
+      const signup = mode === 'signup';
+      const signIn = document.getElementById('tab-signin'), signUp = document.getElementById('tab-signup');
+      const handle = document.getElementById('field-handle'), confirm = document.getElementById('field-confirm');
+      signIn.classList.toggle('active', !signup); signUp.classList.toggle('active', signup);
+      signIn.setAttribute('aria-selected', String(!signup)); signUp.setAttribute('aria-selected', String(signup));
+      handle.classList.toggle('hidden', !signup); confirm.classList.toggle('hidden', !signup);
+      handle.querySelector('input').disabled = !signup; confirm.querySelector('input').disabled = !signup;
+      handle.querySelector('input').required = signup; confirm.querySelector('input').required = signup;
+      document.getElementById('auth-welcome-title').textContent = signup ? 'CREATE CHAMPION' : 'ENTER SANCTUARY';
+      document.querySelector('.subtitle').textContent = signup ? 'BEGIN YOUR HEROIC JOURNEY' : 'REKINDLE YOUR SACRED DISCIPLINE';
+      document.getElementById('cta-label').textContent = signup ? 'CREATE MY CHAMPION' : 'SIGN IN TO SANCTUARY';
+      document.getElementById('register-copy').classList.toggle('hidden', signup);
+      document.getElementById('input-password').autocomplete = signup ? 'new-password' : 'current-password';
     }
-  }
-
-  function togglePassVisibility() {
-    const input = document.getElementById('input-password');
-    const icon = document.getElementById('pass-icon');
-    if (input.type === 'password') {
-      input.type = 'text';
-      icon.textContent = 'visibility_off';
-    } else {
-      input.type = 'password';
-      icon.textContent = 'visibility';
-    }
-  }
-
-  function evaluateCipher(val) {
-    const bar = document.getElementById('strength-bar');
-    const label = document.getElementById('strength-label');
-    if (!bar || !label) return;
-
-    if (val.length === 0) {
-      bar.style.width = '5%';
-      label.textContent = 'CRITICAL (0%)';
-      label.className = 'font-label-sm text-label-sm text-error font-bold tracking-widest';
-    } else if (val.length < 6) {
-      bar.style.width = '35%';
-      label.textContent = 'VULNERABLE (35%)';
-      label.className = 'font-label-sm text-label-sm text-error font-bold tracking-widest';
-    } else if (val.length < 10) {
-      bar.style.width = '65%';
-      label.textContent = 'STABLE (65%)';
-      label.className = 'font-label-sm text-label-sm text-primary font-bold tracking-widest';
-    } else {
-      bar.style.width = '96%';
-      label.textContent = 'OPTIMAL (96%)';
-      label.className = 'font-label-sm text-label-sm text-tertiary font-bold tracking-widest';
-    }
-  }
-</script></main><script src="site.js"></script><script src="auth-client.js"></script></body></html>
+    function togglePassVisibility() { const field=document.getElementById('input-password'), button=document.getElementById('pass-icon'); const show=field.type==='password'; field.type=show?'text':'password'; button.textContent=show?'◌':'◉'; button.setAttribute('aria-label',show?'Hide password':'Show password'); }
+  </script>
+  <script src="site.js"></script><script src="auth-client.js"></script>
+</body>
+</html>

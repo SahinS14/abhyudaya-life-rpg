@@ -5,9 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const error = document.createElement('p');
   error.className = 'text-error text-sm mt-2'; error.setAttribute('aria-live', 'polite');
   form.append(error);
-  const welcome = document.getElementById('auth-welcome-title');
-  document.getElementById('tab-signin')?.addEventListener('click', () => { if (welcome) welcome.textContent = 'Sign in to continue your real-life RPG.'; });
-  document.getElementById('tab-signup')?.addEventListener('click', () => { if (welcome) welcome.textContent = 'Create your account, then forge your first character.'; });
   form.addEventListener('submit', async (event) => {
     event.preventDefault(); event.stopImmediatePropagation(); error.textContent = '';
     const signup = !document.getElementById('field-handle').classList.contains('hidden');
